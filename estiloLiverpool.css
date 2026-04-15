@@ -151,6 +151,7 @@ box-shadow:0 2px 8px rgba(0,0,0,0.08);
 position:relative;
 display:flex;
 align-items:center;
+padding:0 40px;
 }
 
 .carousel{
@@ -167,16 +168,25 @@ display:none;
 
 .arrow{
 position:absolute;
-right:0;
-width:76px;
-height:76px;
+top:50%;
+transform:translateY(-50%);
+width:50px;
+height:50px;
 border-radius:50%;
 border:none;
 background:white;
 box-shadow:0 4px 10px rgba(0,0,0,0.15);
 cursor:pointer;
 font-size:22px;
-z-index:2;
+z-index:10;
+}
+
+.arrow.right{
+right:10px;
+}
+
+.arrow.left{
+left:10px;
 }
 
 .product{
@@ -186,6 +196,10 @@ background:white;
 border-radius:18px;
 border:2px solid #a259ff;
 overflow:hidden;
+flex: 0 0 auto;
+
+position:relative;
+perspective:1000px;
 
 display:flex;
 align-items:center;
@@ -198,6 +212,47 @@ transition-delay:0.05s;
 .product:hover{
 transform:translateY(-6px) scale(1.03);
 box-shadow:0 6px 14px rgba(0,0,0,0.12);
+}
+
+.card-inner{
+width:100%;
+height:100%;
+position:relative;
+transform-style:preserve-3d;
+transition:transform 0.6s;
+}
+
+/* hover = giro */
+.product:hover .card-inner{
+transform:rotateY(180deg);
+}
+
+/* caras */
+.card-front,
+.card-back{
+position:absolute;
+width:100%;
+height:100%;
+backface-visibility:hidden;
+
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+/* frente */
+.card-front img,
+.card-back img{
+width:100%;
+height:100%;
+object-fit:contain;
+padding:18px;
+}
+
+/* reverso */
+.card-back{
+transform:rotateY(180deg);
+background:white; /* opcional */
 }
 
 .product img{
