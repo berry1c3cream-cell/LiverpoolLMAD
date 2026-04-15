@@ -6,80 +6,125 @@
 
 <style>
 
+/* Reset */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
 body{
-    margin:0;
-    font-family: Arial, Helvetica, sans-serif;
-    background:#e6e6e6;
+background:#f5f5f5;
 }
 
-/* Barra superior */
-.header{
-    background:#e6007e;
-    padding:15px;
-    text-align:center;
+/* top bar */
+.topbar{
+background:#d10f6a;
+color:white;
+display:flex;
+justify-content:space-between;
+padding:6px 20px;
+font-size:14px;
 }
 
-.header img{
-    height:30px;
+/* navbar */
+.navbar{
+background:#e10073;
+color:white;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:18px 24px;
 }
 
-/* Contenedor */
-.container{
-    width:320px;
-    margin:80px auto;
-    text-align:center;
+.logo{
+font-size:28px;
+font-weight:700;
 }
 
-/* Título */
-.container h2{
-    font-weight:normal;
-    color:#333;
-    margin-bottom:30px;
+/* CONTENEDOR LOGIN */
+.login-container{
+display:flex;
+justify-content:center;
+align-items:center;
+height:calc(100vh - 120px);
 }
 
-/* Labels */
-label{
-    display:block;
-    text-align:left;
-    font-size:12px;
-    letter-spacing:2px;
-    color:#444;
-    margin-top:15px;
+/* CARD LOGIN */
+.login-card{
+background:white;
+padding:30px;
+border-radius:18px;
+width:320px;
+box-shadow:0 4px 15px rgba(0,0,0,0.1);
 }
 
-/* Inputs */
-input{
-    width:100%;
-    padding:10px;
-    border:2px solid #e6007e;
-    outline:none;
-    margin-top:5px;
-    background:#fff;
+/* título */
+.login-card h2{
+margin-bottom:20px;
+color:#333;
 }
 
-/* Link recuperar */
+/* labels */
+.login-card label{
+font-size:12px;
+letter-spacing:1px;
+color:#555;
+margin-top:15px;
+display:block;
+}
+
+/* inputs */
+.login-card input{
+width:100%;
+padding:10px;
+margin-top:6px;
+border-radius:8px;
+border:1px solid #ccc;
+outline:none;
+transition:0.2s;
+}
+
+.login-card input:focus{
+border-color:#e10073;
+box-shadow:0 0 0 2px rgba(225,0,115,0.15);
+}
+
+/* link */
 .forgot{
-    display:block;
-    margin-top:10px;
-    color:#e6007e;
-    font-size:14px;
-    text-decoration:none;
+display:block;
+margin-top:10px;
+color:#e10073;
+font-size:14px;
+text-decoration:none;
 }
 
-/* Botones */
-button{
-    width:100%;
-    padding:12px;
-    margin-top:15px;
-    border:none;
-    background:#4b1e83;
-    color:white;
-    font-weight:bold;
-    cursor:pointer;
+/* botones */
+.login-card button{
+width:100%;
+padding:12px;
+margin-top:15px;
+border:none;
+border-radius:10px;
+background:#4b1e83;
+color:white;
+font-weight:bold;
+cursor:pointer;
+transition:0.2s;
 }
 
-button:hover{
-    background:#3b1569;
+.login-card button:hover{
+background:#3b1569;
+}
+
+/* botón secundario */
+.secondary{
+background:#e10073;
+}
+
+.secondary:hover{
+background:#c40063;
 }
 
 </style>
@@ -87,25 +132,35 @@ button:hover{
 
 <body>
 
-<div class="header">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Liverpool_logo.svg" alt="Liverpool">
+<!-- TOPBAR -->
+<div class="topbar">
+    <span>Envíos gratis en compras mayores a $999</span>
+    <span>Ayuda</span>
 </div>
 
-<div class="container">
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="logo">Liverpool</div>
+</div>
 
-<h2>Inicia sesión</h2>
+<!-- LOGIN -->
+<div class="login-container">
+    <div class="login-card">
 
-<label>CORREO ELECTRÓNICO *</label>
-<input type="email">
+        <h2>Inicia sesión</h2>
 
-<label>CONTRASEÑA *</label>
-<input type="password">
+        <label>CORREO ELECTRÓNICO *</label>
+        <input type="email" placeholder="ejemplo@correo.com">
 
-<a class="forgot" href="#">¿Olvidaste tu contraseña?</a>
+        <label>CONTRASEÑA *</label>
+        <input type="password" placeholder="••••••••">
 
-<button>INICIAR SESIÓN</button>
-<button>CREAR CUENTA</button>
+        <a class="forgot" href="#">¿Olvidaste tu contraseña?</a>
 
+        <button>INICIAR SESIÓN</button>
+        <button class="secondary">CREAR CUENTA</button>
+
+    </div>
 </div>
 
 </body>
