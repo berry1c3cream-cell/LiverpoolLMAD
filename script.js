@@ -59,3 +59,40 @@ document.querySelectorAll("a").forEach(link => {
         }
     });
 });
+
+const accBtn = document.getElementById("accessibilityBtn");
+const accPanel = document.getElementById("accessPanel");
+const darkToggle = document.getElementById("darkToggle");
+
+
+// abrir panel
+accBtn?.addEventListener("click", () => {
+    accPanel.classList.toggle("show");
+});
+
+
+// cerrar si clic afuera
+document.addEventListener("click", e => {
+    if(!accPanel?.contains(e.target) && !accBtn?.contains(e.target)){
+        accPanel?.classList.remove("show");
+    }
+});
+
+
+// cargar preferencia guardada
+if(localStorage.getItem("darkMode") === "true"){
+    document.body.classList.add("dark");
+    if(darkToggle) darkToggle.checked = true;
+}
+
+
+// toggle dark mode
+darkToggle?.addEventListener("change", () => {
+
+document.body.classList.toggle("dark");
+
+const isDark = document.body.classList.contains("dark");
+
+localStorage.setItem("darkMode", isDark);
+
+});
