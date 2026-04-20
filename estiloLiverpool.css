@@ -30,6 +30,9 @@ font-family:Arial, Helvetica, sans-serif;
     padding:15px 100px;
     gap:20px;
     color:white;
+    position:sticky;
+    top:0;
+    z-index:100;
 }
 
 .logo{
@@ -376,4 +379,71 @@ background:#eee;
 padding:12px;
 border-radius:8px;
 width:220px;
+}
+
+.buySticky{
+position:sticky;
+bottom:0;
+z-index:90;
+background:#eee;
+padding:15px 30px;
+border-top:1px solid #ddd;
+transition:all .3s ease;
+
+}
+
+/* barra comprar para la parte de arriba */
+.buySticky.stickTop{
+top:110px; /* altura header + topbar */
+bottom:auto;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+border-top:none;
+border-bottom:1px solid #ddd;
+}
+
+.buyButtons{
+display:flex;
+align-items:center;
+width:100%;
+justify-content:center;
+gap:16px;
+flex-wrap:wrap;
+}
+
+/* base */
+.buyButtons button{
+max-width:90%;
+padding:14px;
+border-radius:12px;
+border:none;
+cursor:pointer;
+font-weight:bold;
+letter-spacing:0.5px;
+text-transform:uppercase;
+transition:0.2s ease;
+width:260px;
+}
+
+/* agregar bolsa */
+.btnPrimary{
+background:#522583;
+color:white;
+}
+
+/* comprar ahora */
+.btnSecondary{
+background:#522583;
+color:white;
+opacity:0.95;
+}
+
+/* hover */
+.buyButtons button:hover{
+transform:translateY(-2px);
+box-shadow:0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* click */
+.buyButtons button:active{
+transform:scale(0.97);
 }
