@@ -2,10 +2,12 @@
 --bg:#f5f5f5;
 --card:#ffffff;
 --text:#111;
+--whiteText:#f5f5f5;
 --header:#d81b81;
 --headerTop:#ad1457;
 --border:#e0e0e0;
---purple: #a259ff;
+--welement:#f5f5f5;
+--purple:#a259ff;
 }
 
 /* modo oscuro */
@@ -13,9 +15,11 @@ body.dark{
 --bg:#121212;
 --card:#1e1e1e;
 --text:#f1f1f1;
+--whiteText:#d6d6d6;
 --header:#7b1fa2;
 --headerTop:#4a148c;
 --border:#333;
+--welement:#464646;
 }
 
 *{
@@ -49,7 +53,7 @@ body.fade-out{
 /* HEADER SUPERIOR */
 .topbar{
     background:var(--headerTop);
-    color:var(--bg);
+    color:var(--whiteText);
     padding:10px 40px;
     font-size:13px;
     display:flex;
@@ -153,6 +157,7 @@ padding:8px 16px;
 border-radius:8px;
 cursor:pointer;
 font-weight:600;
+color:var(--text)
 }
 
 /* container */
@@ -175,7 +180,7 @@ transform:translateY(0);
 
 .continue-card{
 margin:15px 0;
-background:var(--bg);
+background:var(--welement);
 display:inline-flex;
 align-items:center;
 gap:15px;
@@ -212,7 +217,7 @@ width:50px;
 height:50px;
 border-radius:50%;
 border:none;
-background:var(--bg);
+background:var(--welement);
 box-shadow:0 4px 10px rgba(0,0,0,0.15);
 cursor:pointer;
 font-size:22px;
@@ -221,16 +226,18 @@ z-index:10;
 
 .arrow.right{
 right:10px;
+color:var(--text);
 }
 
 .arrow.left{
 left:10px;
+color:var(--text);
 }
 
 .product{
 width:300px;
 height:300px;
-background:var(--bg);
+background:var(--card);
 border-radius:18px;
 border:2px solid #a259ff;
 overflow:hidden;
