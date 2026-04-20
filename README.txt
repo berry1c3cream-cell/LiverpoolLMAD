@@ -1,1 +1,1 @@
-No tiene nada XD
+El modo oscuro se activa con el icono de hojo, pero se ocupa una señal visual por que no se nota que es botón.
