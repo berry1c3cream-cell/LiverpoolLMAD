@@ -9,6 +9,7 @@
 --welement:#ffffff;
 --gris:#555;
 --purple:#a259ff;
+--font-scale: 1;
 }
 
 /* modo oscuro */
@@ -22,6 +23,11 @@ body.dark{
 --border:#333;
 --welement:#464646;
 --gris:#aaa9a9;
+}
+
+/* cuando está activado */
+body.bigFont{
+--font-scale: 1.3;
 }
 
 *{
@@ -38,6 +44,7 @@ color:var(--text);
 opacity:0;
 transform:translateY(20px);
 transition:all .35s ease;
+font-size: calc(16px * var(--font-scale));
 }
 
 body.loaded{

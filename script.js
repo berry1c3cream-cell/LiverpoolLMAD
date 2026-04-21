@@ -97,6 +97,25 @@ localStorage.setItem("darkMode", isDark);
 
 });
 
+// toggle letra grande
+const sizeFontToggle = document.getElementById("sizeFontToggle");
+
+// cargar
+if(localStorage.getItem("bigFont") === "true"){
+document.body.classList.add("bigFont");
+sizeFontToggle.checked = true;
+}
+
+// toggle
+sizeFontToggle.addEventListener("change", () => {
+document.body.classList.toggle("bigFont");
+
+localStorage.setItem(
+"bigFont",
+document.body.classList.contains("bigFont")
+);
+});
+
 // Menú desplegable
 const catBtn = document.querySelector(".btn-cat");
 const menu = document.getElementById("menu");
