@@ -6,7 +6,8 @@
 --header:#d81b81;
 --headerTop:#ad1457;
 --border:#e0e0e0;
---welement:#f5f5f5;
+--welement:#ffffff;
+--gris:#555;
 --purple:#a259ff;
 }
 
@@ -20,6 +21,7 @@ body.dark{
 --headerTop:#4a148c;
 --border:#333;
 --welement:#464646;
+--gris:#aaa9a9;
 }
 
 *{
@@ -74,8 +76,11 @@ body.fade-out{
 }
 
 .logo{
+    text-decoration: none;
     font-size:36px;
     font-weight: normal;
+    display: block;
+    color: inherit;
 }
 
 /* BOTON CATEGORIAS */
@@ -126,6 +131,12 @@ opacity:0.8;
     gap:30px;
     align-items: center;
     font-size:25px;
+}
+
+.Categorias_Link{
+    text-decoration:none;
+    color:inherit;
+    display:block;
 }
 
 /* banner */
@@ -573,4 +584,183 @@ background:#7b1fa2;
 
 input:checked + .slider:before{
 transform:translateX(22px);
+}
+
+/* ====== TABS ====== */
+.tabs{
+    display:flex;
+    gap:12px;
+    margin:20px 0;
+    border-bottom:2px solid var(--purple);
+    padding-bottom:15px;
+    flex-wrap:wrap;
+}
+
+.tab{
+    border:1px solid var(--header);
+    padding:8px 18px;
+    border-radius:20px;
+    cursor:pointer;
+    color:var(--header);
+    font-size:14px;
+    background:transparent;
+    transition:0.2s ease;
+}
+
+.tab:hover{
+    background:var(--header);
+    color:white;
+}
+
+.tab.active{
+    background:var(--header);
+    color:white;
+}
+
+
+/* ====== FILTROS ====== */
+.filters{
+    margin:10px 0 20px 0;
+    font-size:14px;
+}
+
+.filter-btn{
+    border:1px solid var(--border);
+    padding:6px 15px;
+    border-radius:15px;
+    background:var(--welement);
+    cursor:pointer;
+    margin-right:10px;
+}
+
+.filter-text{
+    color:#999;
+}
+
+
+/* ====== GRID PRODUCTOS ====== */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(220px, 1fr));
+    gap:40px;
+    margin-top:10px;
+}
+
+
+/* ====== CARD ====== */
+.card{
+    cursor:pointer;
+    transition:0.2s ease;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+/* imagen */
+.card img{
+    width:100%;
+    border-radius:10px;
+    background:#f3f3f3;
+    aspect-ratio:1/1;
+    object-fit:contain;
+    padding:10px;
+}
+
+/* título */
+.product-title{
+    font-size:15px;
+    color:var(--text);
+    margin:10px 0 5px;
+    line-height:1.3;
+}
+
+/* precios */
+.price-container{
+    font-size:18px;
+    color:#d0021b;
+}
+
+.price-container sup{
+    font-size:10px;
+}
+
+.old-price{
+    font-size:13px;
+    color:#999;
+    text-decoration:line-through;
+    margin-right:6px;
+}
+
+.sidebar{
+    width:260px;
+    background:var(--card);
+    
+    position:fixed;
+    top:110px;
+    left:-280px;
+
+    height:calc(100vh - 110px);
+    
+    padding:20px;
+    overflow-y:auto;
+    
+    transition:0.3s ease;
+    border-right:1px solid var(--border);
+    z-index:150;
+}
+
+/* visible */
+.sidebar.active{
+    left:0;
+}
+
+.content{
+    padding:20px 40px;
+    transition:0.3s ease;
+}
+
+/* cuando abre menú */
+.content.shift{
+    margin-left:260px;
+}
+
+.sidebar p{
+    margin:12px 0;
+    color:var(--gris);
+    cursor:pointer;
+    font-size:14px;
+}
+
+.sidebar p:hover{
+    color:var(--header);
+}
+
+.sidebar .active-item{
+    color:var(--header);
+    font-weight:bold;
+}
+
+.sidebar hr{
+    border:none;
+    border-top:1px solid var(--border);
+    margin:10px 0;
+}
+
+.overlay{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.3);
+    opacity:0;
+    pointer-events:none;
+    transition:0.3s;
+    z-index:140;
+}
+
+.overlay.show{
+    opacity:1;
+    pointer-events:auto;
 }
