@@ -128,9 +128,80 @@ opacity:0.8;
 /* ICONOS DERECHA */
 .rightIcons{
     display:flex;
-    gap:30px;
-    align-items: center;
-    font-size:25px;
+    gap:22px;
+    align-items:center;
+    font-size:16px;
+}
+
+.iconBtn{
+width:36px;
+height:36px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:10px;
+cursor:pointer;
+transition:0.15s ease;
+}
+
+
+.rightIcons span{
+cursor:pointer;
+padding:6px;
+border-radius:8px;
+transition:0.15s ease;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+/* hover */
+.rightIcons span:hover{
+background:rgba(0,0,0,0.08);
+transform:translateY(-1px);
+}
+
+/* click */
+.rightIcons span:active{
+transform:scale(0.92);
+}
+
+/* modo oscuro */
+body.dark .rightIcons span:hover{
+background:rgba(255,255,255,0.08);
+} 
+
+/* tamaño icono */
+.iconBtn img{
+width:30px;
+height:30px;
+filter:brightness(0) invert(1);
+transition:0.15s ease;
+}
+
+/* modo oscuro */
+body.dark .iconBtn img{
+filter: brightness(0) invert(0);
+}
+
+/* modo claro */
+body:not(.dark) .iconBtn img{
+filter: brightness(0) invert(1);
+opacity:0.95;
+}
+
+/* hover */
+.iconBtn:hover img{
+transform:scale(1.08);
+}
+
+.iconBtn:hover{
+background:rgba(255,255,255,0.15);
+transform:translateY(-1px);
+}
+
+.iconBtn:active{
+transform:scale(0.92);
 }
 
 .Categorias_Link{
