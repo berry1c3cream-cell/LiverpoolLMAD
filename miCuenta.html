@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mi cuenta</title>
+<link rel="stylesheet" href="estiloLiverpool.css">
+</head>
+<body>
+
+<!-- TOPBAR -->
+<header class="topbar">
+    <div>
+        <span>Mi tienda</span>
+    </div>
+
+    <div>
+        <div>Otros servicios | Mesa de regalos | Mi crédito</div>
+    </div>
+</header>
+
+<!-- HEADER PRINCIPAL -->
+<nav class="header">
+
+    <a href="home.html" class="logo">Liverpool</a>
+
+    <div class="btn-cat">
+        <a href="search.html" class="Categorias_Link">
+            Categorías >
+        </a>
+    </div>
+
+    <div class="search">
+        <input type="text" placeholder="Buscar productos...">
+    </div>
+
+    <div class="rightIcons">
+        <a href="miCuenta.html" class="miCuentaLink">
+            <span>Mi cuenta</span>
+        </a>
+        <span>♡</span>
+        <span>🛍</span>
+        <span id="accessibilityBtn">👁</span>
+    </div>
+
+</nav>
+
+<div class="accessPanel" id="accessPanel">
+
+    <h4>Accesibilidad</h4>
+
+    <div class="accItem">
+        <span>Modo oscuro</span>
+
+        <label class="switch">
+            <input type="checkbox" id="darkToggle">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+    <div class="accItem">
+        <span>Reducir animaciones</span>
+
+        <label class="switch">
+            <input type="checkbox" id="motionToggle">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+</div>
+
+
+<!-- CONTENIDO -->
+<div class="content">
+
+<!-- TABS -->
+<div class="tabsAlternate">
+    <div class="tabAlt active" data-tab="cuenta">Mi cuenta</div>
+    <div class="tabAlt" data-tab="datos">Datos personales</div>
+    <div class="tabAlt" data-tab="cartera">Mi cartera</div>
+    <div class="tabAlt" data-tab="wishlist">Wishlist</div>
+    <div class="tabAlt" data-tab="beneficios">Beneficios</div>
+    <div class="tabAlt" data-tab="ayuda">Ayuda y contactos</div>
+    <div class="tabAlt" data-tab="acerca">Acerca de</div>
+</div>
+
+
+<div class="tabContent active" id="cuenta">
+    <h2>Personaliza tu experiencia</h2>
+    <p>Elige tus categorías favoritas para recomendaciones.</p>
+
+    <div class="accountCards">
+        <div class="accountCard">
+            <h3>Moda</h3>
+            <p>Ropa, zapatos y accesorios</p>
+        </div>
+
+        <div class="accountCard">
+            <h3>Tecnología</h3>
+            <p>Celulares, laptops y más</p>
+        </div>
+
+        <div class="accountCard">
+            <h3>Hogar</h3>
+            <p>Muebles y decoración</p>
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <div class="accountHero">
+
+        <div class="accountText">
+            <h1>Usuario... ¡explora y personaliza tu experiencia!</h1>
+
+            <p>
+            Cuéntanos qué te gusta comprar y cuáles son tus marcas favoritas,  
+            en Liverpool nos encargamos de lo demás
+            </p>
+
+            <button class="btnPrimaryMC">Personalizar cuenta</button>
+        </div>
+
+        <div class="accountImage">
+            <img src="imagenes/placeholder.png">
+        </div>
+
+    </div>
+
+
+    <!-- TARJETAS -->
+    <div class="accountCards">
+
+        <div class="accountCard">
+            <h3>Preferencias</h3>
+            <p>Selecciona tus categorías favoritas</p>
+            <button>Editar</button>
+        </div>
+
+        <div class="accountCard">
+            <h3>Direcciones</h3>
+            <p>Administra tus direcciones de envío</p>
+            <button>Administrar</button>
+        </div>
+
+        <div class="accountCard">
+            <h3>Métodos de pago</h3>
+            <p>Tarjetas y métodos guardados</p>
+            <button>Ver</button>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="tabContent" id="datos">
+    <h2>Datos personales</h2>
+
+    <div class="accountCards">
+        <div class="accountCard">
+            <h3>Nombre</h3>
+            <p>Usuario Liverpool</p>
+        </div>
+
+        <div class="accountCard">
+            <h3>Email</h3>
+            <p>usuario@email.com</p>
+        </div>
+
+        <div class="accountCard">
+            <h3>Teléfono</h3>
+            <p>+52 81 0000 0000</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="tabContent" id="cartera">
+    <h2>Mi cartera</h2>
+
+    <div class="accountCards">
+        <div class="accountCard">
+            <h3>Tarjeta Liverpool</h3>
+            <p>**** 4582</p>
+        </div>
+
+        <div class="accountCard">
+            <h3>Saldo disponible</h3>
+            <p>$4,200 MXN</p>
+        </div>
+
+        <div class="accountCard">
+            <h3>Puntos</h3>
+            <p>1,250 puntos</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="tabContent" id="wishlist">
+    <h2>Wishlist</h2>
+    <p>No tienes productos guardados aún.</p>
+</div>
+
+
+<div class="tabContent" id="beneficios">
+    <h2>Beneficios</h2>
+
+    <div class="accountCards">
+        <div class="accountCard">
+            <h3>Envío gratis</h3>
+            <p>En compras mayores a $999</p>
+        </div>
+
+        <div class="accountCard">
+            <h3>Meses sin intereses</h3>
+            <p>Hasta 12 MSI</p>
+        </div>
+
+        <div class="accountCard">
+            <h3>Ofertas exclusivas</h3>
+            <p>Solo para miembros</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="tabContent" id="ayuda">
+    <h2>Ayuda y contactos</h2>
+
+    <div class="accountCards">
+        <div class="accountCard">
+            <h3>Soporte</h3>
+            <p>Chat en vivo</p>
+        </div>
+
+        <div class="accountCard">
+            <h3>Teléfono</h3>
+            <p>800-713-5555</p>
+        </div>
+
+        <div class="accountCard">
+            <h3>Correo</h3>
+            <p>ayuda@liverpool.com</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="tabContent" id="acerca">
+    <h2>Acerca de tu cuenta</h2>
+    <p>Administra tus preferencias y configuración general.</p>
+</div>
+
+
+
+<script>
+window.addEventListener("load", () => {
+document.body.classList.add("loaded")
+})
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>
