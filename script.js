@@ -158,3 +158,10 @@ document
 
 })
 })
+
+document.querySelectorAll(".faqQuestion").forEach(q => {
+    q.addEventListener("click", () => {
+        const item = q.parentElement;
+        item.classList.toggle("active");
+    });
+});
