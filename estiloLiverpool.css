@@ -1208,3 +1208,113 @@ box-shadow:0 4px 10px rgba(0,0,0,0.15);
     font-size:20px;
     color:var(--gris);
 }*/
+
+/* ===== BENEFICIOS ===== */
+
+.benefitsSummary{
+    display:flex;
+    gap:20px;
+    margin:20px 0;
+    flex-wrap:wrap;
+}
+
+.benefitBox{
+    background:var(--card);
+    padding:18px;
+    border-radius:12px;
+    flex:1;
+    min-width:180px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.08);
+}
+
+.benefitBox span{
+    font-size:13px;
+    color:var(--gris);
+}
+
+.benefitBox h3{
+    margin-top:8px;
+}
+
+.benefitBox.highlight{
+    border:2px solid #d81b81;
+}
+
+/* progreso */
+.benefitsProgress{
+    margin:20px 0;
+}
+
+.progressBar{
+    height:10px;
+    background:var(--border);
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:10px;
+}
+
+.progressFill{
+    height:100%;
+    background:#d81b81;
+    transition:width 0.4s ease;
+}
+
+/* títulos */
+.sectionTitle{
+    margin:25px 0 10px;
+}
+
+/* beneficios activos */
+.benefitsGrid{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.benefitCard{
+    background:var(--card);
+    padding:20px;
+    border-radius:12px;
+    width:220px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.08);
+    transition:0.2s ease;
+}
+
+.benefitCard:hover{
+    transform:translateY(-4px);
+}
+
+/* recompensas */
+.rewardsGrid{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.rewardCard{
+    background:var(--card);
+    padding:20px;
+    border-radius:12px;
+    width:220px;
+    text-align:center;
+    box-shadow:0 4px 10px rgba(0,0,0,0.08);
+}
+
+.rewardCard span{
+    display:block;
+    margin:10px 0;
+    color:var(--gris);
+}
+
+.rewardCard button{
+    background:#d81b81;
+    color:white;
+    border:none;
+    padding:8px 14px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.rewardCard.disabled{
+    opacity:0.5;
+}
