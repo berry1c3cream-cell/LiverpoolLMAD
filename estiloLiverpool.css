@@ -82,8 +82,8 @@ body.fade-out{
     background:var(--header);
     display:flex;
     align-items:center;
-    padding:15px 20px; /* móvil */
-    gap:20px;
+    padding:12px 12px; /* móvil */
+    gap:10px;
     color:var(--card);
     position:sticky;
     top:0;
@@ -320,7 +320,7 @@ padding:0 40px;
 
 .carousel{
 display:flex;
-gap:12px;
+gap:10px;
 overflow-x:auto;
 scroll-behavior:smooth;
 padding:10px;
@@ -450,7 +450,13 @@ transform:scale(0.96);
 ========================= */
 
 .productPage{
-padding:40px 80px;
+padding:20px;
+}
+
+@media (min-width:768px){
+    .productPage{
+        padding:40px 80px;
+    }
 }
 
 .productTitle{
@@ -971,45 +977,56 @@ border-radius:8px;
 cursor:pointer;
 }
 
-/* ====== TABS CUENTA (estilo Liverpool) ====== */
+/* ====== TABS CUENTA ====== */
 
 .tabsAlternate{
-display:flex;
-background:var(--border);
-border-bottom:1px solid var(--border);
+    display:flex;
+    overflow-x:auto;
+    gap:10px;
+    padding:10px 15px;
+    background:transparent;
+    border:none;
+    position:relative;
+
+    scroll-snap-type:x mandatory;
 }
 
+.tabsAlternate::after{
+    display:none;
+}
+
+/* ocultar scrollbar */
+.tabsAlternate::-webkit-scrollbar{
+    display:none;
+}
+
+/* tabs */
 .tabAlt{
-padding:16px 24px;
-cursor:pointer;
-background:transparent;
-border:none;
-font-size:15px;
-color:var(--text);
-position:relative;
+    flex:0 0 auto;
+    padding:10px 16px;
+    border-radius:20px;
+    background:transparent;
+    border:none;
+
+    font-size:14px;
+    color:var(--gris);
+    cursor:pointer;
+
+    transition:0.2s ease;
+    scroll-snap-align:start;
 }
 
-/* separadores verticales */
-.tabAlt:not(:last-child)::after{
-content:"";
-position:absolute;
-right:0;
-top:25%;
-height:50%;
-width:1px;
-background:#d81b81;
-opacity:0.5;
-}
-
-/* activo */
-.tabAlt.active{
-background:var(--card);
-font-weight:bold;
-}
-
-/* hover */
+/* hover (desktop) */
 .tabAlt:hover{
-background:rgba(0,0,0,0.03);
+    background:rgba(0,0,0,0.05);
+}
+
+/* activo 🔥 */
+.tabAlt.active{
+    background:var(--header);
+    color:white;
+    font-weight:bold;
+    box-shadow:0 2px 8px rgba(0,0,0,0.15);
 }
 
 .tabContent{
@@ -1020,6 +1037,50 @@ animation:fadeIn .3s ease;
 
 .tabContent.active{
 display:block;
+}
+
+@media (min-width: 768px){
+    .tabsAlternate{
+    display:flex;
+    background:var(--border);
+    border-bottom:1px solid var(--border);
+    }
+
+    .tabAlt{
+    padding:16px 24px;
+    cursor:pointer;
+    background:transparent;
+    border:none;
+    font-size:15px;
+    color:var(--text);
+    position:relative;
+    }
+
+    /* separadores verticales */
+    .tabAlt:not(:last-child)::after{
+    content:"";
+    position:absolute;
+    right:0;
+    top:25%;
+    height:50%;
+    width:1px;
+    background:#d81b81;
+    opacity:0.5;
+    }
+
+    /* activo */
+    .tabAlt.active{
+    background:var(--card);
+    font-weight:bold;
+    color:var(--text);
+    box-shadow:none;
+    }
+
+    /* hover */
+    .tabAlt:hover{
+    background:rgba(0,0,0,0.03);
+    }
+
 }
 
 .btnPrimaryMC{
@@ -1447,8 +1508,8 @@ box-shadow:0 4px 10px rgba(0,0,0,0.15);
 
 @media (min-width: 768px){
     .header{
+        gap:20px;
         padding:15px 40px;
-        flex-wrap:nowrap;
     }
 }
 
