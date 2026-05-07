@@ -140,7 +140,7 @@ overlay?.addEventListener("click", () => {
     overlay.classList.remove("show");
 });
 
-
+//Tabs
 const tabs = document.querySelectorAll(".tabAlt")
 const contents = document.querySelectorAll(".tabContent")
 
@@ -159,6 +159,28 @@ document
 })
 })
 
+// abrir tab desde URL
+const params = new URLSearchParams(window.location.search);
+const activeTab = params.get("tab");
+
+if(activeTab){
+
+    tabs.forEach(t => t.classList.remove("active"));
+    contents.forEach(c => c.classList.remove("active"));
+
+    const targetTab = document.querySelector(
+        `.tabAlt[data-tab="${activeTab}"]`
+    );
+
+    const targetContent = document.getElementById(activeTab);
+
+    if(targetTab && targetContent){
+        targetTab.classList.add("active");
+        targetContent.classList.add("active");
+    }
+}
+
+// faq
 document.querySelectorAll(".faqQuestion").forEach(q => {
     q.addEventListener("click", () => {
         const item = q.parentElement;
