@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Producto</title>
+<link rel="stylesheet" href="estiloLiverpool.css">
+</head>
+<body>
+
+<!-- TOP BAR -->
+<header class="topbar">
+    <div>
+        <span>Mi tienda</span>
+    </div>
+
+    <div>
+        <div>Otros servicios | Mesa de regalos | Mi crédito</div>
+    </div>
+</header>
+
+<!-- HEADER -->
+<div class="header">
+    <a href="home.html" class="logo">Liverpool</a>
+
+    <div class="btn-cat">
+        <a href="search.html" class="Categorias_Link">
+            Categorías >
+        </a>
+    </div>
+
+    <div class="search">
+        <input type="text" placeholder="Search">
+    </div>
+
+    <div class="rightIcons">
+
+        <span class="iconBtn">
+            <a href="miCuenta.html" class="miCuentaLink">
+                <img src="icons/user.svg">
+            </a>
+        </span>
+
+        <!--<span class="iconBtn">
+            <a href="miCuenta.html" class="miCuentaLink">
+                <span class="accountLabel">Mi cuenta</span>
+            </a>
+        </span> -->
+
+        <span class="iconBtn">
+        <img src="icons/heart.svg">
+        </span>
+
+        <span class="iconBtn">
+            <a href="bolsa.html" class="miCuentaLink">
+                <img src="icons/bag.svg">
+            </a>
+        </span>
+
+        <span id="accessibilityBtn" class="iconBtn">
+        <img src="icons/accessibility.svg">
+        </span>
+
+    </div>
+</div>
+
+<div class="accessPanel" id="accessPanel">
+
+    <h4>Accesibilidad</h4>
+
+    <div class="accItem">
+        <span>Modo oscuro</span>
+
+        <label class="switch">
+            <input type="checkbox" id="darkToggle">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+    <div class="accItem">
+        <span>Letra grande</span>
+
+        <label class="switch">
+            <input type="checkbox" id="sizeFontToggle">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+</div>
+
+<!-- PRODUCTO -->
+<div class="productPage">
+
+    <h1 class="productTitle">Nombre del producto</h1>
+
+    <div class="productLayout">
+
+        <!-- IMAGEN -->
+        <div class="productImage">
+            <img src="imagenes/tenis.png">
+        </div>
+
+        <!-- INFO -->
+        <div class="productInfo">
+
+            <div class="stars">
+                ★ ★ ★ ★
+                <span class="stock">Ver disponibilidad en tienda</span>
+            </div>
+
+            <div class="priceBox">
+                <span class="old">$1,629.00</span>
+                <span class="new">$1,303.20</span>
+            </div>
+
+            <div class="shipping">
+                🚚 Envío gratis a todo el país
+            </div>
+
+            <div class="qty">
+                <label>Cantidad:</label>
+                <div class="qtyBox">
+                    <button>-</button>
+                    <span>1</span>
+                    <button>+</button>
+                </div>
+            </div>
+
+            <div class="color">
+                Color: Blanco ▼
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="buySticky" id="buySticky">
+    <div class="buyContent">
+
+        <div class="buyButtons">
+            <button class="btnPrimary">Agregar a la bolsa</button>
+            <button class="btnSecondary">Comprar ahora</button>
+        </div>
+    </div>
+</div>
+
+<div id="reviews">
+   reseñas aquí
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

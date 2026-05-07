@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liverpool - Inicia sesión</title>
+    <link rel="stylesheet" href="estiloLiverpool.css">
+    <style>
+        
+        body.login-page {
+            background-color: #f5f5f5; 
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .topbar-mini {
+            background-color: #ad1457;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 40px;
+            font-size: 13px;
+        }
+
+        .header-main {
+            background-color: #d81b81;
+            padding: 15px 40px;
+            color: white;
+        }
+
+        .header-main .logo-text {
+            font-size: 26px;
+            font-weight: bold;
+            letter-spacing: -0.5px;
+        }
+
+        .login-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+      
+        .login-card-exact {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 380px;
+            padding: 40px;
+            border-radius: 25px; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            text-align: left;
+        }
+
+        .login-card-exact h2 {
+            font-size: 22px;
+            font-weight: normal;
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 11px;
+            color: #666;
+            font-weight: bold;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus {
+            border-color: #d81b81;
+        }
+
+        .forgot-link {
+            display: inline-block;
+            color: #d81b81;
+            text-decoration: none;
+            font-size: 13px;
+            margin-bottom: 25px;
+        }
+
+        .forgot-link:hover {
+            text-decoration: underline;
+        }
+
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .btn-purple {
+            background-color: #4a1e8a; 
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .btn-purple:hover {
+            background-color: #3b186d;
+        }
+
+        .btn-purple:active {
+            transform: scale(0.98);
+        }
+
+    </style>
+</head>
+<body class="login-page">
+
+    <div class="topbar-mini">
+        <span>Envíos gratis en compras mayores a $999</span>
+        <span style="cursor: pointer;">Ayuda</span>
+    </div>
+
+    <header class="header-main">
+        <div class="logo-text">Liverpool</div>
+    </header>
+
+    <main class="login-container">
+        <div class="login-card-exact">
+            <h2>Crear Cuenta</h2>
+
+            <div class="form-group">
+                <label>CORREO ELECTRÓNICO *</label>
+                <input type="email" placeholder="ejemplo@correo.com">
+            </div>
+
+            <div class="form-group">
+                <label>CONTRASEÑA *</label>
+                <input type="password" placeholder="••••••••">
+            </div>
+
+            <a href="iniciarSesion.html" class="forgot-link">¿Ya tienes cuenta?</a>
+
+            <div class="button-group">
+                <button class="btn-purple">CREAR CUENTA</button>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

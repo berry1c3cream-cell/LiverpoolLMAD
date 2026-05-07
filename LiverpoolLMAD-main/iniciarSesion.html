@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Liverpool - Inicia sesión</title>
+
+<style>
+
+/* Reset */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#f5f5f5;
+}
+
+/* top bar */
+.topbar{
+background:#ad1457;
+color:white;
+display:flex;
+justify-content:space-between;
+padding:6px 20px;
+font-size:14px;
+}
+
+/* navbar */
+.navbar{
+background:#d81b81;
+color:white;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:18px 24px;
+}
+
+.logo{
+font-size:28px;
+font-weight:700;
+}
+
+/* CONTENEDOR LOGIN */
+.login-container{
+display:flex;
+justify-content:center;
+align-items:center;
+height:calc(100vh - 120px);
+}
+
+/* CARD LOGIN */
+.login-card{
+background:white;
+padding:30px;
+border-radius:18px;
+width:320px;
+box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* título */
+.login-card h2{
+margin-bottom:20px;
+color:#333;
+}
+
+/* labels */
+.login-card label{
+font-size:12px;
+letter-spacing:1px;
+color:#555;
+margin-top:15px;
+display:block;
+}
+
+/* inputs */
+.login-card input{
+width:100%;
+padding:10px;
+margin-top:6px;
+border-radius:8px;
+border:1px solid #ccc;
+outline:none;
+transition:0.2s;
+}
+
+.login-card input:focus{
+border-color:#d81b81;
+box-shadow:0 0 0 2px rgba(225,0,115,0.15);
+}
+
+/* link */
+.forgot{
+display:block;
+margin-top:10px;
+color:#d81b81;
+font-size:14px;
+text-decoration:none;
+}
+
+/* botones */
+.login-card button{
+width:100%;
+padding:12px;
+margin-top:15px;
+border:none;
+border-radius:10px;
+background:#4a1e8a;
+color:white;
+font-weight:bold;
+cursor:pointer;
+transition:0.2s;
+}
+
+.login-card button:hover{
+background:#4a1e8a;
+}
+
+/* botón secundario */
+.secondary{
+background:#d81b81;
+}
+
+.secondary:hover{
+background:#ad1457;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+    <span>Envíos gratis en compras mayores a $999</span>
+    <span>Ayuda</span>
+</div>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="logo">Liverpool</div>
+</div>
+
+<!-- LOGIN -->
+<div class="login-container">
+    <div class="login-card">
+
+        <h2>Inicia sesión</h2>
+
+        <label>CORREO ELECTRÓNICO *</label>
+        <input type="email" placeholder="ejemplo@correo.com">
+
+        <label>CONTRASEÑA *</label>
+        <input type="password" placeholder="••••••••">
+
+        <a class="forgot" href="#">¿Olvidaste tu contraseña?</a>
+
+        <button>INICIAR SESIÓN</button>
+        <a href="CrearCuenta.html" style="text-decoration: none;">
+    <button type="button" class="secondary">CREAR CUENTA</button>
+</a>
+
+    </div>
+</div>
+
+</body>
+</html>

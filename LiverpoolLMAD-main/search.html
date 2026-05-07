@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Liverpool_Menu</title>
+<link rel="stylesheet" href="estiloLiverpool.css">
+
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Liverpool UI</title>
+<link rel="stylesheet" href="estiloLiverpool.css">
+</head>
+
+<body>
+
+<!-- TOPBAR -->
+
+<header class="topbar">
+    <div>Mi tienda</div>
+    <div>Otros servicios | Mesa de regalos | Mi crédito</div>
+</header>
+
+<!-- HEADER -->
+
+<nav class="header">
+
+<a href="home.html" class="logo">Liverpool</a>
+
+<div class="btn-cat" onclick="toggleMenu()">
+    ☰ Categorías
+</div>
+
+<div class="search">
+    <input type="text" placeholder="Buscar productos...">
+</div>
+
+<div class="rightIcons">
+
+    <span class="iconBtn">
+        <a href="miCuenta.html" class="miCuentaLink">
+            <img src="icons/user.svg">
+        </a>
+    </span>
+
+        <!--<span class="iconBtn">
+            <a href="miCuenta.html" class="miCuentaLink">
+                <span class="accountLabel">Mi cuenta</span>
+            </a>
+        </span> -->
+
+    <span class="iconBtn">
+        <img src="icons/heart.svg">
+    </span>
+
+    <span class="iconBtn">
+        <a href="bolsa.html" class="miCuentaLink">
+            <img src="icons/bag.svg">
+        </a>
+    </span>
+
+    <span id="accessibilityBtn" class="iconBtn">
+        <img src="icons/accessibility.svg">
+    </span>
+
+</div>
+
+</nav>
+
+<!-- PANEL ACCESIBILIDAD -->
+
+<div class="accessPanel" id="accessPanel">
+
+```
+<h4>Accesibilidad</h4>
+
+<div class="accItem">
+    <span>Modo oscuro</span>
+    <label class="switch">
+        <input type="checkbox" id="darkToggle">
+        <span class="slider"></span>
+    </label>
+</div>
+
+<div class="accItem">
+        <span>Letra grande</span>
+
+        <label class="switch">
+            <input type="checkbox" id="sizeFontToggle">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+</div>
+
+<!-- SIDEBAR -->
+
+<div class="sidebar" id="menu">
+    <p style="font-size:12px;">Home > Mujer > Novedades</p>
+    <hr>
+    <p style="color: var(--header); font-weight:bold;">● Mujer</p>
+    <p>○ Ropa</p>
+    <p>○ Zapatos</p>
+    <p>○ Bolsas</p>
+    <p>○ Perfumes</p>
+</div>
+
+<!-- CONTENIDO -->
+
+<main class="content" id="content">
+
+<h2 style="font-weight:normal;">Mujer</h2>
+
+<!-- TABS -->
+<div class="tabs">
+    <div class="tab active">Novedades</div>
+    <div class="tab">Ropa</div>
+    <div class="tab">Zapatos</div>
+    <div class="tab">Bolsas</div>
+    <div class="tab">Relojes y joyería</div>
+    <div class="tab">Perfumes</div>
+</div>
+
+<p style="font-size:14px;">
+    <span style="border:1px solid var(--border); padding:5px 15px; border-radius:15px;">
+        Filtros
+    </span>
+    &nbsp;
+    <span style="color:#999;">No hay filtros</span>
+</p>
+
+<!-- GRID PRODUCTOS -->
+<div class="grid">
+
+    <div class="card">
+        <img src="liverpool1.jpg">
+        <div class="product-title">Blusa manga larga para mujer</div>
+        <div class="price-container">
+            <span class="old-price">$929<sup>00</sup></span>
+            $743<sup>20</sup>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="liverpool2.jpg">
+        <div class="product-title">Blusa camisera manga larga para mujer</div>
+        <div class="price-container">
+            $799<sup>00</sup>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="liverpool3.jpg">
+        <div class="product-title">Pantalón relaxed amplio para mujer</div>
+        <div class="price-container">
+            <span class="old-price">$1,299<sup>00</sup></span>
+            $649<sup>50</sup>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="liverpool4.jpg">
+        <div class="product-title">Vestido midi casual para mujer</div>
+        <div class="price-container">
+            $599<sup>00</sup>
+        </div>
+    </div>
+
+</div>
+
+</main>
+
+<!-- SCRIPT BASE -->
+
+<script>
+
+/* mostrar página */
+window.addEventListener("load", () => {
+    document.body.classList.add("loaded");
+});
+
+/* menú lateral */
+function toggleMenu(){
+    let menu = document.getElementById("menu");
+    let content = document.getElementById("content");
+
+    menu.classList.toggle("active");
+    content.classList.toggle("shift");
+}
+
+</script>
+<script src="script.js"></script>
+
+</body>
+</html>
