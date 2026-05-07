@@ -1518,3 +1518,73 @@ box-shadow:0 4px 10px rgba(0,0,0,0.15);
         padding:15px 100px;
     }
 }
+
+/* =========================
+        BOLSA
+========================= */
+
+.bagLayout{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+/* desktop */
+@media (min-width:768px){
+    .bagLayout{
+        flex-direction:row;
+        align-items:flex-start;
+    }
+}
+
+.bagProducts{
+    flex:1;
+    background:var(--card);
+    padding:16px;
+    border:1px solid var(--border);
+    border-radius:12px;
+}
+
+.bagSummary{
+    width:100%;
+    background:var(--card);
+    padding:20px;
+    border:1px solid var(--border);
+    border-radius:12px;
+}
+
+/* desktop */
+@media (min-width:768px){
+    .bagSummary{
+        width:280px;
+        position:sticky;
+        top:120px;
+    }
+}
+
+.bagItem{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+    padding-bottom:30px;
+    border-bottom:1px solid var(--border);
+    margin-bottom:30px;
+}
+
+.bagItem img{
+    width:100%;
+    max-width:220px;
+    align-self:center;
+}
+
+/* desktop */
+@media (min-width:768px){
+    .bagItem{
+        flex-direction:row;
+        align-items:flex-start;
+    }
+
+    .bagItem img{
+        width:140px;
+    }
+}
