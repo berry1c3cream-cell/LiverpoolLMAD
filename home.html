@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Liverpool UI</title>
+<link rel="stylesheet" href="estiloLiverpool.css">
+</head>
+
+<body>
+
+<!-- TOPBAR -->
+<header class="topbar">
+    <div>
+        <span>Mi tienda</span>
+    </div>
+
+    <div>
+        <div>Otros servicios | Mesa de regalos | Mi crédito</div>
+    </div>
+</header>
+
+<!-- HEADER PRINCIPAL -->
+<nav class="header">
+
+    <a href="home.html" class="logo">Liverpool</a>
+
+    <div class="btn-cat">
+        <a href="search.html" class="Categorias_Link">
+            Categorías >
+        </a>
+    </div>
+
+    <div class="search">
+        <input type="text" placeholder="Buscar productos...">
+    </div>
+
+    <div class="rightIcons">
+
+        <span class="iconBtn">
+            <a href="miCuenta.html" class="miCuentaLink">
+                <img src="icons/user.svg">
+            </a>
+        </span>
+
+        <!--<span class="iconBtn">
+            <a href="miCuenta.html" class="miCuentaLink">
+                <span class="accountLabel">Mi cuenta</span>
+            </a>
+        </span> -->
+
+        <span class="iconBtn">
+            <a href="miCuenta.html?tab=wishlist" class="miCuentaLink">
+                <img src="icons/heart.svg">
+            </a>
+        </span>
+
+        <span class="iconBtn">
+            <a href="bolsa.html" class="miCuentaLink">
+                <img src="icons/bag.svg">
+            </a>
+        </span>
+
+        <span id="accessibilityBtn" class="iconBtn">
+        <img src="icons/accessibility.svg">
+        </span>
+
+    </div>
+
+</nav>
+
+<div class="accessPanel" id="accessPanel">
+
+    <h4>Accesibilidad</h4>
+
+    <div class="accItem">
+        <span>Modo oscuro</span>
+
+        <label class="switch">
+            <input type="checkbox" id="darkToggle">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+    <div class="accItem">
+        <span>Letra grande</span>
+
+        <label class="switch">
+            <input type="checkbox" id="sizeFontToggle">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+</div>
+
+<!-- BANNER -->
+<section class="banner">
+    <div>
+        <small>LA ESPERA TERMINÓ</small>
+        <h2>Preventa Álbum Panini</h2>
+        <button>Comprar ahora</button>
+    </div>
+</section>
+
+<!-- CONTENIDO -->
+<main class="container">
+
+    <h3>Hola, usuario!</h3>
+
+    <a href="bolsa.html" class="miCuentaLink">
+        <div class="continue-card">
+            <img src="imagenes/producto_labiales.png" width="40">
+            <span>Sigue comprando</span>
+        </div>
+    </a>
+
+    <h3>Últimas ofertas</h3>
+
+    <div class="carousel-wrapper">
+
+        <button class="arrow left">‹</button>
+        <button class="arrow right">›</button>
+
+        <div class="carousel">
+
+            <a href="producto.html" class="productLink">
+                <div class="product">
+                    <div class="card-inner">
+
+                        <div class="card-front">
+                            <img src="imagenes/procuto_toallas.png">
+                        </div>
+
+                        <div class="card-back">
+                            <div>
+                                <h3>Toallas para spa</h3>
+                                <p>$1,200</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </a>
+
+            <a href="producto.html" class="productLink">
+                <div class="product">
+                    <div class="card-inner">
+
+                        <div class="card-front">
+                            <img src="imagenes/producto_aceiteOjos.png">
+                        </div>
+
+                        <div class="card-back">
+                            <div>
+                                <h3>Desmaquillante para ojos</h3>
+                                <p>$1,100</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </a>
+
+            <a href="producto.html" class="productLink">
+                <div class="product">
+                    <div class="card-inner">
+
+                        <div class="card-front">
+                            <img src="imagenes/producto_labiales.png">
+                        </div>
+
+                        <div class="card-back">
+                            <div>
+                                <h3>Labial mate</h3>
+                                <p>$1,200</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </a>
+
+            <a href="producto.html" class="productLink">
+                <div class="product">
+                    <div class="card-inner">
+
+                        <div class="card-front">
+                            <img src="imagenes/producto_mascara.png">
+                        </div>
+
+                        <div class="card-back">
+                            <div>
+                                <h3>Mascarilla para cuidado de la piel</h3>
+                                <p>$3,150</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </a>
+
+            <a href="producto.html" class="productLink">
+                <div class="product">
+                    <div class="card-inner">
+
+                        <div class="card-front">
+                            <img src="imagenes/producto_plancha.png">
+                        </div>
+
+                        <div class="card-back">
+                            <div>
+                                <h3>Plancha para el cabello</h3>
+                                <p>$2,100</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </a>
+
+            <a href="producto.html" class="productLink">
+                <div class="product">
+                    <div class="card-inner">
+
+                        <div class="card-front">
+                            <img src="imagenes/producto_aceiteOjos.png">
+                        </div>
+
+                        <div class="card-back">
+                            <div>
+                                <h3>Desmaquillante para ojos</h3>
+                                <p>$1,100</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </a>
+
+            <a href="producto.html" class="productLink">
+                <div class="product">
+                    <div class="card-inner">
+
+                        <div class="card-front">
+                            <img src="imagenes/producto_sombras.png">
+                        </div>
+
+                        <div class="card-back">
+                            <div>
+                                <h3>Sombras para ojos</h3>
+                                <p>$3,100</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </a>
+
+            <a href="producto.html" class="productLink">
+                <div class="product">
+                    <div class="card-inner">
+
+                        <div class="card-front">
+                            <img src="imagenes/producto_plancha.png">
+                        </div>
+
+                        <div class="card-back">
+                            <div>
+                                <h3>Plancha sin cable</h3>
+                                <p>$4,500</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+    <br> </br>
+
+    <h3>Lo que te puede gustar</h3>
+    
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>

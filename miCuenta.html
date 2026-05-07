@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mi cuenta</title>
+<link rel="stylesheet" href="estiloLiverpool.css">
+</head>
+<body>
+
+<!-- TOPBAR -->
+<header class="topbar">
+    <div>
+        <span>Mi tienda</span>
+    </div>
+
+    <div>
+        <div>Otros servicios | Mesa de regalos | Mi crédito</div>
+    </div>
+</header>
+
+<!-- HEADER PRINCIPAL -->
+<nav class="header">
+
+    <a href="home.html" class="logo">Liverpool</a>
+
+    <div class="btn-cat">
+        <a href="search.html" class="Categorias_Link">
+            Categorías >
+        </a>
+    </div>
+
+    <div class="search">
+        <input type="text" placeholder="Buscar productos...">
+    </div>
+
+    <div class="rightIcons">
+
+        <span class="iconBtn">
+            <a href="miCuenta.html" class="miCuentaLink">
+                <img src="icons/user.svg">
+            </a>
+        </span>
+
+        <!--<span class="iconBtn">
+            <a href="miCuenta.html" class="miCuentaLink">
+                <span class="accountLabel">Mi cuenta</span>
+            </a>
+        </span> -->
+
+        <span class="iconBtn">
+            <a href="miCuenta.html?tab=wishlist" class="miCuentaLink">
+                <img src="icons/heart.svg">
+            </a>
+        </span>
+
+        <span class="iconBtn">
+            <a href="bolsa.html" class="miCuentaLink">
+                <img src="icons/bag.svg">
+            </a>
+        </span>
+
+        <span id="accessibilityBtn" class="iconBtn">
+        <img src="icons/accessibility.svg">
+        </span>
+
+    </div>
+
+</nav>
+
+<div class="accessPanel" id="accessPanel">
+
+    <h4>Accesibilidad</h4>
+
+    <div class="accItem">
+        <span>Modo oscuro</span>
+
+        <label class="switch">
+            <input type="checkbox" id="darkToggle">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+    <div class="accItem">
+        <span>Letra grande</span>
+
+        <label class="switch">
+            <input type="checkbox" id="sizeFontToggle">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+</div>
+
+
+<!-- CONTENIDO -->
+<div class="content">
+
+<!-- TABS -->
+<div class="tabsAlternate">
+    <div class="tabAlt active" data-tab="cuenta">Mi cuenta</div>
+    <div class="tabAlt" data-tab="datos">Datos personales</div>
+    <div class="tabAlt" data-tab="cartera">Mi cartera</div>
+    <div class="tabAlt" data-tab="wishlist">Wishlist</div>
+    <div class="tabAlt" data-tab="beneficios">Beneficios</div>
+    <div class="tabAlt" data-tab="ayuda">Ayuda y contactos</div>
+    <div class="tabAlt" data-tab="acerca">Acerca de</div>
+</div>
+
+
+<div class="tabContent active" id="cuenta">
+    <h2>Personaliza tu experiencia</h2>
+    <p>Elige tus categorías favoritas para recomendaciones.</p>
+
+    <div class="accountCards">
+        <div class="accountCard">
+            <h3>Moda</h3>
+            <p>Ropa, zapatos y accesorios</p>
+        </div>
+
+        <div class="accountCard">
+            <h3>Tecnología</h3>
+            <p>Celulares, laptops y más</p>
+        </div>
+
+        <div class="accountCard">
+            <h3>Hogar</h3>
+            <p>Muebles y decoración</p>
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <div class="accountHero">
+
+        <div class="accountText">
+            <h1>Usuario... ¡explora y personaliza tu experiencia!</h1>
+
+            <p>
+            Cuéntanos qué te gusta comprar y cuáles son tus marcas favoritas,  
+            en Liverpool nos encargamos de lo demás
+            </p>
+
+            <button class="btnPrimaryMC">Personalizar cuenta</button>
+        </div>
+
+        <div class="accountImage">
+            <img src="imagenes/placeholder.png">
+        </div>
+
+    </div>
+
+
+    <!-- TARJETAS -->
+    <div class="accountCards">
+
+        <div class="accountCard">
+            <h3>Preferencias</h3>
+            <p>Selecciona tus categorías favoritas</p>
+            <button>Editar</button>
+        </div>
+
+        <div class="accountCard">
+            <h3>Direcciones</h3>
+            <p>Administra tus direcciones de envío</p>
+            <button>Administrar</button>
+        </div>
+
+        <div class="accountCard">
+            <h3>Métodos de pago</h3>
+            <p>Tarjetas y métodos guardados</p>
+            <button>Ver</button>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="tabContent" id="datos">
+    <h2>Datos personales</h2>
+
+    <div class="accountCards">
+        <div class="accountCard">
+            <h3>Nombre</h3>
+            <p>Usuario Liverpool</p>
+        </div>
+
+        <div class="accountCard">
+            <h3>Email</h3>
+            <p>usuario@email.com</p>
+        </div>
+
+        <div class="accountCard">
+            <h3>Teléfono</h3>
+            <p>+52 81 0000 0000</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="tabContent" id="cartera">
+    <h2>Mi cartera</h2>
+
+    <!-- RESUMEN -->
+    <div class="walletSummary">
+        <div class="walletBox">
+            <span>Saldo disponible</span>
+            <h3>$4,200 MXN</h3>
+        </div>
+
+        <div class="walletBox">
+            <span>Puntos</span>
+            <h3>1,250</h3>
+        </div>
+
+        <div class="walletBox highlight">
+            <span>Método principal</span>
+            <h3>**** 4582</h3>
+        </div>
+    </div>
+
+    <!-- MÉTODOS -->
+    <div class="walletList">
+
+        <div class="walletItem">
+            <div class="walletInfo">
+                <img src="icons/card.svg">
+                <span>Tarjeta Liverpool</span>
+            </div>
+            <span class="walletAction">⋮</span>
+        </div>
+
+        <div class="walletItem">
+            <div class="walletInfo">
+                <img src="icons/paypal.svg">
+                <span>PayPal</span>
+            </div>
+            <span class="walletAction">⋮</span>
+        </div>
+
+        <div class="walletItem">
+            <div class="walletInfo">
+                <img src="icons/cash.svg">
+                <span>Efectivo</span>
+            </div>
+            <span class="walletAction">⋮</span>
+        </div>
+
+        <div class="walletItem">
+            <div class="walletInfo">
+                <img src="icons/spei.svg">
+                <span>Transferencia (SPEI)</span>
+            </div>
+            <span class="walletAction">⋮</span>
+        </div>
+
+    </div>
+
+    <!-- BOTÓN -->
+    <button class="addMethodBtn">+ Agregar método de pago</button>
+
+</div>
+
+
+<div class="tabContent" id="wishlist">
+    <h2>Mi Wishlist</h2>
+
+    <div class="wishlistContainer">
+
+        <!-- ITEM -->
+        <div class="wishlistItem">
+
+            <div class="wishlistImg">
+                <img src="imagenes/labiales.png">
+            </div>
+
+            <div class="wishlistInfo">
+                <h3>Set de labiales en barra acabado mate para mujer</h3>
+                <span class="wishlistDate">Creado el: 12 Feb 2026</span>
+            </div>
+
+            <div class="wishlistActions">
+                <button class="btnMove">Mover a la bolsa</button>
+                <button class="btnBuy">Comprar ahora</button>
+            </div>
+
+            <!-- <div class="wishlistMenu">⋮</div> -->
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="tabContent" id="beneficios">
+    <h2>Mis beneficios</h2>
+
+    <!-- RESUMEN -->
+    <div class="benefitsSummary">
+        <div class="benefitBox">
+            <span>Puntos acumulados</span>
+            <h3>1,250 pts</h3>
+        </div>
+
+        <div class="benefitBox">
+            <span>Nivel</span>
+            <h3>Gold</h3>
+        </div>
+
+        <div class="benefitBox highlight">
+            <span>Próxima recompensa</span>
+            <h3>Envío gratis</h3>
+        </div>
+    </div>
+
+    <!-- PROGRESO -->
+    <div class="benefitsProgress">
+        <p>Te faltan <strong>250 pts</strong> para tu siguiente recompensa</p>
+        <div class="progressBar">
+            <div class="progressFill" style="width: 75%;"></div>
+        </div>
+    </div>
+
+    <!-- BENEFICIOS ACTIVOS -->
+    <h3 class="sectionTitle">Beneficios activos</h3>
+
+    <div class="benefitsGrid">
+
+        <div class="benefitCard">
+            <h4>Envío gratis</h4>
+            <p>En compras mayores a $999</p>
+        </div>
+
+        <div class="benefitCard">
+            <h4>Meses sin intereses</h4>
+            <p>Hasta 12 MSI en productos seleccionados</p>
+        </div>
+
+        <div class="benefitCard">
+            <h4>Ofertas exclusivas</h4>
+            <p>Acceso anticipado a promociones</p>
+        </div>
+
+    </div>
+
+    <!-- RECOMPENSAS -->
+    <h3 class="sectionTitle">Canjea tus puntos</h3>
+
+    <div class="rewardsGrid">
+
+        <div class="rewardCard">
+            <h4>$100 de descuento</h4>
+            <span>1000 pts</span>
+            <button>Canjear</button>
+        </div>
+
+        <div class="rewardCard">
+            <h4>Envío gratis</h4>
+            <span>1500 pts</span>
+            <button>Canjear</button>
+        </div>
+
+        <div class="rewardCard disabled">
+            <h4>Acceso VIP</h4>
+            <span>3000 pts</span>
+            <button disabled>Bloqueado</button>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="tabContent" id="ayuda">
+    <h2>¿Cómo podemos ayudarte?</h2>
+
+    <!-- BUSCADOR -->
+    <div class="helpSearch">
+        <input type="text" placeholder="Busca tu pregunta...">
+    </div>
+
+    <!-- PREGUNTAS FRECUENTES -->
+    <h3 class="sectionTitle">Preguntas frecuentes</h3>
+
+    <div class="faqContainer">
+
+        <div class="faqItem">
+            <div class="faqQuestion">¿Dónde está mi pedido?</div>
+            <div class="faqAnswer">Puedes rastrear tu pedido desde la sección “Mis compras”.</div>
+        </div>
+
+        <div class="faqItem">
+            <div class="faqQuestion">¿Cómo cambio mi dirección?</div>
+            <div class="faqAnswer">Ve a Datos personales y edita tu dirección de envío.</div>
+        </div>
+
+        <div class="faqItem">
+            <div class="faqQuestion">¿Puedo cancelar una compra?</div>
+            <div class="faqAnswer">Sí, siempre que el pedido no haya sido enviado.</div>
+        </div>
+
+    </div>
+
+    <!-- CONTACTO -->
+    <h3 class="sectionTitle">Contáctanos</h3>
+
+    <div class="contactGrid">
+
+        <div class="contactCard">
+            <h4>Chat en vivo</h4>
+            <p>Disponible 24/7</p>
+            <button>Abrir chat</button>
+        </div>
+
+        <div class="contactCard">
+            <h4>Teléfono</h4>
+            <p>800-713-5555</p>
+            <button>Llamar</button>
+        </div>
+
+        <div class="contactCard">
+            <h4>Correo</h4>
+            <p>ayuda@liverpool.com</p>
+            <button>Enviar correo</button>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="tabContent" id="acerca">
+    <h2>Acerca de tu cuenta</h2>
+    <p>Administra tus preferencias y configuración general.</p>
+</div>
+
+
+
+<script>
+window.addEventListener("load", () => {
+document.body.classList.add("loaded")
+})
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>

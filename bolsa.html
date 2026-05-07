@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mi Bolsa</title>
+<link rel="stylesheet" href="estiloLiverpool.css">
+</head>
+
+<body class="loaded">
+
+<!-- TOPBAR -->
+<header class="topbar">
+    <div>
+        <span>Mi tienda</span>
+    </div>
+
+    <div>
+        <div>Otros servicios | Mesa de regalos | Mi crédito</div>
+    </div>
+</header>
+
+<!-- HEADER PRINCIPAL -->
+<nav class="header">
+
+    <a href="home.html" class="logo">Liverpool</a>
+
+    <div class="btn-cat">
+        <a href="search.html" class="Categorias_Link">
+            Categorías >
+        </a>
+    </div>
+
+    <div class="search">
+        <input type="text" placeholder="Buscar productos...">
+    </div>
+
+    <div class="rightIcons">
+
+        <span class="iconBtn">
+            <a href="miCuenta.html" class="miCuentaLink">
+                <img src="icons/user.svg">
+            </a>
+        </span>
+
+        <!--<span class="iconBtn">
+            <a href="miCuenta.html" class="miCuentaLink">
+                <span class="accountLabel">Mi cuenta</span>
+            </a>
+        </span> -->
+
+        <span class="iconBtn">
+            <a href="miCuenta.html?tab=wishlist" class="miCuentaLink">
+                <img src="icons/heart.svg">
+            </a>
+        </span>
+
+        <span class="iconBtn">
+            <a href="bolsa.html" class="miCuentaLink">
+                <img src="icons/bag.svg">
+            </a>
+        </span>
+
+        <span id="accessibilityBtn" class="iconBtn">
+        <img src="icons/accessibility.svg">
+        </span>
+
+    </div>
+
+</nav>
+
+<div class="accessPanel" id="accessPanel">
+
+    <h4>Accesibilidad</h4>
+
+    <div class="accItem">
+        <span>Modo oscuro</span>
+
+        <label class="switch">
+            <input type="checkbox" id="darkToggle">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+    <div class="accItem">
+        <span>Letra grande</span>
+
+        <label class="switch">
+            <input type="checkbox" id="sizeFontToggle">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+</div>
+
+<!-- CONTENIDO -->
+<div class="container">
+
+    <h1 style="margin-bottom:20px;">Mi Bolsa</h1>
+
+    <div class="bagLayout">
+
+        <!-- LISTA PRODUCTOS -->
+        <div class="bagProducts">
+
+            <!-- ENCABEZADOS -->
+            <div style="display:flex; font-weight:bold; border-bottom:1px solid var(--border); padding-bottom:10px; margin-bottom:20px;">
+                <div style="flex:2;">Producto</div>
+                <div style="flex:1;">Precio</div>
+                <div style="flex:1;">Cantidad</div>
+                <div style="flex:1;">Total</div>
+            </div>
+
+            <!-- PRODUCTO 1 -->
+            <div class="bagItem">
+
+                <img src="imagenes/labiales.png" style="width:140px; border-radius:12px;">
+
+                <div style="flex:2;">
+                    <h3>Set de labiales en barra acabado mate para mujer</h3>
+                    <p style="color:var(--gris); font-size:14px; margin:10px 0;">
+                        Tamaño: Estándar, Color: Tonos nude y rosados, Material: Fórmula cosmética en barra, Presentación: Estuche dorado elegante
+                    </p>
+
+                    <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                        <button>Comprar para mesa de regalos</button>
+                        <button>Comprar ahora</button>
+                        <button>Mover a Wishlist</button>
+                        <button>Eliminar</button>
+                    </div>
+                </div>
+
+                <div style="flex:1; color:red;">$999.00</div>
+
+                <div style="flex:1;">
+                    <div class="qtyBox">
+                        <button>-</button>
+                        <span>1</span>
+                        <button>+</button>
+                    </div>
+                </div>
+
+                <div style="flex:1; color:red;">$999.00</div>
+            </div>
+
+            <!-- PRODUCTO 2 -->
+            <div class="bagItem">
+
+                <img src="imagenes/tenis.png" style="width:140px; border-radius:12px;">
+
+                <div style="flex:2;">
+                    <h3>Tenis casual Skechers con agujetas para mujer</h3>
+                    <p style="color:var(--gris); font-size:14px; margin:10px 0;">
+                        Talla: Variable, Color: Blanco con detalles en azul, Material: Sintético, Suela: Goma antideslizante
+                    </p>
+
+                    <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                        <button>Comprar para mesa de regalos</button>
+                        <button>Comprar ahora</button>
+                        <button>Mover a Wishlist</button>
+                        <button>Eliminar</button>
+                    </div>
+                </div>
+
+                <div style="flex:1; color:red;">$1303.20</div>
+
+                <div style="flex:1;">
+                    <div class="qtyBox">
+                        <button>-</button>
+                        <span>1</span>
+                        <button>+</button>
+                    </div>
+                </div>
+
+                <div style="flex:1; color:red;">$1303.20</div>
+            </div>
+
+        </div>
+
+        <!-- RESUMEN -->
+        <div class="bagSummary">
+
+            <p>Subtotal (2 productos) <span style="float:right;">$2,303.20</span></p>
+            <p style="margin-top:10px;">Descuento <span style="float:right;">$0.00</span></p>
+            <p style="margin-top:10px;">Cupones <span style="float:right;">$0.00</span></p>
+            <p style="margin-top:10px;">Costo de envío <span style="float:right;">Gratis</span></p>
+
+            <hr style="margin:15px 0;">
+
+            <p style="font-weight:bold;">
+                Total (IVA incluido)
+                <span style="float:right; color:red;">$2,303.20</span>
+            </p>
+
+            <button style="
+                margin-top:20px;
+                width:100%;
+                padding:12px;
+                background:var(--header);
+                color:white;
+                border:none;
+                cursor:pointer;
+                border-radius:8px;
+                font-weight:bold;
+            ">
+                Comprar
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
