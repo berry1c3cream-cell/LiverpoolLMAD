@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mi Bolsa</title>
+<!-- <link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/home.css"> -->
+<link rel="stylesheet" href="css/bolsa.css">
 <link rel="stylesheet" href="estiloLiverpool.css">
 </head>
 
@@ -104,11 +109,11 @@
         <div class="bagProducts">
 
             <!-- ENCABEZADOS -->
-            <div style="display:flex; font-weight:bold; border-bottom:1px solid var(--border); padding-bottom:10px; margin-bottom:20px;">
-                <div style="flex:2;">Producto</div>
-                <div style="flex:1;">Precio</div>
-                <div style="flex:1;">Cantidad</div>
-                <div style="flex:1;">Total</div>
+            <div class="bagHeader">
+                <div class="bagInfo">Producto</div>
+                <div class="bagInfo">Precio</div>
+                <div class="bagInfo">Cantidad</div>
+                <div class="bagInfo">Total</div>
             </div>
 
             <!-- PRODUCTO 1 -->
@@ -130,7 +135,7 @@
                     </div>
                 </div>
 
-                <div style="flex:1; color:red;">$999.00</div>
+                <div class="bagPrice">$999.00</div>
 
                 <div style="flex:1;">
                     <div class="qtyBox">
@@ -140,7 +145,7 @@
                     </div>
                 </div>
 
-                <div style="flex:1; color:red;">$999.00</div>
+                <div class="bagTotal">$999.00</div>
             </div>
 
             <!-- PRODUCTO 2 -->
@@ -192,17 +197,7 @@
                 <span style="float:right; color:red;">$2,303.20</span>
             </p>
 
-            <button style="
-                margin-top:20px;
-                width:100%;
-                padding:12px;
-                background:var(--header);
-                color:white;
-                border:none;
-                cursor:pointer;
-                border-radius:8px;
-                font-weight:bold;
-            ">
+            <button class="bagCheckoutBtn">
                 Comprar
             </button>
 

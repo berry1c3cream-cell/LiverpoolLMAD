@@ -60,6 +60,26 @@ document.querySelectorAll("a").forEach(link => {
     });
 });
 
+// cargar años dinámicamente
+window.addEventListener("DOMContentLoaded", () => {
+
+    const select = document.getElementById("AnioSelect");
+
+    if(select){
+
+        for(let year = 1927; year <= 2026; year++){
+
+            const option = document.createElement("option");
+
+            option.value = year;
+            option.textContent = year;
+
+            select.appendChild(option);
+        }
+    }
+
+});
+
 const accBtn = document.getElementById("accessibilityBtn");
 const accPanel = document.getElementById("accessPanel");
 const darkToggle = document.getElementById("darkToggle");
@@ -107,7 +127,7 @@ sizeFontToggle.checked = true;
 }
 
 // toggle
-sizeFontToggle.addEventListener("change", () => {
+sizeFontToggle?.addEventListener("change", () => {
 document.body.classList.toggle("bigFont");
 
 localStorage.setItem(

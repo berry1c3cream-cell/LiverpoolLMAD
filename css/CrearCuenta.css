@@ -1,0 +1,127 @@
+/* =========================
+   LOGIN PAGE MODULE
+========================= */
+
+body.login-page {
+    background-color: var(--bg);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* TOP BAR LOGIN */
+.topbar-mini {
+    background-color: var(--headerTop);
+    color: var(--whiteText);
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 40px;
+    font-size: 13px;
+}
+
+/* HEADER LOGIN */
+.header-main {
+    background-color: var(--header);
+    padding: 15px 40px;
+    color: var(--card);
+}
+
+.header-main .logo-text {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+/* CONTAINER */
+.login-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* CARD */
+.login-card-exact {
+    background-color: var(--card);
+    width: 100%;
+    max-width: 400px;
+    padding: 45px;
+    border-radius: 25px;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.06);
+}
+
+.login-card-exact h2 {
+    font-size: 22px;
+    font-weight: normal;
+    color: var(--text);
+    margin-bottom: 25px;
+}
+
+/* FORM */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 11px;
+    color: var(--gris);
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 14px;
+    background-color: var(--welement);
+    color: var(--text);
+}
+
+.form-group input:focus {
+    border-color: var(--header);
+}
+
+/* LINK */
+.forgot-link {
+    display: inline-block;
+    color: var(--header);
+    text-decoration: none;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+/* BUTTONS */
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.btn-purple {
+    background-color: #4a1e8a;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.2s ease;
+}
+
+body.dark .btn-purple {
+    background-color: var(--purple);
+}
+
+.btn-purple:hover {
+    filter: brightness(1.1);
+}
+
+.btn-purple:active {
+    transform: scale(0.98);
+}

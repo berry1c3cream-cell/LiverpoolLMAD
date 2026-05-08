@@ -1,0 +1,200 @@
+/* =========================
+        BAG PAGE
+========================= */
+
+
+/* =========================
+        LAYOUT
+========================= */
+
+.bagLayout{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+/* desktop */
+@media (min-width:768px){
+    .bagLayout{
+        flex-direction:row;
+        align-items:flex-start;
+    }
+}
+
+
+/* =========================
+        PRODUCTS SECTION
+========================= */
+
+.bagProducts{
+    flex:1;
+    background:var(--card);
+    padding:16px;
+
+    border:1px solid var(--border);
+    border-radius:12px;
+}
+
+
+/* header row */
+.bagHeader{
+    display:flex;
+    font-weight:bold;
+
+    border-bottom:1px solid var(--border);
+    padding-bottom:10px;
+    margin-bottom:20px;
+}
+
+.bagHeader > div{
+    flex:1;
+}
+
+.bagHeader > div:first-child{
+    flex:2;
+}
+
+
+/* =========================
+        ITEM
+========================= */
+
+.bagItem{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+
+    padding-bottom:30px;
+    margin-bottom:30px;
+
+    border-bottom:1px solid var(--border);
+}
+
+/* desktop */
+@media (min-width:768px){
+    .bagItem{
+        flex-direction:row;
+        align-items:flex-start;
+    }
+}
+
+.bagItem img{
+    width:140px;
+    border-radius:12px;
+}
+
+
+/* info block */
+.bagInfo{
+    flex:2;
+}
+
+.bagInfo h3{
+    margin:0;
+}
+
+.bagInfo p{
+    color:var(--gris);
+    font-size:14px;
+    margin:10px 0;
+}
+
+
+/* actions */
+.bagActions{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:10px;
+}
+
+
+/* prices columns */
+.bagPrice,
+.bagTotal{
+    flex:1;
+    color:red;
+}
+
+
+/* =========================
+        QUANTITY
+========================= */
+
+.bagQty{
+    flex:1;
+}
+
+.qtyBox{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.qtyBox button{
+    width:35px;
+    height:35px;
+
+    border:1px solid var(--bg);
+    background:var(--bg);
+
+    cursor:pointer;
+}
+
+.qtyBox span{
+    padding:8px 14px;
+    border:1px solid var(--border);
+}
+
+
+/* =========================
+        SUMMARY
+========================= */
+
+.bagSummary{
+    width:100%;
+    background:var(--card);
+
+    padding:20px;
+
+    border:1px solid var(--border);
+    border-radius:12px;
+}
+
+/* desktop sticky */
+@media (min-width:768px){
+    .bagSummary{
+        width:280px;
+        position:sticky;
+        top:120px;
+    }
+}
+
+.bagSummary p{
+    margin:10px 0;
+}
+
+
+/* total highlight */
+.bagTotalFinal{
+    font-weight:bold;
+    color:red;
+}
+
+
+/* button */
+.bagCheckoutBtn{
+    margin-top:20px;
+
+    width:100%;
+    padding:12px;
+
+    background:var(--header);
+    color:var(--whiteText);
+
+    border:none;
+    border-radius:8px;
+
+    cursor:pointer;
+    font-weight:bold;
+}
