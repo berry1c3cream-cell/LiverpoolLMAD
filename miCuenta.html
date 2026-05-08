@@ -176,22 +176,37 @@
 
 
 <div class="tabContent" id="datos">
-    <h2>Datos personales</h2>
-
+    <h2 class="sectionTitleMC">Datos personales</h2>
     <div class="accountCards">
         <div class="accountCard">
             <h3>Nombre</h3>
             <p>Usuario Liverpool</p>
         </div>
-
         <div class="accountCard">
             <h3>Email</h3>
             <p>usuario@email.com</p>
         </div>
-
         <div class="accountCard">
             <h3>Teléfono</h3>
             <p>+52 81 0000 0000</p>
+        </div>
+    </div>
+
+    <h2 class="sectionTitleMC" style="margin-top: 40px;">¿Quieres cambiar tu contraseña?</h2>
+    <div class="accountCards">
+        <div class="accountCard fullWidthCard">
+            <h3>Contraseña</h3>
+            <p>************</p>
+            <button class="btnActionCard" onclick="openTab(event, 'password')">Cambiar contraseña</button>
+        </div>
+    </div>
+
+    <h2 class="sectionTitleMC" style="margin-top: 40px;">¿Quieres cambiar tu información personal?</h2>
+    <div class="accountCards">
+        <div class="accountCard fullWidthCard">
+            <h3>Información personal</h3>
+            <p>Nombre, email, teléfono, fecha de nacimiento y género.</p>
+            <button class="btnActionCard" onclick="openTab(event, 'actualizar')">Actualizar datos</button>
         </div>
     </div>
 </div>
@@ -429,8 +444,49 @@
 
 
 <div class="tabContent" id="acerca">
-    <h2>Acerca de tu cuenta</h2>
-    <p>Administra tus preferencias y configuración general.</p>
+<h2 class="sectionTitleMC">Garantía, Cambios y Devoluciones</h2>
+    
+    <div class="garantia-container">
+        <div class="highlight-box">
+            <h3>Si tu producto no fue lo que esperabas, puedes cambiarlo o devolverlo</h3>
+            <p>Tu satisfacción es lo más importante. Puedes cancelar en tienda o a través de Liverpool Pocket. Conserva el producto en buenas condiciones, con todos sus componentes y empaque original.</p>
+        </div>
+
+        <div class="garantia-grid">
+            <div class="info-card">
+                <h4>Garantía Liverpool</h4>
+                <p>Si tu producto no coincide con lo que querías o tiene algún defecto, podrás cambiarlo por otro similar en tienda.</p>
+            </div>
+            <div class="info-card">
+                <h4>Garantía del fabricante</h4>
+                <p>Consulta la garantía emitida por el fabricante en el empaque. Si tienes problemas, contáctanos y te ayudaremos.</p>
+            </div>
+        </div>
+
+        <div class="detalles-devolucion">
+            <h3>Cambios y devoluciones</h3>
+            <p>No hay tiempo límite, pero considera lo siguiente:</p>
+            
+            <div class="paso-item">
+                <strong>1. Condiciones del producto</strong>
+                <ul>
+                    <li>El producto deberá estar en buenas condiciones.</li>
+                    <li><strong>Documentación:</strong> Ten tu comprobante de compra para agilizar el proceso.</li>
+                    <li><strong>Talla y color:</strong> Cambios siempre posibles en ropa y zapatos.</li>
+                </ul>
+            </div>
+
+            <div class="paso-item">
+                <strong>2. Dónde realizarlo</strong>
+                <p>En cualquier tienda. Para productos grandes, llama al CAT (55 5262 9999) para programar recolección.</p>
+            </div>
+
+            <div class="paso-item">
+                <strong>3. Método de reembolso</strong>
+                <p>Se realizará en Monedero Electrónico o en tu método de pago original. Reembolsos a tarjetas externas dependen de los tiempos de cada institución financiera.</p>
+            </div>
+        </div>
+    </div>
 </div>
 
 

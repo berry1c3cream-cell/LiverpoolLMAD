@@ -82,12 +82,20 @@
     <script src="script.js"></script>
 
     <script>
-        // Script para manejar la transición de entrada definida en tu estiloLiverpool.css
         window.onload = () => {
             document.body.classList.add('loaded');
         };
     </script>
     
+    <script>
+    const formulario = document.querySelector('form');
+
+    formulario.addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        window.location.href = 'iniciarSesion.html';
+    });
+</script>
 
 </body>
 </html>

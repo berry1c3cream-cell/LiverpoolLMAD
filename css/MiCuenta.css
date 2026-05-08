@@ -464,3 +464,54 @@
     padding:15px;
     max-height:200px;
 }
+
+/*Jahir*/
+
+.tabLink-container {
+    position: relative;
+    width: 100%;
+}
+
+.submenu {
+    display: none; 
+    background-color: var(--welement);
+    padding-left: 20px;
+    border-left: 2px solid var(--header); 
+    margin-bottom: 10px;
+}
+
+
+.tabLink-container:hover .submenu {
+    display: block;
+}
+
+
+.sub-tab {
+    padding: 10px 5px;
+    font-size: 13px;
+    color: var(--gris);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.sub-tab:hover {
+    color: var(--header);
+}
+
+
+.profile-form {
+    max-width: 350px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.profile-form input {
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--welement);
+    color: var(--text);
+}
+
