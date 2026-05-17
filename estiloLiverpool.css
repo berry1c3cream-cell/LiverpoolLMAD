@@ -1733,3 +1733,29 @@ body.login-page {
         grid-template-columns: 1fr;
     }
 }
+
+/* Microinteracciones de producto */
+.buyButtons .btnPrimary, 
+.buyButtons .btnSecondary {
+    background-color: #512da8;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
+}
+
+.buyButtons .btnPrimary:hover, 
+.buyButtons .btnSecondary:hover {
+    background-color: #d81b81;
+    box-shadow: 0 4px 15px rgba(216, 27, 129, 0.4);
+}
+
+.buyButtons .btnPrimary:active, 
+.buyButtons .btnSecondary:active {
+    transform: scale(0.96);
+}
