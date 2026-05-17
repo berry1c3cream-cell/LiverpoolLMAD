@@ -1759,3 +1759,45 @@ body.login-page {
 .buyButtons .btnSecondary:active {
     transform: scale(0.96);
 }
+
+/* Microinteraccion para la bolsa */
+
+@keyframes popIcon {
+    0% { transform: scale(1); }
+    30% { transform: scale(1.4) rotate(-8deg); }
+    50% { transform: scale(1.1) rotate(8deg); }
+    70% { transform: scale(1.25); }
+    100% { transform: scale(1); }
+}
+
+.pop-bag {
+    display: inline-block !important;
+    animation: popIcon 0.5s ease-in-out !important;
+}
+
+#bagBadge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: white;
+    color: #d81b81;
+    font-size: 11px;
+    font-weight: bold;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border: 1px solid #d81b81;
+    opacity: 0;
+    transform: scale(0);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+    pointer-events: none;
+}
+
+#bagBadge.show-badge {
+    opacity: 1;
+    transform: scale(1);
+}

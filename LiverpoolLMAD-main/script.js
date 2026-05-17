@@ -179,4 +179,3 @@ document.querySelectorAll(".faqQuestion").forEach(q => {
         item.classList.toggle("active");
     });
 });
-
