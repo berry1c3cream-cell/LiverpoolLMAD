@@ -55,9 +55,10 @@
         </span> -->
 
         <span class="iconBtn">
-            <a href="miCuenta.html?tab=wishlist" class="miCuentaLink">
-                <img src="icons/heart.svg">
-            </a>
+    <a href="miCuenta.html?tab=wishlist" class="miCuentaLink" style="position: relative;">
+        <img src="icons/heart.svg" id="heartImg">
+        <span id="heartBadge">!</span>
+    </a>
         </span>
 
         <span class="iconBtn">
@@ -205,6 +206,118 @@
 
     </div>
 
+</div>
+
+<div class="checkout-overlay" id="checkoutOverlay"></div>
+
+<div class="checkout-panel" id="checkoutPanel">
+    <div class="panel-header">
+        <button class="btn-back" id="closePanelBtn">←</button>
+        <h3>Agregar dirección de entrega</h3>
+        <button class="btn-close-x" id="closePanelBtnX">×</button>
+    </div>
+
+    <div class="panel-body">
+        <p class="required-notice">* Campos obligatorios</p>
+        
+        <h4>Datos del destinatario</h4>
+        <div class="form-group">
+            <label>Nombre*</label>
+            <input type="text">
+        </div>
+        <div class="form-group">
+            <label>Segundo nombre</label>
+            <input type="text">
+        </div>
+        <div class="form-group">
+            <label>Apellido paterno*</label>
+            <input type="text">
+        </div>
+        <div class="form-group">
+            <label>Apellido materno</label>
+            <input type="text">
+        </div>
+
+        <h4>Dirección de entrega</h4>
+        <div class="form-group">
+            <label>Alias de dirección*</label>
+            <input type="text">
+        </div>
+        <div class="form-group">
+            <label>Código postal*</label>
+            <input type="text">
+        </div>
+        <div class="form-group-checkbox">
+            <input type="checkbox" id="noCp">
+            <label for="noCp">No sé mi código postal</label>
+        </div>
+        <div class="form-group">
+            <label>Estado*</label>
+            <select>
+                <option>Selecciona</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Municipio o Alcaldía*</label>
+            <select>
+                <option>Selecciona</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Colonia*</label>
+            <select>
+                <option>Selecciona</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Ciudad</label>
+            <input type="text">
+        </div>
+        <div class="form-group">
+            <label>Calle*</label>
+            <input type="text">
+        </div>
+        <div class="form-group">
+            <label>Número exterior*</label>
+            <input type="text">
+        </div>
+        <div class="form-group">
+            <label>Número interior</label>
+            <input type="text">
+        </div>
+        <div class="form-group">
+            <label>Edificio</label>
+            <input type="text">
+        </div>
+        <div class="form-group">
+            <label>Entre calle</label>
+            <input type="text">
+        </div>
+        <div class="form-group">
+            <label>y calle</label>
+            <input type="text">
+        </div>
+        <div class="form-group">
+            <label>Referencia</label>
+            <input type="text">
+        </div>
+        <div class="form-group">
+            <label>Teléfono celular*</label>
+            <input type="text">
+        </div>
+        <div class="form-group">
+            <label>Teléfono fijo*</label>
+            <input type="text">
+        </div>
+        <div class="form-group-checkbox">
+            <input type="checkbox" id="defaultDir">
+            <label for="defaultDir">Establecer como dirección predeterminada</label>
+        </div>
+
+        <p class="terms-text">Al presionar "Usar esta dirección" estás aceptando nuestros <a href="#">Términos y Condiciones</a></p>
+        
+        <button class="btn-submit-dir">Usar esta dirección</button>
+    </div>
 </div>
 
 <script src="script.js"></script>

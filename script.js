@@ -226,3 +226,56 @@ if (btnPrimary && bagImg) {
         }, 500);
     });
 }
+
+/* Microinteracción en el corazon  */
+
+const wishlistButtons = document.querySelectorAll("button");
+const heartImg = document.getElementById("heartImg");
+const heartBadge = document.getElementById("heartBadge");
+
+wishlistButtons.forEach(btn => {
+    if (btn.textContent.trim() === "Mover a Wishlist") {
+        btn.addEventListener("click", () => {
+            if (heartImg) {
+                heartImg.classList.add("pop-heart");
+                setTimeout(() => {
+                    heartImg.classList.remove("pop-heart");
+                }, 500);
+            }
+            if (heartBadge) {
+                heartBadge.classList.add("show-badge");
+            }
+        });
+    }
+});
+
+                    /* Formulario de compra */
+const btnBuyProduct = document.querySelector(".btnSecondary"); 
+const btnBuyCart = document.querySelector(".btnActionCard") || document.querySelector("button.btnPrimaryMC") || Array.from(document.querySelectorAll("button")).find(b => b.textContent.trim() === "Comprar");
+
+const checkoutPanel = document.getElementById("checkoutPanel");
+const checkoutOverlay = document.getElementById("checkoutOverlay");
+const closePanelBtn = document.getElementById("closePanelBtn");
+const closePanelBtnX = document.getElementById("closePanelBtnX");
+
+function openCheckout() {
+    checkoutPanel?.classList.add("active");
+    checkoutOverlay?.classList.add("active");
+    document.body.classList.add("modal-open"); // Bloquea el fondo
+}
+
+function closeCheckout() {
+    checkoutPanel?.classList.remove("active");
+    checkoutOverlay?.classList.remove("active");
+    document.body.classList.remove("modal-open"); // Libera el fondo
+}
+
+// Eventos para abrir
+btnBuyProduct?.addEventListener("click", openCheckout);
+btnBuyCart?.addEventListener("click", openCheckout);
+
+// Eventos para cerrar
+closePanelBtn?.addEventListener("click", closeCheckout);
+closePanelBtnX?.addEventListener("click", closeCheckout);
+checkoutOverlay?.addEventListener("click", closeCheckout);
+
