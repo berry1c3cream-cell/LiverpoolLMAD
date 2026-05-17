@@ -141,7 +141,7 @@
 
                 <div class="deliveryOptions">
 
-                    <div class="deliveryCard active">
+                    <div class="deliveryCard active" id="pickupOption">
                         <div class="deliveryIcon">🏬</div>
 
                         <div>
@@ -152,7 +152,7 @@
                         <span class="check">✓</span>
                     </div>
 
-                    <div class="deliveryCard">
+                    <div class="deliveryCard" id="homeOption">
                         <div class="deliveryIcon">🚚</div>
 
                         <div>
@@ -181,7 +181,9 @@
 
         <div class="buyButtons">
             <button class="btnPrimary">Agregar a la bolsa</button>
-            <button class="btnSecondary">Comprar ahora</button>
+            <button class="btnSecondary" id="buyNowBtn">
+                Comprar ahora
+            </button>
         </div>
     </div>
 </div>
@@ -250,5 +252,6 @@
 </section>
 
 <script src="script.js"></script>
+<script src="LiverpoolLMAD-main/producto.js"></script>
 </body>
 </html>

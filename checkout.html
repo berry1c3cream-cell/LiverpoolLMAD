@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout</title>
+<link rel="stylesheet" href="estiloLiverpool.css">
+<link rel="stylesheet" href="css/checkout.css">
+</head>
+
+<body>
+
+<!-- TOPBAR -->
+<header class="topbar">
+    <div>
+        <span>Mi tienda</span>
+    </div>
+
+    <div>
+        <div>Otros servicios | Mesa de regalos | Mi crédito</div>
+    </div>
+</header>
+
+<!-- HEADER PRINCIPAL -->
+<nav class="header">
+
+    <a href="home.html" class="logo">Liverpool</a>
+
+    <div class="btn-cat">
+        <a href="search.html" class="Categorias_Link">
+            Categorías >
+        </a>
+    </div>
+
+    <div class="search">
+        <input type="text" placeholder="Buscar productos...">
+    </div>
+
+    <div class="rightIcons">
+
+        <span class="iconBtn">
+            <a href="miCuenta.html" class="miCuentaLink">
+                <img src="icons/user.svg">
+            </a>
+        </span>
+
+        <!--<span class="iconBtn">
+            <a href="miCuenta.html" class="miCuentaLink">
+                <span class="accountLabel">Mi cuenta</span>
+            </a>
+        </span> -->
+
+        <span class="iconBtn">
+            <a href="miCuenta.html?tab=wishlist" class="miCuentaLink">
+                <img src="icons/heart.svg">
+            </a>
+        </span>
+
+        <span class="iconBtn">
+            <a href="bolsa.html" class="miCuentaLink">
+                <img src="icons/bag.svg">
+            </a>
+        </span>
+
+        <span id="accessibilityBtn" class="iconBtn">
+        <img src="icons/accessibility.svg">
+        </span>
+
+    </div>
+
+</nav>
+
+<div class="accessPanel" id="accessPanel">
+
+    <h4>Accesibilidad</h4>
+
+    <div class="accItem">
+        <span>Modo oscuro</span>
+
+        <label class="switch">
+            <input type="checkbox" id="darkToggle">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+    <div class="accItem">
+        <span>Letra grande</span>
+
+        <label class="switch">
+            <input type="checkbox" id="sizeFontToggle">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+</div>
+
+<div class="checkoutPage">
+
+    <!-- IZQUIERDA -->
+    <div class="checkoutLeft">
+
+        <!-- ENTREGA -->
+        <section class="checkoutCard">
+
+            <h2 class="checkoutTitle">
+                1. Entrega
+            </h2>
+
+            <p class="checkoutSub">
+                Elige cómo quieres recibir tu pedido
+            </p>
+
+            <div id="deliveryContent"></div>
+
+        </section>
+
+        <!-- PAGO -->
+        <section class="checkoutCard">
+
+            <h2 class="checkoutTitle">
+                2. Forma de pago
+            </h2>
+
+            <div class="paymentMethods">
+
+                <div class="paymentBtn active">
+                    💳 Tarjeta
+                </div>
+
+                <div class="paymentBtn">
+                    <img src="imagenes/paypal.png" width="70">
+                </div>
+
+                <div class="paymentBtn">
+                    💵 Efectivo
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- PRODUCTOS -->
+        <section class="checkoutCard">
+
+            <h2 class="checkoutTitle">
+                3. Artículos
+            </h2>
+
+            <div class="bagItem">
+
+                <img src="imagenes/aretes.png" alt="producto">
+
+                <div class="wishlistInfo">
+
+                    <h3>
+                        Aretes DKNY con acabado pavé cristal
+                    </h3>
+
+                    <p class="wishlistDate">
+                        Color rosa · Acero inoxidable
+                    </p>
+
+                    <br>
+
+                    <div class="price-container">
+                        $749<sup>00</sup>
+                    </div>
+
+                    <br>
+
+                    <!-- LOADING FAKE -->
+                    <!--
+                    <div class="loadingBar"></div>
+                    -->
+
+                    <!-- PROMOCION -->
+                    <div class="deliveryCard active">
+
+                        <h3>✨ Pago único</h3>
+
+                        <p>
+                            50% de descuento aplicado automáticamente.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <!-- DERECHA -->
+    <aside class="checkoutSummary">
+
+        <h2 class="checkoutTitle">
+            Resumen
+        </h2>
+
+        <div class="summaryRow">
+            <span>Subtotal</span>
+            <span>$749.00</span>
+        </div>
+
+        <div class="summaryRow">
+            <span>Envío</span>
+            <span>Gratis</span>
+        </div>
+
+        <div class="summaryRow">
+            <span>Descuento</span>
+            <span>-$0.00</span>
+        </div>
+
+        <div class="summaryTotal">
+            <span>Total</span>
+            <span>$749.00</span>
+        </div>
+
+        <button class="checkoutBtn">
+            Finalizar compra
+        </button>
+
+    </aside>
+
+</div>
+
+<script src="script.js"></script>
+<script src="LiverpoolLMAD-main/checkout.js"></script>
+
+</body>
+</html>
