@@ -1,0 +1,185 @@
+/* =========================
+    ENTREGA PRODUCTO
+========================= */
+
+.sectionMiniTitle{
+    margin-bottom:16px;
+    font-size:18px;
+}
+
+.deliverySection{
+    margin-top:30px;
+}
+
+.deliveryOptions{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+@media(min-width:768px){
+    .deliveryOptions{
+        flex-direction:row;
+    }
+}
+
+.deliveryCard{
+    flex:1;
+    background:var(--card);
+    border:2px solid var(--border);
+    border-radius:16px;
+    padding:18px;
+    display:flex;
+    align-items:center;
+    gap:16px;
+    position:relative;
+    cursor:pointer;
+    transition:0.25s ease;
+}
+
+.deliveryCard:hover{
+    transform:translateY(-2px);
+    box-shadow:0 6px 14px rgba(0,0,0,0.08);
+}
+
+.deliveryCard.active{
+    border-color:#d81b81;
+}
+
+.deliveryIcon{
+    font-size:28px;
+}
+
+.deliveryCard h4{
+    margin-bottom:4px;
+}
+
+.deliveryCard p{
+    color:var(--gris);
+    font-size:14px;
+}
+
+.check{
+    position:absolute;
+    top:12px;
+    right:12px;
+    background:#d81b81;
+    color:white;
+    width:24px;
+    height:24px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:13px;
+}
+
+.storeInfo{
+    margin-top:14px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.storeInfo a{
+    color:#d81b81;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* =========================
+        RESEÑAS
+========================= */
+
+.reviewsSection{
+    padding:40px 20px 120px;
+}
+
+@media(min-width:768px){
+    .reviewsSection{
+        padding:60px 80px 140px;
+    }
+}
+
+.reviewsHeader{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    margin-bottom:30px;
+}
+
+@media(min-width:768px){
+    .reviewsHeader{
+        flex-direction:row;
+        justify-content:space-between;
+        align-items:center;
+    }
+}
+
+.reviewScore{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    background:var(--card);
+    padding:18px;
+    border-radius:16px;
+    border:1px solid var(--border);
+}
+
+.bigScore{
+    font-size:42px;
+    font-weight:bold;
+    color:#d81b81;
+}
+
+.starsReview{
+    color:#5e2ca5;
+    letter-spacing:2px;
+}
+
+.reviewScore p{
+    color:var(--gris);
+    font-size:14px;
+}
+
+.reviewsGrid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:20px;
+}
+
+@media(min-width:768px){
+    .reviewsGrid{
+        grid-template-columns:repeat(3,1fr);
+    }
+}
+
+.reviewCard{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:22px;
+    transition:0.25s ease;
+}
+
+.reviewCard:hover{
+    transform:translateY(-4px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+.reviewTop{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:12px;
+}
+
+.reviewTop span{
+    font-size:13px;
+    color:var(--gris);
+}
+
+.reviewCard p{
+    margin-top:12px;
+    line-height:1.6;
+    color:var(--text);
+}
