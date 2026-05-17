@@ -207,3 +207,22 @@ document.querySelectorAll(".faqQuestion").forEach(q => {
         item.classList.toggle("active");
     });
 });
+
+/* Pequeña microinteraccion en la bolsa */
+const btnPrimary = document.querySelector(".btnPrimary");
+const bagImg = document.getElementById("bagImg");
+const bagBadge = document.getElementById("bagBadge");
+
+if (btnPrimary && bagImg) {
+    btnPrimary.addEventListener("click", () => {
+        bagImg.classList.add("pop-bag");
+        
+        if (bagBadge) {
+            bagBadge.classList.add("show-badge");
+        }
+
+        setTimeout(() => {
+            bagImg.classList.remove("pop-bag");
+        }, 500);
+    });
+}
