@@ -1,19 +1,27 @@
 // carousel
-const right = document.querySelector('.arrow.right');
-const left = document.querySelector('.arrow.left');
-const carousel = document.querySelector('.carousel');
+const wrappers = document.querySelectorAll(".carousel-wrapper");
 
-if(right && left && carousel){
+wrappers.forEach(wrapper => {
 
-right.onclick = () => {
-  carousel.scrollBy({ left: 320, behavior: 'smooth' });
-};
+    const carousel = wrapper.querySelector(".carousel");
+    const leftBtn = wrapper.querySelector(".left");
+    const rightBtn = wrapper.querySelector(".right");
 
-left.onclick = () => {
-  carousel.scrollBy({ left: -320, behavior: 'smooth' });
-};
+    rightBtn.addEventListener("click", () => {
+        carousel.scrollBy({
+            left: 320,
+            behavior: "smooth"
+        });
+    });
 
-}
+    leftBtn.addEventListener("click", () => {
+        carousel.scrollBy({
+            left: -320,
+            behavior: "smooth"
+        });
+    });
+
+});
 
 
 // sticky buy bar
