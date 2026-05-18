@@ -32,38 +32,82 @@
     </div>
 
     <div class="search">
-        <input type="text" placeholder="Buscar productos...">
+        <label for="searchBar" class="sr-only">
+            Buscar productos
+        </label>
+
+        <input 
+        type="text"
+        id="searchBar"
+        placeholder="Buscar productos..."
+        >
     </div>
 
     <div class="rightIcons">
 
-        <span class="iconBtn">
+        <a 
+        href="miCuenta.html"
+        class="iconBtn miCuentaLink"
+        aria-label="Ir a Mi cuenta"
+        >
+            <img 
+            src="icons/user.svg"
+            alt=""
+            >
+        </a>
+
+        <!-- <span class="iconBtn">
             <a href="miCuenta.html" class="miCuentaLink">
                 <img src="icons/user.svg">
             </a>
-        </span>
-
-        <!--<span class="iconBtn">
-            <a href="miCuenta.html" class="miCuentaLink">
-                <span class="accountLabel">Mi cuenta</span>
-            </a>
         </span> -->
 
-        <span class="iconBtn">
+        <a 
+        href="miCuenta.html?tab=wishlist"
+        class="iconBtn miCuentaLink"
+        aria-label="Ir a Mi cuenta"
+        >
+            <img 
+            src="icons/heart.svg"
+            alt=""
+            >
+        </a>
+
+        <!-- <span class="iconBtn">
             <a href="miCuenta.html?tab=wishlist" class="miCuentaLink">
                 <img src="icons/heart.svg">
             </a>
-        </span>
+        </span> -->
 
-        <span class="iconBtn">
+        <a 
+        href="bolsa.html"
+        class="iconBtn miCuentaLink"
+        aria-label="Ir a Mi cuenta"
+        >
+            <img 
+            src="icons/bag.svg"
+            alt=""
+            >
+        </a>
+        
+        <!-- <span class="iconBtn">
             <a href="bolsa.html" class="miCuentaLink">
                 <img src="icons/bag.svg">
             </a>
-        </span>
+        </span> -->
 
-        <span id="accessibilityBtn" class="iconBtn">
-        <img src="icons/accessibility.svg">
-        </span>
+        <button 
+            id="accessibilityBtn" 
+            class="iconBtn"
+            aria-label="Abrir opciones de accesibilidad"
+            aria-expanded="false"
+            aria-controls="accessPanel"
+        >
+            <img 
+            src="icons/accessibility.svg"
+            alt="Accesibilidad"
+            >
+        </button>
 
     </div>
 
@@ -107,28 +151,43 @@
 
     <h3>Hola, usuario!</h3>
 
-    <a href="bolsa.html" class="miCuentaLink">
-        <div class="continue-card">
+    <div class="continue-card">
+        <a href="bolsa.html" class="miCuentaLink">
             <img src="imagenes/producto_labiales.png" width="40">
-            <span>Sigue comprando</span>
-        </div>
-    </a>
+        </a>
+        <span>Sigue comprando</span>
+    </div>
 
     <h3>Últimas ofertas</h3>
 
     <div class="carousel-wrapper">
 
-        <button class="arrow left">‹</button>
-        <button class="arrow right">›</button>
+        <button 
+        class="arrow left" 
+        aria-label="Mover carrusel a la izquierda"
+        >
+        ‹
+        </button>
 
-        <div class="carousel">
+        <button 
+        class="arrow right" 
+        aria-label="Mover carrusel a la derecha"
+        >
+        ›
+        </button>
+
+        <div 
+        class="carousel"
+        tabindex="0"
+        aria-label="Carrusel de productos"
+        >
 
             <a href="producto.html" class="productLink">
                 <div class="product">
                     <div class="card-inner">
 
                         <div class="card-front">
-                            <img src="imagenes/procuto_toallas.png">
+                            <img src="imagenes/procuto_toallas.png" alt="Toallas de Desmaquillante">
                         </div>
 
                         <div class="card-back">
@@ -149,7 +208,7 @@
                     <div class="card-inner">
 
                         <div class="card-front">
-                            <img src="imagenes/producto_aceiteOjos.png">
+                            <img src="imagenes/producto_aceiteOjos.png" alt="Aceite de ojos">
                         </div>
 
                         <div class="card-back">
@@ -168,7 +227,7 @@
                     <div class="card-inner">
 
                         <div class="card-front">
-                            <img src="imagenes/producto_labiales.png">
+                            <img src="imagenes/producto_labiales.png" alt="Labial mate color rosa">
                         </div>
 
                         <div class="card-back">
@@ -187,7 +246,7 @@
                     <div class="card-inner">
 
                         <div class="card-front">
-                            <img src="imagenes/producto_mascara.png">
+                            <img src="imagenes/producto_mascara.png" alt="Mascara para cuidado de la piel">
                         </div>
 
                         <div class="card-back">
@@ -206,7 +265,7 @@
                     <div class="card-inner">
 
                         <div class="card-front">
-                            <img src="imagenes/producto_plancha.png">
+                            <img src="imagenes/producto_plancha.png" alt="Plancha para cabello">
                         </div>
 
                         <div class="card-back">
@@ -225,7 +284,7 @@
                     <div class="card-inner">
 
                         <div class="card-front">
-                            <img src="imagenes/producto_aceiteOjos.png">
+                            <img src="imagenes/producto_aceiteOjos.png" alt="Aceite de ojos">
                         </div>
 
                         <div class="card-back">
@@ -244,7 +303,7 @@
                     <div class="card-inner">
 
                         <div class="card-front">
-                            <img src="imagenes/producto_sombras.png">
+                            <img src="imagenes/producto_sombras.png" alt="Sombras de maquillaje">
                         </div>
 
                         <div class="card-back">
@@ -263,7 +322,7 @@
                     <div class="card-inner">
 
                         <div class="card-front">
-                            <img src="imagenes/producto_plancha.png">
+                            <img src="imagenes/producto_plancha.png" alt="Plancha para el cabello">
                         </div>
 
                         <div class="card-back">
@@ -286,17 +345,31 @@
 
     <div class="carousel-wrapper">
 
-        <button class="arrow left">‹</button>
-        <button class="arrow right">›</button>
+        <button 
+        class="arrow left" 
+        aria-label="Mover carrusel a la izquierda"
+        >
+        ‹
+        </button>
 
-        <div class="carousel">
+        <button 
+        class="arrow right" 
+        aria-label="Mover carrusel a la derecha"
+        >
+        ›
+        </button>
+        <div 
+        class="carousel"
+        tabindex="0"
+        aria-label="Carrusel de productos"
+        >
 
             <a href="producto.html" class="productLink">
                 <div class="product">
                     <div class="card-inner">
 
                         <div class="card-front">
-                            <img src="imagenes/procuto_toallas.png">
+                            <img src="imagenes/procuto_toallas.png" alt="Toallas de Desmaquillante">
                         </div>
 
                         <div class="card-back">
@@ -317,7 +390,7 @@
                     <div class="card-inner">
 
                         <div class="card-front">
-                            <img src="imagenes/producto_aceiteOjos.png">
+                            <img src="imagenes/producto_aceiteOjos.png" alt="Aceite de ojos">
                         </div>
 
                         <div class="card-back">
@@ -336,7 +409,7 @@
                     <div class="card-inner">
 
                         <div class="card-front">
-                            <img src="imagenes/producto_labiales.png">
+                            <img src="imagenes/producto_labiales.png" alt="Labial mate color rosa">
                         </div>
 
                         <div class="card-back">
@@ -355,7 +428,7 @@
                     <div class="card-inner">
 
                         <div class="card-front">
-                            <img src="imagenes/producto_mascara.png">
+                            <img src="imagenes/producto_mascara.png" alt="Mascara para cuidado de la piel">
                         </div>
 
                         <div class="card-back">
@@ -374,7 +447,7 @@
                     <div class="card-inner">
 
                         <div class="card-front">
-                            <img src="imagenes/producto_plancha.png">
+                            <img src="imagenes/producto_plancha.png" alt="Plancha para cabello">
                         </div>
 
                         <div class="card-back">
@@ -393,7 +466,7 @@
                     <div class="card-inner">
 
                         <div class="card-front">
-                            <img src="imagenes/producto_aceiteOjos.png">
+                            <img src="imagenes/producto_aceiteOjos.png" alt="Aceite de ojos">
                         </div>
 
                         <div class="card-back">
@@ -412,7 +485,7 @@
                     <div class="card-inner">
 
                         <div class="card-front">
-                            <img src="imagenes/producto_sombras.png">
+                            <img src="imagenes/producto_sombras.png" alt="Sombras de maquillaje">
                         </div>
 
                         <div class="card-back">
@@ -431,7 +504,7 @@
                     <div class="card-inner">
 
                         <div class="card-front">
-                            <img src="imagenes/producto_plancha.png">
+                            <img src="imagenes/producto_plancha.png" alt="Plancha para el cabello">
                         </div>
 
                         <div class="card-back">

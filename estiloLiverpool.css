@@ -29,9 +29,35 @@ body.dark{
 --gris:#aaa9a9;
 }
 
+/* =========================
+    ACCESSIBILITY
+========================= */
+
 /* cuando está activado */
 body.bigFont{
 --font-scale: 1.3;
+}
+
+a:focus,
+button:focus,
+input:focus,
+.carousel:focus{
+outline:3px solid #a259ff;
+outline-offset:4px;
+border-radius:10px;
+}
+
+/* oculto para lectores */
+.sr-only{
+position:absolute;
+width:1px;
+height:1px;
+padding:0;
+margin:-1px;
+overflow:hidden;
+clip:rect(0,0,0,0);
+white-space:nowrap;
+border:0;
 }
 
 /* =========================
@@ -159,16 +185,22 @@ opacity:0.8;
 }
 
 .iconBtn{
-width:36px;
-height:36px;
+background:none;
+border:none;
+padding:0;
+
 display:flex;
 align-items:center;
 justify-content:center;
-border-radius:10px;
+
 cursor:pointer;
-transition:0.15s ease;
 }
 
+.iconBtn:focus{
+outline:3px solid #ffffff;
+outline-offset:4px;
+border-radius:12px;
+}
 
 .rightIcons span{
 cursor:pointer;
@@ -198,10 +230,8 @@ background:rgba(255,255,255,0.08);
 
 /* tamaño icono */
 .iconBtn img{
-width:30px;
-height:30px;
-filter:brightness(0) invert(1);
-transition:0.15s ease;
+width:28px;
+height:28px;
 }
 
 /* modo oscuro */
@@ -396,7 +426,8 @@ transition:transform 0.6s;
 }
 
 /* hover = giro */
-.product:hover .card-inner{
+.product:hover .card-inner,
+.product:focus-within .card-inner{
 transform:rotateY(180deg);
 }
 
@@ -737,8 +768,8 @@ padding:18px;
 box-shadow:0 10px 30px rgba(0,0,0,0.15);
 
 opacity:0;
-transform:translateY(-10px);
 pointer-events:none;
+transform:translateY(-10px);
 
 transition:0.25s ease;
 z-index:200;
@@ -746,8 +777,8 @@ z-index:200;
 
 .accessPanel.show{
 opacity:1;
-transform:translateY(0);
 pointer-events:auto;
+transform:translateY(0);
 }
 
 .accessPanel h4{

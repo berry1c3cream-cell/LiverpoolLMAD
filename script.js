@@ -7,18 +7,42 @@ wrappers.forEach(wrapper => {
     const leftBtn = wrapper.querySelector(".left");
     const rightBtn = wrapper.querySelector(".right");
 
+    /* botones */
     rightBtn.addEventListener("click", () => {
         carousel.scrollBy({
-            left: 320,
-            behavior: "smooth"
+            left:320,
+            behavior:"smooth"
         });
     });
 
     leftBtn.addEventListener("click", () => {
         carousel.scrollBy({
-            left: -320,
-            behavior: "smooth"
+            left:-320,
+            behavior:"smooth"
         });
+    });
+
+    /* teclado */
+    carousel.addEventListener("keydown", (e) => {
+
+        if(e.key === "ArrowRight"){
+            e.preventDefault();
+
+            carousel.scrollBy({
+                left:320,
+                behavior:"smooth"
+            });
+        }
+
+        if(e.key === "ArrowLeft"){
+            e.preventDefault();
+
+            carousel.scrollBy({
+                left:-320,
+                behavior:"smooth"
+            });
+        }
+
     });
 
 });
@@ -93,18 +117,38 @@ const accPanel = document.getElementById("accessPanel");
 const darkToggle = document.getElementById("darkToggle");
 
 
-// abrir panel
-accBtn?.addEventListener("click", () => {
-    accPanel.classList.toggle("show");
-});
+accessibilityBtn.addEventListener("click", () => {
 
+    accessPanel.classList.toggle("show");
 
-// cerrar si clic afuera
-document.addEventListener("click", e => {
-    if(!accPanel?.contains(e.target) && !accBtn?.contains(e.target)){
-        accPanel?.classList.remove("show");
+    /* mover foco al primer input */
+    if(accessPanel.classList.contains("show")){
+
+        const firstInput = accessPanel.querySelector("input");
+
+        firstInput.focus();
     }
+
 });
+
+document.addEventListener("keydown", (e) => {
+
+    if(e.key === "Escape"){
+
+        accessPanel.classList.remove("show");
+
+        accessibilityBtn.focus();
+    }
+
+});
+
+const expanded =
+accessPanel.classList.contains("show");
+
+accessibilityBtn.setAttribute(
+"aria-expanded",
+expanded
+);
 
 
 // cargar preferencia guardada
