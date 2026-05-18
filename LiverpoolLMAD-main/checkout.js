@@ -8,6 +8,8 @@ localStorage.getItem("deliveryMethod");
 const deliveryContent =
 document.getElementById("deliveryContent");
 
+const finishPurchaseBtn =
+document.getElementById("finishPurchaseBtn");
 
 // evita errores si el div no existe
 if(deliveryContent){
@@ -61,3 +63,10 @@ if(deliveryContent){
     }
 
 }
+
+finishPurchaseBtn.addEventListener("click", () => {
+
+    window.location.href =
+    "success.html";
+
+});

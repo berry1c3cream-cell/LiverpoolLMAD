@@ -1,19 +1,51 @@
 // carousel
-const right = document.querySelector('.arrow.right');
-const left = document.querySelector('.arrow.left');
-const carousel = document.querySelector('.carousel');
+const wrappers = document.querySelectorAll(".carousel-wrapper");
 
-if(right && left && carousel){
+wrappers.forEach(wrapper => {
 
-right.onclick = () => {
-  carousel.scrollBy({ left: 320, behavior: 'smooth' });
-};
+    const carousel = wrapper.querySelector(".carousel");
+    const leftBtn = wrapper.querySelector(".left");
+    const rightBtn = wrapper.querySelector(".right");
 
-left.onclick = () => {
-  carousel.scrollBy({ left: -320, behavior: 'smooth' });
-};
+    /* botones */
+    rightBtn.addEventListener("click", () => {
+        carousel.scrollBy({
+            left:320,
+            behavior:"smooth"
+        });
+    });
 
-}
+    leftBtn.addEventListener("click", () => {
+        carousel.scrollBy({
+            left:-320,
+            behavior:"smooth"
+        });
+    });
+
+    /* teclado */
+    carousel.addEventListener("keydown", (e) => {
+
+        if(e.key === "ArrowRight"){
+            e.preventDefault();
+
+            carousel.scrollBy({
+                left:320,
+                behavior:"smooth"
+            });
+        }
+
+        if(e.key === "ArrowLeft"){
+            e.preventDefault();
+
+            carousel.scrollBy({
+                left:-320,
+                behavior:"smooth"
+            });
+        }
+
+    });
+
+});
 
 
 // sticky buy bar
@@ -85,18 +117,38 @@ const accPanel = document.getElementById("accessPanel");
 const darkToggle = document.getElementById("darkToggle");
 
 
-// abrir panel
-accBtn?.addEventListener("click", () => {
-    accPanel.classList.toggle("show");
-});
+accBtn.addEventListener("click", () => {
 
+    accessPanel.classList.toggle("show");
 
-// cerrar si clic afuera
-document.addEventListener("click", e => {
-    if(!accPanel?.contains(e.target) && !accBtn?.contains(e.target)){
-        accPanel?.classList.remove("show");
+    /* mover foco al primer input */
+    if(accessPanel.classList.contains("show")){
+
+        const firstInput = accessPanel.querySelector("input");
+
+        firstInput.focus();
     }
+
 });
+
+document.addEventListener("keydown", (e) => {
+
+    if(e.key === "Escape"){
+
+        accessPanel.classList.remove("show");
+
+        accBtn.focus();
+    }
+
+});
+
+const expanded =
+accessPanel.classList.contains("show");
+
+accBtn.setAttribute(
+"aria-expanded",
+expanded
+);
 
 
 // cargar preferencia guardada
@@ -249,33 +301,140 @@ wishlistButtons.forEach(btn => {
     }
 });
 
-                    /* Formulario de compra */
-const btnBuyProduct = document.querySelector(".btnSecondary"); 
-const btnBuyCart = document.querySelector(".btnActionCard") || document.querySelector("button.btnPrimaryMC") || Array.from(document.querySelectorAll("button")).find(b => b.textContent.trim() === "Comprar");
+/* Formulario de compra */
 
+const btnBuyProduct = document.querySelector(".btnSecondary");
+const btnBuyCart = document.querySelector(".bagCheckoutBtn");
 const checkoutPanel = document.getElementById("checkoutPanel");
 const checkoutOverlay = document.getElementById("checkoutOverlay");
 const closePanelBtn = document.getElementById("closePanelBtn");
 const closePanelBtnX = document.getElementById("closePanelBtnX");
 
 function openCheckout() {
+
     checkoutPanel?.classList.add("active");
     checkoutOverlay?.classList.add("active");
-    document.body.classList.add("modal-open"); // Bloquea el fondo
+
+    document.body.classList.add("modal-open");
+
+    const firstInput =
+    checkoutPanel?.querySelector("input");
+
+    firstInput?.focus();
 }
 
 function closeCheckout() {
+
     checkoutPanel?.classList.remove("active");
     checkoutOverlay?.classList.remove("active");
-    document.body.classList.remove("modal-open"); // Libera el fondo
+
+    document.body.classList.remove("modal-open");
 }
 
-// Eventos para abrir
+/* abrir */
+
 btnBuyProduct?.addEventListener("click", openCheckout);
+
 btnBuyCart?.addEventListener("click", openCheckout);
 
-// Eventos para cerrar
-closePanelBtn?.addEventListener("click", closeCheckout);
-closePanelBtnX?.addEventListener("click", closeCheckout);
-checkoutOverlay?.addEventListener("click", closeCheckout);
+/* cerrar */
 
+closePanelBtn?.addEventListener(
+"click",
+closeCheckout
+);
+
+closePanelBtnX?.addEventListener(
+"click",
+closeCheckout
+);
+
+checkoutOverlay?.addEventListener(
+"click",
+closeCheckout
+);
+
+document.addEventListener("keydown", (e) => {
+
+    if(
+        e.key === "Escape" &&
+        checkoutPanel?.classList.contains("active")
+    ){
+
+        closeCheckout();
+    }
+});
+
+
+// ==========================================
+// VALIDACIÓN Y REGISTRO - CREAR CUENTA
+// ==========================================
+document.addEventListener("DOMContentLoaded", () => {
+    const passwordInput = document.getElementById("regPassword");
+    const emailInput = document.getElementById("regEmail");
+    const btnRegister = document.getElementById("btnRegister");
+
+    const paramLength = document.getElementById("paramLength");
+    const paramMayus = document.getElementById("paramMayus");
+    const paramNumber = document.getElementById("paramNumber");
+    const paramSpecial = document.getElementById("paramSpecial");
+
+    // Verificar si estamos en la página de Crear Cuenta
+    if (passwordInput && btnRegister) {
+        
+        // Escuchar cada que el usuario escribe en la contraseña
+        passwordInput.addEventListener("input", () => {
+            const val = passwordInput.value;
+
+            // 1. Mínimo 8 caracteres
+            if (val.length >= 8) paramLength.classList.add("valid");
+            else paramLength.classList.remove("valid");
+
+            // 2. Una mayúscula
+            if (/[A-Z]/.test(val)) paramMayus.classList.add("valid");
+            else paramMayus.classList.remove("valid");
+
+            // 3. Un número
+            if (/[0-9]/.test(val)) paramNumber.classList.add("valid");
+            else paramNumber.classList.remove("valid");
+
+            // 4. Signo especial
+            if (/[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(val)) paramSpecial.classList.add("valid");
+            else paramSpecial.classList.remove("valid");
+        });
+
+        // Evento al dar clic en CREAR CUENTA
+        btnRegister.addEventListener("click", () => {
+            const isLengthValid = paramLength.classList.contains("valid");
+            const isMayusValid = paramMayus.classList.contains("valid");
+            const isNumberValid = paramNumber.classList.contains("valid");
+            const isSpecialValid = paramSpecial.classList.contains("valid");
+
+            if (!emailInput.value) {
+                alert("Por favor ingresa un correo electrónico.");
+                return;
+            }
+
+            if (!isLengthValid || !isMayusValid || !isNumberValid || !isSpecialValid) {
+                alert("Tu contraseña aún no cumple con todos los filtros de seguridad.");
+                return;
+            }
+
+            // Crear el objeto del usuario nuevo
+            const nuevoUsuario = {
+                correo: emailInput.value,
+                contrasena: passwordInput.value
+            };
+
+            // Guardar en el LocalStorage (Backend Falso)
+            let usuariosRegistrados = JSON.parse(localStorage.getItem("db_usuarios")) || [];
+            usuariosRegistrados.push(nuevoUsuario);
+            localStorage.setItem("db_usuarios", JSON.stringify(usuariosRegistrados));
+
+            alert("¡Cuenta creada exitosamente en el backend falso!");
+            
+            // Forzar redirección directa
+            window.location.href = "Campos.html";
+        });
+    }
+});

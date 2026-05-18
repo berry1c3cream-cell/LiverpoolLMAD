@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Checkout</title>
+<title>Success</title>
 <link rel="stylesheet" href="estiloLiverpool.css">
-<link rel="stylesheet" href="css/checkout.css">
+<link rel="stylesheet" href="css/success.css">
 </head>
 
 <body>
@@ -138,137 +138,89 @@
 
 </div>
 
-<div class="checkoutPage">
+<div class="successPage">
 
-    <!-- IZQUIERDA -->
-    <div class="checkoutLeft">
+    <div class="successCard">
 
-        <!-- ENTREGA -->
-        <section class="checkoutCard">
+        <!-- ICONO -->
+        <div 
+        class="successIcon"
+        aria-hidden="true"
+        >
+            ✓
+        </div>
 
-            <h2 class="checkoutTitle">
-                1. Entrega
-            </h2>
+        <!-- TEXTO -->
+        <h1>
+            ¡Compra realizada!
+        </h1>
 
-            <p class="checkoutSub">
-                Elige cómo quieres recibir tu pedido
-            </p>
+        <p class="successText">
+            Tu pedido fue procesado correctamente.
+        </p>
 
-            <div id="deliveryContent"></div>
+        <!-- PEDIDO -->
+        <div class="orderBox">
 
-        </section>
+            <span>Número de pedido</span>
 
-        <!-- PAGO -->
-        <section class="checkoutCard">
+            <h2>#LVP482913</h2>
 
-            <h2 class="checkoutTitle">
-                2. Forma de pago
-            </h2>
+        </div>
 
-            <div class="paymentMethods">
+        <!-- ENTREGA DINÁMICA -->
+        <div id="deliveryResult" aria-live="polite"></div>
 
-                <button class="paymentBtn active">
-                    💳 Tarjeta
-                </button>
+        <!-- PRODUCTO -->
+        <div class="successProduct">
 
-                <button class="paymentBtn">
-                    <img src="imagenes/paypal.png" width="70">
-                </button>
+            <img src="imagenes/tenis.png" alt="Tenis Nike Court Vision Low color blanco">
 
-            </div>
+            <div>
 
-        </section>
+                <h3>
+                    Nike Court Vision Low
+                </h3>
 
-        <!-- PRODUCTOS -->
-        <section class="checkoutCard">
-
-            <h2 class="checkoutTitle">
-                3. Artículos
-            </h2>
-
-            <div class="bagItem">
-
-                <img src="imagenes/aretes.png" alt="producto">
-
-                <div class="wishlistInfo">
-
-                    <h3>
-                        Aretes DKNY con acabado pavé cristal
-                    </h3>
-
-                    <p class="wishlistDate">
-                        Color rosa · Acero inoxidable
-                    </p>
-
-                    <br>
-
-                    <div class="price-container">
-                        $749<sup>00</sup>
-                    </div>
-
-                    <br>
-
-                    <!-- LOADING FAKE -->
-                    <!--
-                    <div class="loadingBar"></div>
-                    -->
-
-                    <!-- PROMOCION -->
-                    <button class="deliveryCard active">
-
-                        <h3>✨ Pago único</h3>
-
-                        <p>
-                            50% de descuento aplicado automáticamente.
-                        </p>
-
-                    </button>
-
-                </div>
+                <p>
+                    Color blanco · Cantidad: 1
+                </p>
 
             </div>
 
-        </section>
+            <strong>
+                $1,303.20
+            </strong>
+
+        </div>
+
+        <!-- TOTAL -->
+        <div class="successTotal">
+
+            <span>Total pagado</span>
+
+            <strong>$1,303.20</strong>
+
+        </div>
+
+        <!-- BOTONES -->
+        <div class="successButtons">
+
+            <a 
+            href="home.html"
+            class="checkoutBtn successLinkBtn"
+            >
+                Volver al inicio
+            </a>
+
+        </div>
 
     </div>
-
-    <!-- DERECHA -->
-    <aside class="checkoutSummary">
-
-        <h2 class="checkoutTitle">
-            Resumen
-        </h2>
-
-        <div class="summaryRow">
-            <span>Subtotal</span>
-            <span>$749.00</span>
-        </div>
-
-        <div class="summaryRow">
-            <span>Envío</span>
-            <span>Gratis</span>
-        </div>
-
-        <div class="summaryRow">
-            <span>Descuento</span>
-            <span>-$0.00</span>
-        </div>
-
-        <div class="summaryTotal">
-            <span>Total</span>
-            <span>$749.00</span>
-        </div>
-
-        <button class="checkoutBtn" id="finishPurchaseBtn">
-            Finalizar compra
-        </button>
-
-    </aside>
 
 </div>
 
 <script src="script.js"></script>
-<script src="LiverpoolLMAD-main/checkout.js"></script>
+<script src="success.js"></script>
 
 </body>
 </html>

@@ -256,3 +256,28 @@
         background-position:-200% 0;
     }
 }
+
+/* =========================
+        FOCUS STATES
+========================= */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible{
+
+    outline:3px solid #d81b81;
+    outline-offset:3px;
+
+    border-radius:12px;
+}
+
+.paymentBtn,
+.deliveryCard,
+.iconBtn{
+
+    font:inherit;
+
+    border:none;
+
+    background:none;
+}
