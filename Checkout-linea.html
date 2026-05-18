@@ -3,15 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Producto</title>
+<title>Checkout</title>
 <link rel="stylesheet" href="estiloLiverpool.css">
-<link rel="stylesheet" href="css/producto.css">
+<link rel="stylesheet" href="css/checkout.css">
 <link rel="stylesheet" href="css/components.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-keyboard@latest/build/css/index.css"/>
 </head>
-<a href="#mainContent" class="skipLink">
-    Saltar al contenido principal
-</a>
+
 <body>
 
 <!-- TOPBAR -->
@@ -85,17 +83,14 @@
         </span> -->
 
         <a 
-         href="#"
-         id="btnAbrirBolsa"
-         class="iconBtn miCuentaLink"
-         aria-label="Ir a la bolsa"
->           
-         <img 
-           src="icons/bag.svg"
-           id="bagImg"
-           alt=""
-    >
-    <span id="bagBadge">!</span>
+        href="bolsa.html"
+        class="iconBtn miCuentaLink"
+        aria-label="Ir a la bolsa"
+        >
+            <img 
+            src="icons/bag.svg"
+            alt=""
+            >
         </a>
         
         <!-- <span class="iconBtn">
@@ -156,164 +151,143 @@
 
 <div class="simple-keyboard"></div>
 
-<!-- PRODUCTO -->
-<div class="productPage" id="mainContent">
+<div class="checkoutPage">
 
-    <h1 class="productTitle">Nombre del producto</h1>
+    <!-- IZQUIERDA -->
+    <div class="checkoutLeft">
 
-    <div class="productLayout">
+        <!-- ENTREGA -->
+<section class="checkoutCard">
 
-        <!-- IMAGEN -->
-        <div class="productImage">
-            <img src="imagenes/tenis.png" alt="Tenis blancos deportivos">
-        </div>
+    <h2 class="checkoutTitle">
+        1. Entrega
+    </h2>
 
-        <!-- INFO -->
-        <div class="productInfo">
+    <p class="checkoutSub">
+        Elige cómo quieres recibir tu pedido
+    </p>
 
-            <div class="stars">
-                ★ ★ ★ ★
-                <span class="stock">Ver disponibilidad en tienda</span>
-            </div>
-
-            <div class="priceBox">
-                <span class="old">$1,629.00</span>
-                <span class="new">$1,303.20</span>
-            </div>
-
-            <div class="shipping">
-                🚚 Envío gratis a todo el país
-            </div>
-
-            <div class="qty">
-                <label>Cantidad:</label>
-                <div class="qtyBox">
-                    <button aria-label="Disminuir cantidad">-</button>
-                    <span>1</span>
-                    <button aria-label="Aumentar cantidad">+</button>
-                </div>
-            </div>
-
-            <div class="color">
-                Color: Blanco ▼
-            </div>
-
-            <!-- ENTREGA -->
-            <div class="deliverySection">
-
-                <h3 class="sectionMiniTitle">Método de entrega</h3>
-
-                <div class="deliveryOptions">
-
-                    <button class="deliveryCard active" id="pickupOption" aria-pressed="true">
-                        <div class="deliveryIcon">🏬</div>
-
-                        <div>
-                            <h4>Click & Collect</h4>
-                            <p>Disponible entre May 19 y May 22</p>
-                        </div>
-
-                        <!-- <span class="check">✓</span> -->
-                    </div>
-
-                    <button class="deliveryCard" id="homeOption" aria-pressed="false">
-                        <div class="deliveryIcon">🚚</div>
-
-                        <div>
-                            <h4>Recibe a domicilio</h4>
-                            <p>Envío gratis a todo el país</p>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="storeInfo">
-                    <p><strong>Entrega en:</strong> Liverpool Monterrey Valle</p>
-                    <!-- <a href="#">Cambiar tienda</a> -->
-                    <button class="changeStoreBtn"> Cambiar tienda</button>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-</div>
-
-<div class="buySticky" id="buySticky">
-    <div class="buyContent">
-
-        <div class="buyButtons">
-            <button class="btnPrimary">Agregar a la bolsa</button>
-            <button class="btnSecondary" id="buyNowBtn">
-                Comprar ahora
-            </button>
-        </div>
-    </div>
-</div>
-
-<!-- RESEÑAS -->
-<section class="reviewsSection">
-
-    <div class="reviewsHeader">
-        <h2>Opiniones de clientes</h2>
-
-        <div class="reviewScore">
-            <span class="bigScore">4.8</span>
-            <div>
-                <div class="starsReview">★★★★★</div>
-                <p>Basado en 248 reseñas</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="reviewsGrid">
-
-        <div class="reviewCard">
-            <div class="reviewTop">
-                <strong>Sofía M.</strong>
-                <span>Hace 2 días</span>
-            </div>
-
-            <div class="starsReview">★★★★★</div>
-
-            <p>
-                Súper cómodos. Llegaron antes de lo esperado y el color
-                se ve exactamente igual que en las fotos.
+    <div id="deliveryContentStatic">
+        <div class="deliveryCard active" style="border: 1px solid #d81b81; padding: 15px; border-radius: 8px; background-color: #fff; margin-top: 15px;">
+            <h3 style="color: #333; margin-bottom: 5px; font-size: 16px;">
+                📍 Envío a domicilio
+            </h3>
+            <p style="color: #666; font-size: 14px; line-height: 1.4; margin: 0;">
+                [Ubicacion del usuario] <br>
             </p>
         </div>
-
-        <div class="reviewCard">
-            <div class="reviewTop">
-                <strong>Daniel R.</strong>
-                <span>Hace 1 semana</span>
-            </div>
-
-            <div class="starsReview">★★★★☆</div>
-
-            <p>
-                La calidad está muy bien por el precio. Me gustó mucho
-                la opción de recoger en tienda.
-            </p>
-        </div>
-
-        <div class="reviewCard">
-            <div class="reviewTop">
-                <strong>Valeria T.</strong>
-                <span>Hace 5 días</span>
-            </div>
-
-            <div class="starsReview">★★★★★</div>
-
-            <p>
-                El proceso de compra fue muy rápido y la página se siente
-                súper fácil de usar desde el celular.
-            </p>
-        </div>
-
     </div>
 
 </section>
+
+        <!-- PAGO -->
+        <section class="checkoutCard">
+
+            <h2 class="checkoutTitle">
+                2. Forma de pago
+            </h2>
+
+            <div class="paymentMethods">
+
+                <button class="paymentBtn active">
+                    💳 Tarjeta
+                </button>
+
+                <button class="paymentBtn">
+                    <img src="imagenes/paypal.png" width="70">
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- PRODUCTOS -->
+        <section class="checkoutCard">
+
+            <h2 class="checkoutTitle">
+                3. Artículos
+            </h2>
+
+            <div class="bagItem">
+
+                <img src="imagenes/aretes.png" alt="producto">
+
+                <div class="wishlistInfo">
+
+                    <h3>
+                        Aretes DKNY con acabado pavé cristal
+                    </h3>
+
+                    <p class="wishlistDate">
+                        Color rosa · Acero inoxidable
+                    </p>
+
+                    <br>
+
+                    <div class="price-container">
+                        $749<sup>00</sup>
+                    </div>
+
+                    <br>
+
+                    <!-- LOADING FAKE -->
+                    <!--
+                    <div class="loadingBar"></div>
+                    -->
+
+                    <!-- PROMOCION -->
+                    <button class="deliveryCard active">
+
+                        <h3>✨ Pago único</h3>
+
+                        <p>
+                            50% de descuento aplicado automáticamente.
+                        </p>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <!-- DERECHA -->
+    <aside class="checkoutSummary">
+
+        <h2 class="checkoutTitle">
+            Resumen
+        </h2>
+
+        <div class="summaryRow">
+            <span>Subtotal</span>
+            <span>$749.00</span>
+        </div>
+
+        <div class="summaryRow">
+            <span>Envío</span>
+            <span>Gratis</span>
+        </div>
+
+        <div class="summaryRow">
+            <span>Descuento</span>
+            <span>-$0.00</span>
+        </div>
+
+        <div class="summaryTotal">
+            <span>Total</span>
+            <span>$749.00</span>
+        </div>
+
+        <button class="checkoutBtn" id="finishPurchaseBtn">
+            Finalizar compra
+        </button>
+
+    </aside>
+
+</div>
 
 <!-- FOOTER -->
 <footer class="footer">
@@ -381,6 +355,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/simple-keyboard@latest/build/index.js"></script>
 <script src="script.js"></script>
-<script src="LiverpoolLMAD-main/producto.js"></script>
+<script src="LiverpoolLMAD-main/checkout.js"></script>
+
 </body>
 </html>

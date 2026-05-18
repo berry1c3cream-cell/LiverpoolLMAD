@@ -1950,6 +1950,7 @@ body.login-page {
 
 /* Microinteraccion para la bolsa */
 
+/* 1. ANIMACIÓN DE REBOTE (Tu código original) */
 @keyframes popIcon {
     0% { transform: scale(1); }
     30% { transform: scale(1.4) rotate(-8deg); }
@@ -1958,34 +1959,53 @@ body.login-page {
     100% { transform: scale(1); }
 }
 
-.pop-bag {
+/* Clases que activa JavaScript al hacer clic */
+.pop-bag, .pop-heart {
     display: inline-block !important;
     animation: popIcon 0.5s ease-in-out !important;
 }
 
-#bagBadge {
+/* Forzar que las imágenes de los iconos permitan transformaciones */
+#bagImg, #heartImg {
+    display: inline-block;
+}
+
+/* 2. ANCLAJE RELATIVO (Para que el círculo no se vaya a la esquina) */
+.iconBtn {
+    position: relative; /* Bloquea el círculo dentro del botón */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 3. ESTILOS DE LOS CÍRCULOS NOTIFICADORES (Unificados) */
+#bagBadge, #heartBadge {
     position: absolute;
-    top: -5px;
-    right: -5px;
+    top: -5px;     /* Ajusta qué tan arriba queda el círculo */
+    right: -5px;   /* Ajusta qué tan a la derecha queda el círculo */
     background-color: white;
     color: #d81b81;
     font-size: 11px;
     font-weight: bold;
-    width: 15px;
-    height: 15px;
+    width: 16px;   /* Un pixel extra para centrar mejor el número */
+    height: 16px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     border: 1px solid #d81b81;
+    z-index: 10;   /* Asegura que flote sobre la imagen */
+    
+    /* Estados de animación iniciales (Tu código original) */
     opacity: 0;
     transform: scale(0);
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
     pointer-events: none;
 }
 
-#bagBadge.show-badge {
+/* Estado activo cuando agregas a la bolsa o wishlist */
+#bagBadge.show-badge, #heartBadge.show-badge {
     opacity: 1;
     transform: scale(1);
 }

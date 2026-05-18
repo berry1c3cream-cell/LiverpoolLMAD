@@ -1,84 +1,80 @@
-// carousel
+// ==========================================
+// 1. CAROUSEL
+// ==========================================
 const wrappers = document.querySelectorAll(".carousel-wrapper");
 
 wrappers.forEach(wrapper => {
-
     const carousel = wrapper.querySelector(".carousel");
     const leftBtn = wrapper.querySelector(".left");
     const rightBtn = wrapper.querySelector(".right");
 
     /* botones */
-    rightBtn.addEventListener("click", () => {
-        carousel.scrollBy({
-            left:320,
-            behavior:"smooth"
+    rightBtn?.addEventListener("click", () => {
+        carousel?.scrollBy({
+            left: 320,
+            behavior: "smooth"
         });
     });
 
-    leftBtn.addEventListener("click", () => {
-        carousel.scrollBy({
-            left:-320,
-            behavior:"smooth"
+    leftBtn?.addEventListener("click", () => {
+        carousel?.scrollBy({
+            left: -320,
+            behavior: "smooth"
         });
     });
 
     /* teclado */
-    carousel.addEventListener("keydown", (e) => {
-
-        if(e.key === "ArrowRight"){
+    carousel?.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowRight") {
             e.preventDefault();
-
             carousel.scrollBy({
-                left:320,
-                behavior:"smooth"
+                left: 320,
+                behavior: "smooth"
             });
         }
 
-        if(e.key === "ArrowLeft"){
+        if (e.key === "ArrowLeft") {
             e.preventDefault();
-
             carousel.scrollBy({
-                left:-320,
-                behavior:"smooth"
+                left: -320,
+                behavior: "smooth"
             });
         }
-
     });
-
 });
 
-
-// sticky buy bar
+// ==========================================
+// 2. STICKY BUY BAR
+// ==========================================
 const sticky = document.getElementById("buySticky");
 const reviews = document.getElementById("reviews");
 
-if(sticky && reviews){
-
-window.addEventListener("scroll", () => {
-
-const rect = reviews.getBoundingClientRect();
-
-if(rect.top <= 120){
-    sticky.classList.add("stickTop");
-}else{
-    sticky.classList.remove("stickTop");
+if (sticky && reviews) {
+    window.addEventListener("scroll", () => {
+        const rect = reviews.getBoundingClientRect();
+        if (rect.top <= 120) {
+            sticky.classList.add("stickTop");
+        } else {
+            sticky.classList.remove("stickTop");
+        }
+    });
 }
 
-});
-
-}
-
-
-// fade in
+// ==========================================
+// 3. FADE IN & FADE OUT
+// ==========================================
 window.addEventListener("DOMContentLoaded", () => {
     document.body.classList.add("loaded");
 });
 
-
-// fade out
 document.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", e => {
-        if(link.href){
+        // CORRECCIÓN: Si el enlace es una microinteracción o apunta a la misma página, ignorar fade-out
+        if (link.classList.contains("iconBtn") || link.classList.contains("miCuentaLink") || link.getAttribute("href") === "#") {
+            return;
+        }
+
+        if (link.href && !link.href.includes("#")) {
             e.preventDefault();
             const url = link.href;
 
@@ -92,295 +88,141 @@ document.querySelectorAll("a").forEach(link => {
     });
 });
 
-// cargar años dinámicamente
+// ==========================================
+// 4. CARGAR AÑOS DINÁMICAMENTE
+// ==========================================
 window.addEventListener("DOMContentLoaded", () => {
-
     const select = document.getElementById("AnioSelect");
-
-    if(select){
-
-        for(let year = 1927; year <= 2026; year++){
-
+    if (select) {
+        for (let year = 1927; year <= 2026; year++) {
             const option = document.createElement("option");
-
             option.value = year;
             option.textContent = year;
-
             select.appendChild(option);
         }
     }
-
 });
 
-//Virtual keyboard
+// ==========================================
+// 5. ACCESIBILIDAD (CORREGIDO CONTRA BLOQUEOS NULL)
+// ==========================================
+const accBtn = document.getElementById("accessibilityBtn");
+const accessPanel = document.getElementById("accessPanel");
+const darkToggle = document.getElementById("darkToggle");
 
-if(window.SimpleKeyboard){
+// Solo activa los eventos si AMBOS elementos existen en el HTML actual
+if (accBtn && accessPanel) {
+    accBtn.addEventListener("click", () => {
+        accessPanel.classList.toggle("show");
 
-    const Keyboard = window.SimpleKeyboard.default;
-
-    let currentInput = null;
-
-    document.querySelectorAll("input").forEach(input => {
-
-        input.addEventListener("focus", () => {
-            currentInput = input;
-        });
-
-    });
-
-    const keyboard = new Keyboard(".simple-keyboard", {
-
-        onChange: inputText => {
-
-            if(currentInput){
-                currentInput.value = inputText;
-            }
-
+        /* mover foco al primer input */
+        if (accessPanel.classList.contains("show")) {
+            const firstInput = accessPanel.querySelector("input");
+            firstInput?.focus();
         }
 
+        const expanded = accessPanel.classList.contains("show");
+        accBtn.setAttribute("aria-expanded", expanded);
+    });
+
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+            accessPanel.classList.remove("show");
+            accBtn.focus();
+        }
     });
 }
 
-const accBtn = document.getElementById("accessibilityBtn");
-const accPanel = document.getElementById("accessPanel");
-const darkToggle = document.getElementById("darkToggle");
-const keyboardToggle = document.getElementById("keyboardToggle");
-const keyboardContainer = document.querySelector(".simple-keyboard");
-
-console.log(keyboardContainer);
-console.log(keyboardContainer.classList);
-
-/* ocultar al inicio */
-keyboardContainer?.classList.remove("show");
-
-keyboardToggle?.addEventListener("change", () => {
-
-    console.log("toggle!");
-
-    keyboardContainer?.classList.toggle(
-        "show",
-        keyboardToggle.checked
-    );
-
-});
-
-
-
-
-accBtn.addEventListener("click", () => {
-
-    accPanel.classList.toggle("show");
-
-    /* mover foco al primer input */
-    if(accPanel.classList.contains("show")){
-
-        const firstInput = accPanel.querySelector("input");
-
-        firstInput.focus();
-    }
-
-});
-
-document.addEventListener("keydown", (e) => {
-
-    if(e.key === "Escape"){
-
-        accPanel.classList.remove("show");
-
-        accBtn.focus();
-    }
-
-});
-
-const expanded =
-accPanel.classList.contains("show");
-
-accBtn.setAttribute(
-"aria-expanded",
-expanded
-);
-
-
-// cargar preferencia guardada
-if(localStorage.getItem("darkMode") === "true"){
+// Cargar preferencia guardada de Dark Mode
+if (localStorage.getItem("darkMode") === "true") {
     document.body.classList.add("dark");
-    if(darkToggle) darkToggle.checked = true;
+    if (darkToggle) darkToggle.checked = true;
 }
 
-
-// toggle dark mode
+// Toggle Dark Mode
 darkToggle?.addEventListener("change", () => {
-
-document.body.classList.toggle("dark");
-
-const isDark = document.body.classList.contains("dark");
-
-localStorage.setItem("darkMode", isDark);
-
+    document.body.classList.toggle("dark");
+    const isDark = document.body.classList.contains("dark");
+    localStorage.setItem("darkMode", isDark);
 });
 
-// toggle letra grande
+// Toggle Letra Grande
 const sizeFontToggle = document.getElementById("sizeFontToggle");
 
-// cargar
-if(localStorage.getItem("bigFont") === "true"){
-document.body.classList.add("bigFont");
-sizeFontToggle.checked = true;
+if (localStorage.getItem("bigFont") === "true") {
+    document.body.classList.add("bigFont");
+    if (sizeFontToggle) sizeFontToggle.checked = true;
 }
 
-// toggle
 sizeFontToggle?.addEventListener("change", () => {
-document.body.classList.toggle("bigFont");
-
-localStorage.setItem(
-"bigFont",
-document.body.classList.contains("bigFont")
-);
+    document.body.classList.toggle("bigFont");
+    localStorage.setItem("bigFont", document.body.classList.contains("bigFont"));
 });
 
-//Tabs
-//const tabs = document.querySelectorAll(".tabAlt")
-//const contents = document.querySelectorAll(".tabContent")
+// ==========================================
+// 6. MENÚ DESPLEGABLE
+// ==========================================
+const catBtn = document.querySelector(".btn-cat");
+const menu = document.getElementById("menu");
+const content = document.getElementById("content");
+const overlay = document.querySelector(".overlay");
 
-//tabs.forEach(tab=>{
-//tab.addEventListener("click",()=>{
+catBtn?.addEventListener("click", () => {
+    menu?.classList.toggle("active");
+    content?.classList.toggle("shift");
+    overlay?.classList.toggle("show");
+});
 
-//tabs.forEach(t=>t.classList.remove("active"))
-//contents.forEach(c=>c.classList.remove("active"))
+overlay?.addEventListener("click", () => {
+    menu?.classList.remove("active");
+    content?.classList.remove("shift");
+    overlay.classList.remove("show");
+});
 
-//tab.classList.add("active")
+// ==========================================
+// 7. TABS
+// ==========================================
+const tabs = document.querySelectorAll(".tabAlt");
+const contents = document.querySelectorAll(".tabContent");
 
-//document
-//.getElementById(tab.dataset.tab)
-//.classList.add("active")
+tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+        tabs.forEach(t => t.classList.remove("active"));
+        contents.forEach(c => c.classList.remove("active"));
 
-//})
-//})
+        tab.classList.add("active");
+        document.getElementById(tab.dataset.tab)?.classList.add("active");
+    });
+});
 
-// abrir tab desde URL
+// Abrir tab desde URL
 const params = new URLSearchParams(window.location.search);
 const activeTab = params.get("tab");
 
-if(activeTab){
+if (activeTab) {
+    tabs.forEach(t => t.classList.remove("active"));
+    contents.forEach(c => c.classList.remove("active"));
 
-    tabs.forEach(t => {
-        t.classList.remove("active");
-        t.setAttribute("aria-selected", "false");
-    });
+    const targetTab = document.querySelector(`.tabAlt[data-tab="${activeTab}"]`);
+    const targetContent = document.getElementById(activeTab);
 
-    contents.forEach(c => {
-        c.classList.remove("active");
-    });
-
-    // buscar por aria-controls
-    const targetTab = document.querySelector(
-        `.tabAlt[aria-controls="${activeTab}"]`
-    );
-
-    const targetContent =
-    document.getElementById(activeTab);
-
-    if(targetTab && targetContent){
-
+    if (targetTab && targetContent) {
         targetTab.classList.add("active");
-
-        targetTab.setAttribute(
-            "aria-selected",
-            "true"
-        );
-
         targetContent.classList.add("active");
     }
 }
 
-// faq
+// FAQ
 document.querySelectorAll(".faqQuestion").forEach(q => {
-
     q.addEventListener("click", () => {
-
         const item = q.parentElement;
-
-        item.classList.toggle("active");
-
-        // aria
-        const expanded =
-        q.getAttribute("aria-expanded") === "true";
-
-        q.setAttribute(
-            "aria-expanded",
-            !expanded
-        );
-
+        item?.classList.toggle("active");
     });
-
 });
 
-const tabs = document.querySelectorAll(".tabAlt");
-const contents = document.querySelectorAll(".tabContent");
-
-tabs.forEach((tab, index) => {
-
-    // CLICK
-    tab.addEventListener("click", () => {
-
-        // limpiar tabs
-        tabs.forEach(t => {
-            t.classList.remove("active");
-            t.setAttribute("aria-selected", "false");
-        });
-
-        // limpiar contenidos
-        contents.forEach(c => {
-            c.classList.remove("active");
-        });
-
-        // activar actual
-        tab.classList.add("active");
-        tab.setAttribute("aria-selected", "true");
-
-        // mostrar panel correcto
-        const target = tab.getAttribute("aria-controls");
-
-        document
-        .getElementById(target)
-        .classList.add("active");
-    });
-
-    // TECLADO
-    tab.addEventListener("keydown", (e) => {
-
-        // derecha
-        if(e.key === "ArrowRight"){
-
-            e.preventDefault();
-
-            const next =
-            tabs[(index + 1) % tabs.length];
-
-            next.focus();
-            next.click();
-        }
-
-        // izquierda
-        if(e.key === "ArrowLeft"){
-
-            e.preventDefault();
-
-            const prev =
-            tabs[
-                (index - 1 + tabs.length)
-                % tabs.length
-            ];
-
-            prev.focus();
-            prev.click();
-        }
-
-    });
-
-});
-
-/* Pequeña microinteraccion en la bolsa */
+// ==========================================
+// 8. MICROINTERACCIÓN EN LA BOLSA
+// ==========================================
 const btnPrimary = document.querySelector(".btnPrimary");
 const bagImg = document.getElementById("bagImg");
 const bagBadge = document.getElementById("bagBadge");
@@ -388,7 +230,7 @@ const bagBadge = document.getElementById("bagBadge");
 if (btnPrimary && bagImg) {
     btnPrimary.addEventListener("click", () => {
         bagImg.classList.add("pop-bag");
-        
+
         if (bagBadge) {
             bagBadge.classList.add("show-badge");
         }
@@ -399,8 +241,9 @@ if (btnPrimary && bagImg) {
     });
 }
 
-/* Microinteracción en el corazon  */
-
+// ==========================================
+// 9. MICROINTERACCIÓN EN EL CORAZÓN
+// ==========================================
 const wishlistButtons = document.querySelectorAll("button");
 const heartImg = document.getElementById("heartImg");
 const heartBadge = document.getElementById("heartBadge");
@@ -421,8 +264,9 @@ wishlistButtons.forEach(btn => {
     }
 });
 
-/* Formulario de compra */
-
+// ==========================================
+// 10. FORMULARIO DE COMPRA (CHECKOUT)
+// ==========================================
 const btnBuyProduct = document.querySelector(".btnSecondary");
 const btnBuyCart = document.querySelector(".bagCheckoutBtn");
 const checkoutPanel = document.getElementById("checkoutPanel");
@@ -431,130 +275,31 @@ const closePanelBtn = document.getElementById("closePanelBtn");
 const closePanelBtnX = document.getElementById("closePanelBtnX");
 
 function openCheckout() {
-
     checkoutPanel?.classList.add("active");
     checkoutOverlay?.classList.add("active");
-
     document.body.classList.add("modal-open");
 
-    const firstInput =
-    checkoutPanel?.querySelector("input");
-
+    const firstInput = checkoutPanel?.querySelector("input");
     firstInput?.focus();
 }
 
 function closeCheckout() {
-
     checkoutPanel?.classList.remove("active");
     checkoutOverlay?.classList.remove("active");
-
     document.body.classList.remove("modal-open");
 }
 
-/* abrir */
-
+/* Abrir */
 btnBuyProduct?.addEventListener("click", openCheckout);
-
 btnBuyCart?.addEventListener("click", openCheckout);
 
-/* cerrar */
-
-closePanelBtn?.addEventListener(
-"click",
-closeCheckout
-);
-
-closePanelBtnX?.addEventListener(
-"click",
-closeCheckout
-);
-
-checkoutOverlay?.addEventListener(
-"click",
-closeCheckout
-);
+/* Cerrar */
+closePanelBtn?.addEventListener("click", closeCheckout);
+closePanelBtnX?.addEventListener("click", closeCheckout);
+checkoutOverlay?.addEventListener("click", closeCheckout);
 
 document.addEventListener("keydown", (e) => {
-
-    if(
-        e.key === "Escape" &&
-        checkoutPanel?.classList.contains("active")
-    ){
-
+    if (e.key === "Escape" && checkoutPanel?.classList.contains("active")) {
         closeCheckout();
-    }
-});
-
-
-// ==========================================
-// VALIDACIÓN Y REGISTRO - CREAR CUENTA
-// ==========================================
-document.addEventListener("DOMContentLoaded", () => {
-    const passwordInput = document.getElementById("regPassword");
-    const emailInput = document.getElementById("regEmail");
-    const btnRegister = document.getElementById("btnRegister");
-
-    const paramLength = document.getElementById("paramLength");
-    const paramMayus = document.getElementById("paramMayus");
-    const paramNumber = document.getElementById("paramNumber");
-    const paramSpecial = document.getElementById("paramSpecial");
-
-    // Verificar si estamos en la página de Crear Cuenta
-    if (passwordInput && btnRegister) {
-        
-        // Escuchar cada que el usuario escribe en la contraseña
-        passwordInput.addEventListener("input", () => {
-            const val = passwordInput.value;
-
-            // 1. Mínimo 8 caracteres
-            if (val.length >= 8) paramLength.classList.add("valid");
-            else paramLength.classList.remove("valid");
-
-            // 2. Una mayúscula
-            if (/[A-Z]/.test(val)) paramMayus.classList.add("valid");
-            else paramMayus.classList.remove("valid");
-
-            // 3. Un número
-            if (/[0-9]/.test(val)) paramNumber.classList.add("valid");
-            else paramNumber.classList.remove("valid");
-
-            // 4. Signo especial
-            if (/[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(val)) paramSpecial.classList.add("valid");
-            else paramSpecial.classList.remove("valid");
-        });
-
-        // Evento al dar clic en CREAR CUENTA
-        btnRegister.addEventListener("click", () => {
-            const isLengthValid = paramLength.classList.contains("valid");
-            const isMayusValid = paramMayus.classList.contains("valid");
-            const isNumberValid = paramNumber.classList.contains("valid");
-            const isSpecialValid = paramSpecial.classList.contains("valid");
-
-            if (!emailInput.value) {
-                alert("Por favor ingresa un correo electrónico.");
-                return;
-            }
-
-            if (!isLengthValid || !isMayusValid || !isNumberValid || !isSpecialValid) {
-                alert("Tu contraseña aún no cumple con todos los filtros de seguridad.");
-                return;
-            }
-
-            // Crear el objeto del usuario nuevo
-            const nuevoUsuario = {
-                correo: emailInput.value,
-                contrasena: passwordInput.value
-            };
-
-            // Guardar en el LocalStorage (Backend Falso)
-            let usuariosRegistrados = JSON.parse(localStorage.getItem("db_usuarios")) || [];
-            usuariosRegistrados.push(nuevoUsuario);
-            localStorage.setItem("db_usuarios", JSON.stringify(usuariosRegistrados));
-
-            alert("¡Cuenta creada exitosamente en el backend falso!");
-            
-            // Forzar redirección directa
-            window.location.href = "Campos.html";
-        });
     }
 });

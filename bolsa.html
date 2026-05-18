@@ -52,16 +52,16 @@
 
     <div class="rightIcons">
 
-        <a 
-        href="miCuenta.html"
-        class="iconBtn miCuentaLink"
-        aria-label="Ir a Mi cuenta"
+<a 
+    href="miCuenta.html"
+    class="iconBtn miCuentaLink"
+    aria-label="Ir a Mi cuenta"
+    >
+        <img 
+        src="icons/user.svg"
+        alt=""
         >
-            <img 
-            src="icons/user.svg"
-            alt=""
-            >
-        </a>
+    </a>
 
         <!-- <span class="iconBtn">
             <a href="miCuenta.html" class="miCuentaLink">
@@ -69,16 +69,18 @@
             </a>
         </span> -->
 
-        <a 
-        href="miCuenta.html?tab=wishlist"
-        class="iconBtn miCuentaLink"
-        aria-label="Ir a Whislist"
+<a 
+    href="miCuenta.html?tab=wishlist"
+    class="iconBtn miCuentaLink"
+    aria-label="Ir a Whislist"
+    >
+        <img 
+        src="icons/heart.svg"
+        id="heartImg"
+        alt=""
         >
-            <img 
-            src="icons/heart.svg"
-            alt=""
-            >
-        </a>
+        <span id="heartBadge">!</span>
+    </a>
 
         <!-- <span class="iconBtn">
             <a href="miCuenta.html?tab=wishlist" class="miCuentaLink">
@@ -86,16 +88,18 @@
             </a>
         </span> -->
 
-        <a 
-        href="bolsa.html"
-        class="iconBtn miCuentaLink"
-        aria-label="Ir a la bolsa"
+ <a 
+    href="bolsa.html"
+    class="iconBtn miCuentaLink"
+    aria-label="Ir a la bolsa"
+    >
+        <img 
+        src="icons/bag.svg"
+        id="bagImg"
+        alt=""
         >
-            <img 
-            src="icons/bag.svg"
-            alt=""
-            >
-        </a>
+        <span id="bagBadge">!</span>
+    </a>
         
         <!-- <span class="iconBtn">
             <a href="bolsa.html" class="miCuentaLink">
@@ -103,18 +107,18 @@
             </a>
         </span> -->
 
-        <button 
-            id="accessibilityBtn" 
-            class="iconBtn"
-            aria-label="Abrir opciones de accesibilidad"
-            aria-expanded="false"
-            aria-controls="accessPanel"
+<button 
+        id="accessibilityBtn" 
+        class="iconBtn"
+        aria-label="Abrir opciones de accesibilidad"
+        aria-expanded="false"
+        aria-controls="accessPanel"
+    >
+        <img 
+        src="icons/accessibility.svg"
+        alt="Accesibilidad"
         >
-            <img 
-            src="icons/accessibility.svg"
-            alt="Accesibilidad"
-            >
-        </button>
+    </button>
 
     </div>
 
@@ -376,7 +380,9 @@
 
         <p class="terms-text">Al presionar "Usar esta dirección" estás aceptando nuestros <a href="#">Términos y Condiciones</a></p>
         
-        <button class="btn-submit-dir">Usar esta dirección</button>
+        <a href="Checkout-linea.html" style="text-decoration: none; display: block;">
+    <button type="button" class="btn-submit-dir" style="width: 100%;">Usar esta dirección</button>
+</a>
     </div>
 </div>
 
