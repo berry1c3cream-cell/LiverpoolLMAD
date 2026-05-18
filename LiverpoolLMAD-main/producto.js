@@ -48,3 +48,52 @@ buyNowBtn.addEventListener("click", () => {
     "checkout.html";
 
 });
+
+const deliveryOptions =
+document.querySelectorAll(".deliveryCard");
+
+deliveryOptions.forEach((option, index) => {
+
+    option.addEventListener("click", () => {
+
+        deliveryOptions.forEach(card => {
+            card.classList.remove("active");
+            card.setAttribute("aria-pressed", "false");
+        });
+
+        option.classList.add("active");
+        option.setAttribute("aria-pressed", "true");
+    });
+
+    option.addEventListener("keydown", (e) => {
+
+        if(e.key === "ArrowRight"){
+
+            e.preventDefault();
+
+            const next =
+            deliveryOptions[
+                (index + 1) % deliveryOptions.length
+            ];
+
+            next.focus();
+            next.click();
+        }
+
+        if(e.key === "ArrowLeft"){
+
+            e.preventDefault();
+
+            const prev =
+            deliveryOptions[
+                (index - 1 + deliveryOptions.length)
+                % deliveryOptions.length
+            ];
+
+            prev.focus();
+            prev.click();
+        }
+
+    });
+
+});

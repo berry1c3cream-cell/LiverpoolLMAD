@@ -131,6 +131,7 @@ body.fade-out{
     gap:5px;
     cursor:pointer;
     font-weight: bold;
+    color: var(--bg);
 }
 
 .btn-cat:hover{
@@ -847,15 +848,19 @@ transform:translateX(22px);
     flex-wrap:wrap;
 }
 
-.tab{
-    border:1px solid var(--header);
-    padding:8px 18px;
-    border-radius:20px;
-    cursor:pointer;
-    color:var(--header);
-    font-size:14px;
-    background:transparent;
-    transition:0.2s ease;
+.tab {
+
+    padding: 10px 20px;
+
+    border-radius: 999px;
+
+    transition: 0.2s;
+}
+
+.tab.active {
+
+    background: var(--header);
+    color: white;
 }
 
 .tab:hover{
@@ -863,12 +868,13 @@ transform:translateX(22px);
     color:white;
 }
 
-.tab.active{
-    background:var(--header);
-    color:white;
+button {
+
+    appearance: none;
+    border: none;
+    background: none;
+    font: inherit;
 }
-
-
 /* ====== FILTROS ====== */
 .filters{
     margin:10px 0 20px 0;
@@ -964,6 +970,33 @@ transform:translateX(22px);
 /* visible */
 .sidebar.active{
     left:0;
+}
+
+.sidebarItem {
+
+    display: block;
+    width: 100%;
+
+    text-align: left;
+
+    padding: 10px 14px;
+
+    border-radius: 10px;
+
+    transition: 0.2s;
+
+    color: var(--text);
+}
+
+.sidebarItem:hover {
+
+    background: #f3f3f3;
+}
+
+.sidebarItem.active {
+
+    color: var(--header);
+    font-weight: bold;
 }
 
 .content{

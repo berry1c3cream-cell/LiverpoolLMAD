@@ -7,9 +7,12 @@
 <link rel="stylesheet" href="estiloLiverpool.css">
 <link rel="stylesheet" href="css/producto.css">
 </head>
+<a href="#mainContent" class="skipLink">
+    Saltar al contenido principal
+</a>
 <body>
 
-<!-- TOP BAR -->
+<!-- TOPBAR -->
 <header class="topbar">
     <div>
         <span>Mi tienda</span>
@@ -20,8 +23,9 @@
     </div>
 </header>
 
-<!-- HEADER -->
-<div class="header">
+<!-- HEADER PRINCIPAL -->
+<nav class="header">
+
     <a href="home.html" class="logo">Liverpool</a>
 
     <div class="btn-cat">
@@ -31,42 +35,86 @@
     </div>
 
     <div class="search">
-        <input type="text" placeholder="Search">
+        <label for="searchBar" class="sr-only">
+            Buscar productos
+        </label>
+
+        <input 
+        type="text"
+        id="searchBar"
+        placeholder="Buscar productos..."
+        >
     </div>
 
     <div class="rightIcons">
 
-        <span class="iconBtn">
+        <a 
+        href="miCuenta.html"
+        class="iconBtn miCuentaLink"
+        aria-label="Ir a Mi cuenta"
+        >
+            <img 
+            src="icons/user.svg"
+            alt=""
+            >
+        </a>
+
+        <!-- <span class="iconBtn">
             <a href="miCuenta.html" class="miCuentaLink">
                 <img src="icons/user.svg">
             </a>
-        </span>
-
-        <!--<span class="iconBtn">
-            <a href="miCuenta.html" class="miCuentaLink">
-                <span class="accountLabel">Mi cuenta</span>
-            </a>
         </span> -->
 
-        <span class="iconBtn">
+        <a 
+        href="miCuenta.html?tab=wishlist"
+        class="iconBtn miCuentaLink"
+        aria-label="Ir a Whislist"
+        >
+            <img 
+            src="icons/heart.svg"
+            alt=""
+            >
+        </a>
+
+        <!-- <span class="iconBtn">
             <a href="miCuenta.html?tab=wishlist" class="miCuentaLink">
                 <img src="icons/heart.svg">
             </a>
-        </span>
+        </span> -->
 
-        <span class="iconBtn">
-    <a href="bolsa.html" class="miCuentaLink" style="position: relative;">
-        <img src="icons/bag.svg" id="bagImg">
-        <span id="bagBadge">!</span>
-    </a>
-        </span>
+        <a 
+        href="bolsa.html"
+        class="iconBtn miCuentaLink"
+        aria-label="Ir a la bolsa"
+        >
+            <img 
+            src="icons/bag.svg"
+            alt=""
+            >
+        </a>
+        
+        <!-- <span class="iconBtn">
+            <a href="bolsa.html" class="miCuentaLink">
+                <img src="icons/bag.svg">
+            </a>
+        </span> -->
 
-        <span id="accessibilityBtn" class="iconBtn">
-        <img src="icons/accessibility.svg">
-        </span>
+        <button 
+            id="accessibilityBtn" 
+            class="iconBtn"
+            aria-label="Abrir opciones de accesibilidad"
+            aria-expanded="false"
+            aria-controls="accessPanel"
+        >
+            <img 
+            src="icons/accessibility.svg"
+            alt="Accesibilidad"
+            >
+        </button>
 
     </div>
-</div>
+
+</nav>
 
 <div class="accessPanel" id="accessPanel">
 
@@ -93,7 +141,7 @@
 </div>
 
 <!-- PRODUCTO -->
-<div class="productPage">
+<div class="productPage" id="mainContent">
 
     <h1 class="productTitle">Nombre del producto</h1>
 
@@ -101,7 +149,7 @@
 
         <!-- IMAGEN -->
         <div class="productImage">
-            <img src="imagenes/tenis.png">
+            <img src="imagenes/tenis.png" alt="Tenis blancos deportivos">
         </div>
 
         <!-- INFO -->
@@ -124,9 +172,9 @@
             <div class="qty">
                 <label>Cantidad:</label>
                 <div class="qtyBox">
-                    <button>-</button>
+                    <button aria-label="Disminuir cantidad">-</button>
                     <span>1</span>
-                    <button>+</button>
+                    <button aria-label="Aumentar cantidad">+</button>
                 </div>
             </div>
 
@@ -141,7 +189,7 @@
 
                 <div class="deliveryOptions">
 
-                    <div class="deliveryCard active" id="pickupOption">
+                    <button class="deliveryCard active" id="pickupOption" aria-pressed="true">
                         <div class="deliveryIcon">🏬</div>
 
                         <div>
@@ -149,10 +197,10 @@
                             <p>Disponible entre May 19 y May 22</p>
                         </div>
 
-                        <span class="check">✓</span>
+                        <!-- <span class="check">✓</span> -->
                     </div>
 
-                    <div class="deliveryCard" id="homeOption">
+                    <button class="deliveryCard" id="homeOption" aria-pressed="false">
                         <div class="deliveryIcon">🚚</div>
 
                         <div>
@@ -166,7 +214,7 @@
                 <div class="storeInfo">
                     <p><strong>Entrega en:</strong> Liverpool Monterrey Valle</p>
                     <!-- <a href="#">Cambiar tienda</a> -->
-                    <p><strong>Cambiar tienda</strong></p>
+                    <button class="changeStoreBtn"> Cambiar tienda</button>
                 </div>
 
             </div>

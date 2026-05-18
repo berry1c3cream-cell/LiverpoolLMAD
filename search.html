@@ -17,76 +17,121 @@
 <body>
 
 <!-- TOPBAR -->
-
 <header class="topbar">
-    <div>Mi tienda</div>
-    <div>Otros servicios | Mesa de regalos | Mi crédito</div>
+    <div>
+        <span>Mi tienda</span>
+    </div>
+
+    <div>
+        <div>Otros servicios | Mesa de regalos | Mi crédito</div>
+    </div>
 </header>
 
-<!-- HEADER -->
-
+<!-- HEADER PRINCIPAL -->
 <nav class="header">
 
-<a href="home.html" class="logo">Liverpool</a>
+    <a href="home.html" class="logo">Liverpool</a>
 
-<div class="btn-cat" onclick="toggleMenu()">
-    ☰ Categorías
-</div>
+    <button class="btn-cat" id="menuToggle" aria-expanded="false" aria-controls="menu">
+        ☰ Categorías
+    </button>
 
-<div class="search">
-    <input type="text" placeholder="Buscar productos...">
-</div>
+    <div class="search">
+        <label for="searchBar" class="sr-only">
+            Buscar productos
+        </label>
 
-<div class="rightIcons">
+        <input 
+        type="text"
+        id="searchBar"
+        placeholder="Buscar productos..."
+        >
+    </div>
 
-    <span class="iconBtn">
-        <a href="miCuenta.html" class="miCuentaLink">
-            <img src="icons/user.svg">
+    <div class="rightIcons">
+
+        <a 
+        href="miCuenta.html"
+        class="iconBtn miCuentaLink"
+        aria-label="Ir a Mi cuenta"
+        >
+            <img 
+            src="icons/user.svg"
+            alt=""
+            >
         </a>
-    </span>
 
-        <!--<span class="iconBtn">
+        <!-- <span class="iconBtn">
             <a href="miCuenta.html" class="miCuentaLink">
-                <span class="accountLabel">Mi cuenta</span>
+                <img src="icons/user.svg">
             </a>
         </span> -->
 
-    <span class="iconBtn">
-        <a href="miCuenta.html?tab=wishlist" class="miCuentaLink">
-            <img src="icons/heart.svg">
+        <a 
+        href="miCuenta.html?tab=wishlist"
+        class="iconBtn miCuentaLink"
+        aria-label="Ir a Whislist"
+        >
+            <img 
+            src="icons/heart.svg"
+            alt=""
+            >
         </a>
-    </span>
 
-    <span class="iconBtn">
-        <a href="bolsa.html" class="miCuentaLink">
-            <img src="icons/bag.svg">
+        <!-- <span class="iconBtn">
+            <a href="miCuenta.html?tab=wishlist" class="miCuentaLink">
+                <img src="icons/heart.svg">
+            </a>
+        </span> -->
+
+        <a 
+        href="bolsa.html"
+        class="iconBtn miCuentaLink"
+        aria-label="Ir a la bolsa"
+        >
+            <img 
+            src="icons/bag.svg"
+            alt=""
+            >
         </a>
-    </span>
+        
+        <!-- <span class="iconBtn">
+            <a href="bolsa.html" class="miCuentaLink">
+                <img src="icons/bag.svg">
+            </a>
+        </span> -->
 
-    <span id="accessibilityBtn" class="iconBtn">
-        <img src="icons/accessibility.svg">
-    </span>
+        <button 
+            id="accessibilityBtn" 
+            class="iconBtn"
+            aria-label="Abrir opciones de accesibilidad"
+            aria-expanded="false"
+            aria-controls="accessPanel"
+        >
+            <img 
+            src="icons/accessibility.svg"
+            alt="Accesibilidad"
+            >
+        </button>
 
-</div>
+    </div>
 
 </nav>
 
-<!-- PANEL ACCESIBILIDAD -->
-
 <div class="accessPanel" id="accessPanel">
 
-```
-<h4>Accesibilidad</h4>
+    <h4>Accesibilidad</h4>
 
-<div class="accItem">
-    <span>Modo oscuro</span>
-    <label class="switch">
-        <input type="checkbox" id="darkToggle">
-        <span class="slider"></span>
-    </label>
-</div>
+    <div class="accItem">
+        <span>Modo oscuro</span>
 
-<div class="accItem">
+        <label class="switch">
+            <input type="checkbox" id="darkToggle">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+    <div class="accItem">
         <span>Letra grande</span>
 
         <label class="switch">
@@ -99,15 +144,35 @@
 
 <!-- SIDEBAR -->
 
-<div class="sidebar" id="menu">
-    <p style="font-size:12px;">Home > Mujer > Novedades</p>
+<nav class="sidebar" id="menu" aria-label="Categorías">
+
+    <p class="breadcrumb">
+        Home > Mujer > Novedades
+    </p>
+
     <hr>
-    <p style="color: var(--header); font-weight:bold;">● Mujer</p>
-    <p>○ Ropa</p>
-    <p>○ Zapatos</p>
-    <p>○ Bolsas</p>
-    <p>○ Perfumes</p>
-</div>
+
+    <button class="sidebarItem active">
+        Mujer
+    </button>
+
+    <button class="sidebarItem">
+        Ropa
+    </button>
+
+    <button class="sidebarItem">
+        Zapatos
+    </button>
+
+    <button class="sidebarItem">
+        Bolsas
+    </button>
+
+    <button class="sidebarItem">
+        Perfumes
+    </button>
+
+</nav>
 
 <!-- CONTENIDO -->
 
@@ -116,14 +181,35 @@
 <h2 style="font-weight:normal;">Mujer</h2>
 
 <!-- TABS -->
-<div class="tabs">
-    <div class="tab">Novedades</div>
-    <div class="tab">Ropa</div>
-    <div class="tab">Zapatos</div>
-    <div class="tab">Bolsas</div>
-    <div class="tab">Relojes y joyería</div>
-    <div class="tab">Perfumes</div>
+<div class="tabs" role="tablist">
+
+    <button class="tab active" role="tab" aria-selected="true">
+        Novedades
+    </button>
+
+    <button class="tab" role="tab" aria-selected="false">
+        Ropa
+    </button>
+
+    <button class="tab" role="tab" aria-selected="false">
+        Zapatos
+    </button>
+
+    <button class="tab" role="tab" aria-selected="false">
+        Bolsas
+    </button>
+
+    <button class="tab" role="tab" aria-selected="false">
+        Relojes y joyería
+    </button>
+
+    <button class="tab" role="tab" aria-selected="false">
+        Perfumes
+    </button>
+
+
 </div>
+
 
 <p style="font-size:14px;">
     <span style="border:1px solid var(--border); padding:5px 15px; border-radius:15px;">
@@ -136,39 +222,55 @@
 <!-- GRID PRODUCTOS -->
 <div class="grid">
 
-    <div class="card">
-        <img src="imagenes/liverpool1.jpg">
-        <div class="product-title">Blusa manga larga para mujer</div>
+    <a href="producto.html" class="card">
+        <img src="imagenes/liverpool1.jpg" alt="Blusa manga larga para mujer">
+
+        <div class="product-title">
+            Blusa manga larga para mujer
+        </div>
+
         <div class="price-container">
             <span class="old-price">$929<sup>00</sup></span>
             $743<sup>20</sup>
         </div>
-    </div>
+    </a>
 
-    <div class="card">
-        <img src="imagenes/liverpool2.jpg">
-        <div class="product-title">Blusa camisera manga larga para mujer</div>
+    <a href="producto.html" class="card">
+        <img src="imagenes/liverpool2.jpg" alt="Blusa camisera manga larga para mujer">
+
+        <div class="product-title">
+            Blusa manga larga para mujer
+        </div>
+
         <div class="price-container">
             $799<sup>00</sup>
         </div>
-    </div>
+    </a>
 
-    <div class="card">
-        <img src="imagenes/liverpool3.jpg">
-        <div class="product-title">Pantalón relaxed amplio para mujer</div>
+    <a href="producto.html" class="card">
+        <img src="imagenes/liverpool3.jpg" alt="Pantalón relaxed amplio para mujer">
+
+        <div class="product-title">
+            Pantalón relaxed amplio para mujer
+        </div>
+
         <div class="price-container">
             <span class="old-price">$1,299<sup>00</sup></span>
             $649<sup>50</sup>
         </div>
-    </div>
+    </a>
 
-    <div class="card">
-        <img src="imagenes/liverpool4.jpg">
-        <div class="product-title">Vestido midi casual para mujer</div>
+    <a href="producto.html" class="card">
+        <img src="imagenes/liverpool4.jpg" alt="Vestido midi casual para mujer">
+
+        <div class="product-title">
+            Vestido midi casual para mujer
+        </div>
+
         <div class="price-container">
             $599<sup>00</sup>
         </div>
-    </div>
+    </a>
 
 </div>
 
@@ -194,6 +296,7 @@ function toggleMenu(){
 
 </script>
 <script src="script.js"></script>
+<script src="LiverpoolLMAD-main/search.js"></script>
 
 </body>
 </html>

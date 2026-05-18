@@ -188,30 +188,6 @@ document.body.classList.contains("bigFont")
 );
 });
 
-// Menú desplegable
-const catBtn = document.querySelector(".btn-cat");
-const menu = document.getElementById("menu");
-const content = document.getElementById("content");
-
-catBtn?.addEventListener("click", () => {
-    menu.classList.toggle("active");
-    content.classList.toggle("shift");
-});
-
-const overlay = document.querySelector(".overlay");
-
-catBtn?.addEventListener("click", () => {
-    menu.classList.toggle("active");
-    content.classList.toggle("shift");
-    overlay?.classList.toggle("show");
-});
-
-overlay?.addEventListener("click", () => {
-    menu.classList.remove("active");
-    content.classList.remove("shift");
-    overlay.classList.remove("show");
-});
-
 //Tabs
 //const tabs = document.querySelectorAll(".tabAlt")
 //const contents = document.querySelectorAll(".tabContent")

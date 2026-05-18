@@ -24,17 +24,27 @@
 }
 
 .deliveryCard{
-    flex:1;
-    background:var(--card);
-    border:2px solid var(--border);
-    border-radius:16px;
-    padding:18px;
+
+    all: unset;
+
     display:flex;
     align-items:center;
+    justify-content:space-between;
+
     gap:16px;
-    position:relative;
+
+    width:100%;
+
+    padding:18px;
+    border-radius:18px;
+
+    border:2px solid #ddd;
+    background:white;
+
     cursor:pointer;
-    transition:0.25s ease;
+    box-sizing:border-box;
+
+    transition:.2s ease;
 }
 
 .deliveryCard:hover{
@@ -43,7 +53,13 @@
 }
 
 .deliveryCard.active{
-    border-color:#d81b81;
+    border-color:#e1007a;
+}
+
+.deliveryCard:focus-visible{
+
+    outline:3px solid #1a73e8;
+    outline-offset:4px;
 }
 
 .deliveryIcon{
@@ -182,4 +198,59 @@
     margin-top:12px;
     line-height:1.6;
     color:var(--text);
+}
+
+/* button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+
+    outline: 3px solid #1a73e8;
+    outline-offset: 3px;
+} */
+
+.skipLink{
+
+    position:absolute;
+    top:-50px;
+    left:20px;
+
+    background:black;
+    color:white;
+
+    padding:12px 18px;
+    border-radius:8px;
+
+    z-index:9999;
+}
+
+.skipLink:focus{
+    top:20px;
+}
+
+.changeStoreBtn{
+
+    all: unset;
+
+    cursor:pointer;
+
+    font-size:14px;
+    font-weight:600;
+
+    color:#e1007a;
+
+    padding:6px 0;
+
+    transition:.2s ease;
+}
+
+.changeStoreBtn:hover{
+    opacity:.7;
+}
+
+.changeStoreBtn:focus-visible{
+
+    outline:3px solid #1a73e8;
+    outline-offset:4px;
+
+    border-radius:6px;
 }
