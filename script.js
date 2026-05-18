@@ -117,7 +117,7 @@ const accPanel = document.getElementById("accessPanel");
 const darkToggle = document.getElementById("darkToggle");
 
 
-accessibilityBtn.addEventListener("click", () => {
+accBtn.addEventListener("click", () => {
 
     accessPanel.classList.toggle("show");
 
@@ -137,7 +137,7 @@ document.addEventListener("keydown", (e) => {
 
         accessPanel.classList.remove("show");
 
-        accessibilityBtn.focus();
+        accBtn.focus();
     }
 
 });
@@ -145,7 +145,7 @@ document.addEventListener("keydown", (e) => {
 const expanded =
 accessPanel.classList.contains("show");
 
-accessibilityBtn.setAttribute(
+accBtn.setAttribute(
 "aria-expanded",
 expanded
 );
@@ -301,33 +301,66 @@ wishlistButtons.forEach(btn => {
     }
 });
 
-                    /* Formulario de compra */
-const btnBuyProduct = document.querySelector(".btnSecondary"); 
-const btnBuyCart = document.querySelector(".btnActionCard") || document.querySelector("button.btnPrimaryMC") || Array.from(document.querySelectorAll("button")).find(b => b.textContent.trim() === "Comprar");
+/* Formulario de compra */
 
+const btnBuyProduct = document.querySelector(".btnSecondary");
+const btnBuyCart = document.querySelector(".bagCheckoutBtn");
 const checkoutPanel = document.getElementById("checkoutPanel");
 const checkoutOverlay = document.getElementById("checkoutOverlay");
 const closePanelBtn = document.getElementById("closePanelBtn");
 const closePanelBtnX = document.getElementById("closePanelBtnX");
 
 function openCheckout() {
+
     checkoutPanel?.classList.add("active");
     checkoutOverlay?.classList.add("active");
-    document.body.classList.add("modal-open"); // Bloquea el fondo
+
+    document.body.classList.add("modal-open");
+
+    const firstInput =
+    checkoutPanel?.querySelector("input");
+
+    firstInput?.focus();
 }
 
 function closeCheckout() {
+
     checkoutPanel?.classList.remove("active");
     checkoutOverlay?.classList.remove("active");
-    document.body.classList.remove("modal-open"); // Libera el fondo
+
+    document.body.classList.remove("modal-open");
 }
 
-// Eventos para abrir
+/* abrir */
+
 btnBuyProduct?.addEventListener("click", openCheckout);
+
 btnBuyCart?.addEventListener("click", openCheckout);
 
-// Eventos para cerrar
-closePanelBtn?.addEventListener("click", closeCheckout);
-closePanelBtnX?.addEventListener("click", closeCheckout);
-checkoutOverlay?.addEventListener("click", closeCheckout);
+/* cerrar */
 
+closePanelBtn?.addEventListener(
+"click",
+closeCheckout
+);
+
+closePanelBtnX?.addEventListener(
+"click",
+closeCheckout
+);
+
+checkoutOverlay?.addEventListener(
+"click",
+closeCheckout
+);
+
+document.addEventListener("keydown", (e) => {
+
+    if(
+        e.key === "Escape" &&
+        checkoutPanel?.classList.contains("active")
+    ){
+
+        closeCheckout();
+    }
+});

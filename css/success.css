@@ -141,3 +141,16 @@
         transform:translateY(0);
     }
 }
+
+/* =========================
+    BOTÓN LINK BONITO
+========================= */
+
+.successLinkBtn{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-decoration:none;
+}

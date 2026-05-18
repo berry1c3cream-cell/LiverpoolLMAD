@@ -33,38 +33,82 @@
     </div>
 
     <div class="search">
-        <input type="text" placeholder="Buscar productos...">
+        <label for="searchBar" class="sr-only">
+            Buscar productos
+        </label>
+
+        <input 
+        type="text"
+        id="searchBar"
+        placeholder="Buscar productos..."
+        >
     </div>
 
     <div class="rightIcons">
 
-        <span class="iconBtn">
+        <a 
+        href="miCuenta.html"
+        class="iconBtn miCuentaLink"
+        aria-label="Ir a Mi cuenta"
+        >
+            <img 
+            src="icons/user.svg"
+            alt=""
+            >
+        </a>
+
+        <!-- <span class="iconBtn">
             <a href="miCuenta.html" class="miCuentaLink">
                 <img src="icons/user.svg">
             </a>
-        </span>
-
-        <!--<span class="iconBtn">
-            <a href="miCuenta.html" class="miCuentaLink">
-                <span class="accountLabel">Mi cuenta</span>
-            </a>
         </span> -->
 
-        <span class="iconBtn">
+        <a 
+        href="miCuenta.html?tab=wishlist"
+        class="iconBtn miCuentaLink"
+        aria-label="Ir a Whislist"
+        >
+            <img 
+            src="icons/heart.svg"
+            alt=""
+            >
+        </a>
+
+        <!-- <span class="iconBtn">
             <a href="miCuenta.html?tab=wishlist" class="miCuentaLink">
                 <img src="icons/heart.svg">
             </a>
-        </span>
+        </span> -->
 
-        <span class="iconBtn">
+        <a 
+        href="bolsa.html"
+        class="iconBtn miCuentaLink"
+        aria-label="Ir a la bolsa"
+        >
+            <img 
+            src="icons/bag.svg"
+            alt=""
+            >
+        </a>
+        
+        <!-- <span class="iconBtn">
             <a href="bolsa.html" class="miCuentaLink">
                 <img src="icons/bag.svg">
             </a>
-        </span>
+        </span> -->
 
-        <span id="accessibilityBtn" class="iconBtn">
-        <img src="icons/accessibility.svg">
-        </span>
+        <button 
+            id="accessibilityBtn" 
+            class="iconBtn"
+            aria-label="Abrir opciones de accesibilidad"
+            aria-expanded="false"
+            aria-controls="accessPanel"
+        >
+            <img 
+            src="icons/accessibility.svg"
+            alt="Accesibilidad"
+            >
+        </button>
 
     </div>
 
@@ -123,17 +167,13 @@
 
             <div class="paymentMethods">
 
-                <div class="paymentBtn active">
+                <button class="paymentBtn active">
                     💳 Tarjeta
-                </div>
+                </button>
 
-                <div class="paymentBtn">
+                <button class="paymentBtn">
                     <img src="imagenes/paypal.png" width="70">
-                </div>
-
-                <div class="paymentBtn">
-                    💵 Efectivo
-                </div>
+                </button>
 
             </div>
 
@@ -174,7 +214,7 @@
                     -->
 
                     <!-- PROMOCION -->
-                    <div class="deliveryCard active">
+                    <button class="deliveryCard active">
 
                         <h3>✨ Pago único</h3>
 
@@ -182,7 +222,7 @@
                             50% de descuento aplicado automáticamente.
                         </p>
 
-                    </div>
+                    </button>
 
                 </div>
 

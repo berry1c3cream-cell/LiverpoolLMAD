@@ -37,39 +37,82 @@
     </div>
 
     <div class="search">
-        <input type="text" placeholder="Buscar productos...">
+        <label for="searchBar" class="sr-only">
+            Buscar productos
+        </label>
+
+        <input 
+        type="text"
+        id="searchBar"
+        placeholder="Buscar productos..."
+        >
     </div>
 
     <div class="rightIcons">
 
-        <span class="iconBtn">
+        <a 
+        href="miCuenta.html"
+        class="iconBtn miCuentaLink"
+        aria-label="Ir a Mi cuenta"
+        >
+            <img 
+            src="icons/user.svg"
+            alt=""
+            >
+        </a>
+
+        <!-- <span class="iconBtn">
             <a href="miCuenta.html" class="miCuentaLink">
                 <img src="icons/user.svg">
             </a>
-        </span>
+        </span> -->
 
-        <!--<span class="iconBtn">
-            <a href="miCuenta.html" class="miCuentaLink">
-                <span class="accountLabel">Mi cuenta</span>
+        <a 
+        href="miCuenta.html?tab=wishlist"
+        class="iconBtn miCuentaLink"
+        aria-label="Ir a Whislist"
+        >
+            <img 
+            src="icons/heart.svg"
+            alt=""
+            >
+        </a>
+
+        <!-- <span class="iconBtn">
+            <a href="miCuenta.html?tab=wishlist" class="miCuentaLink">
+                <img src="icons/heart.svg">
             </a>
         </span> -->
 
-        <span class="iconBtn">
-    <a href="miCuenta.html?tab=wishlist" class="miCuentaLink" style="position: relative;">
-        <img src="icons/heart.svg" id="heartImg">
-        <span id="heartBadge">!</span>
-    </a>
-        </span>
-
-        <span class="iconBtn">
+        <a 
+        href="bolsa.html"
+        class="iconBtn miCuentaLink"
+        aria-label="Ir a la bolsa"
+        >
+            <img 
+            src="icons/bag.svg"
+            alt=""
+            >
+        </a>
+        
+        <!-- <span class="iconBtn">
             <a href="bolsa.html" class="miCuentaLink">
                 <img src="icons/bag.svg">
             </a>
-        </span>
+        </span> -->
 
-        <span id="accessibilityBtn" class="iconBtn">
-        <img src="icons/accessibility.svg">
-        </span>
+        <button 
+            id="accessibilityBtn" 
+            class="iconBtn"
+            aria-label="Abrir opciones de accesibilidad"
+            aria-expanded="false"
+            aria-controls="accessPanel"
+        >
+            <img 
+            src="icons/accessibility.svg"
+            alt="Accesibilidad"
+            >
+        </button>
 
     </div>
 
@@ -210,11 +253,15 @@
 
 <div class="checkout-overlay" id="checkoutOverlay"></div>
 
-<div class="checkout-panel" id="checkoutPanel">
+<div class="checkout-panel" id="checkoutPanel" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
     <div class="panel-header">
-        <button class="btn-back" id="closePanelBtn">←</button>
-        <h3>Agregar dirección de entrega</h3>
-        <button class="btn-close-x" id="closePanelBtnX">×</button>
+        <button class="btn-back" id="closePanelBtn" aria-label="Cerrar panel">
+            ←
+        </button>
+        <h3 id="checkoutTitle">Agregar dirección de entrega</h3>
+        <button class="btn-close-x" id="closePanelBtnX" aria-label="Cerrar panel">
+            ×
+        </button>
     </div>
 
     <div class="panel-body">
@@ -222,92 +269,92 @@
         
         <h4>Datos del destinatario</h4>
         <div class="form-group">
-            <label>Nombre*</label>
-            <input type="text">
+            <label for="nombreInput"> Nombre* </label>
+            <input type="text" id="nombreInput">
         </div>
         <div class="form-group">
-            <label>Segundo nombre</label>
-            <input type="text">
+            <label for="segundoNombreInput"> Segundo nombre </label>
+            <input type="text" id="segundoNombreInput">
         </div>
         <div class="form-group">
-            <label>Apellido paterno*</label>
-            <input type="text">
+            <label for="apellidoPaternoInput">Apellido paterno*</label>
+            <input type="text" id="apellidoPaternoInput">
         </div>
         <div class="form-group">
-            <label>Apellido materno</label>
-            <input type="text">
+            <label for="apellidoMaternoInput">Apellido materno</label>
+            <input type="text" id="apellidoMaternoInput">
         </div>
 
         <h4>Dirección de entrega</h4>
         <div class="form-group">
-            <label>Alias de dirección*</label>
-            <input type="text">
+            <label for="direccionInput">Alias de dirección*</label>
+            <input type="text" id="direccionInput">
         </div>
         <div class="form-group">
-            <label>Código postal*</label>
-            <input type="text">
+            <label for="codigoPostalInput">Código postal*</label>
+            <input type="text" id="codigoPostalInput">
         </div>
         <div class="form-group-checkbox">
             <input type="checkbox" id="noCp">
             <label for="noCp">No sé mi código postal</label>
         </div>
         <div class="form-group">
-            <label>Estado*</label>
+            <label for="estadoSelect">Estado*</label>
             <select>
-                <option>Selecciona</option>
+                <option id="estadoSelect">Selecciona</option>
             </select>
         </div>
         <div class="form-group">
-            <label>Municipio o Alcaldía*</label>
+            <label for="municipioSelect">Municipio o Alcaldía*</label>
             <select>
-                <option>Selecciona</option>
+                <option id="municipioSelect">Selecciona</option>
             </select>
         </div>
         <div class="form-group">
-            <label>Colonia*</label>
+            <label for="coloniaSelect">Colonia*</label>
             <select>
-                <option>Selecciona</option>
+                <option id="coloniaSelect">Selecciona</option>
             </select>
         </div>
         <div class="form-group">
-            <label>Ciudad</label>
-            <input type="text">
+            <label for="ciudadInput">Ciudad</label>
+            <input type="text" id="ciudadInput">
         </div>
         <div class="form-group">
-            <label>Calle*</label>
-            <input type="text">
+            <label for="calleInput">Calle*</label>
+            <input type="text" id="calleInput">
         </div>
         <div class="form-group">
-            <label>Número exterior*</label>
-            <input type="text">
+            <label for="numeroExtInput">Número exterior*</label>
+            <input type="text" id="numeroExtInput">
         </div>
         <div class="form-group">
-            <label>Número interior</label>
-            <input type="text">
+            <label for="numeroIntInput">Número interior</label>
+            <input type="text" id="numeroIntInput">
         </div>
         <div class="form-group">
-            <label>Edificio</label>
-            <input type="text">
+            <label for="edificioInput">Edificio</label>
+            <input type="text" id="edificioInput">
         </div>
         <div class="form-group">
-            <label>Entre calle</label>
-            <input type="text">
+            <label for="entreCalleInput">Entre calle</label>
+            <input type="text" id="entreCalleInput">
         </div>
         <div class="form-group">
-            <label>y calle</label>
-            <input type="text">
+            <label for="calleInput">y calle</label>
+            <input type="text" id="calleInput">
         </div>
         <div class="form-group">
-            <label>Referencia</label>
-            <input type="text">
+            <label for="referenciaInput">Referencia</label>
+            <input type="text" id="referenciaInput">
         </div>
         <div class="form-group">
-            <label>Teléfono celular*</label>
-            <input type="text">
+            <label for="celularInput">Teléfono celular*</label>
+            <input type="text" id="celularInput">
         </div>
         <div class="form-group">
-            <label>Teléfono fijo*</label>
-            <input type="text">
+            <label for="telefonoInput">Teléfono fijo*</label>
+            <input type="text" id="telefonoInput">
         </div>
         <div class="form-group-checkbox">
             <input type="checkbox" id="defaultDir">

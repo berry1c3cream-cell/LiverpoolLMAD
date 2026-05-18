@@ -33,38 +33,82 @@
     </div>
 
     <div class="search">
-        <input type="text" placeholder="Buscar productos...">
+        <label for="searchBar" class="sr-only">
+            Buscar productos
+        </label>
+
+        <input 
+        type="text"
+        id="searchBar"
+        placeholder="Buscar productos..."
+        >
     </div>
 
     <div class="rightIcons">
 
-        <span class="iconBtn">
+        <a 
+        href="miCuenta.html"
+        class="iconBtn miCuentaLink"
+        aria-label="Ir a Mi cuenta"
+        >
+            <img 
+            src="icons/user.svg"
+            alt=""
+            >
+        </a>
+
+        <!-- <span class="iconBtn">
             <a href="miCuenta.html" class="miCuentaLink">
                 <img src="icons/user.svg">
             </a>
-        </span>
-
-        <!--<span class="iconBtn">
-            <a href="miCuenta.html" class="miCuentaLink">
-                <span class="accountLabel">Mi cuenta</span>
-            </a>
         </span> -->
 
-        <span class="iconBtn">
+        <a 
+        href="miCuenta.html?tab=wishlist"
+        class="iconBtn miCuentaLink"
+        aria-label="Ir a Whislist"
+        >
+            <img 
+            src="icons/heart.svg"
+            alt=""
+            >
+        </a>
+
+        <!-- <span class="iconBtn">
             <a href="miCuenta.html?tab=wishlist" class="miCuentaLink">
                 <img src="icons/heart.svg">
             </a>
-        </span>
+        </span> -->
 
-        <span class="iconBtn">
+        <a 
+        href="bolsa.html"
+        class="iconBtn miCuentaLink"
+        aria-label="Ir a la bolsa"
+        >
+            <img 
+            src="icons/bag.svg"
+            alt=""
+            >
+        </a>
+        
+        <!-- <span class="iconBtn">
             <a href="bolsa.html" class="miCuentaLink">
                 <img src="icons/bag.svg">
             </a>
-        </span>
+        </span> -->
 
-        <span id="accessibilityBtn" class="iconBtn">
-        <img src="icons/accessibility.svg">
-        </span>
+        <button 
+            id="accessibilityBtn" 
+            class="iconBtn"
+            aria-label="Abrir opciones de accesibilidad"
+            aria-expanded="false"
+            aria-controls="accessPanel"
+        >
+            <img 
+            src="icons/accessibility.svg"
+            alt="Accesibilidad"
+            >
+        </button>
 
     </div>
 
@@ -99,7 +143,10 @@
     <div class="successCard">
 
         <!-- ICONO -->
-        <div class="successIcon">
+        <div 
+        class="successIcon"
+        aria-hidden="true"
+        >
             ✓
         </div>
 
@@ -122,12 +169,12 @@
         </div>
 
         <!-- ENTREGA DINÁMICA -->
-        <div id="deliveryResult"></div>
+        <div id="deliveryResult" aria-live="polite"></div>
 
         <!-- PRODUCTO -->
         <div class="successProduct">
 
-            <img src="imagenes/tenis.png">
+            <img src="imagenes/tenis.png" alt="Tenis Nike Court Vision Low color blanco">
 
             <div>
 
@@ -159,10 +206,11 @@
         <!-- BOTONES -->
         <div class="successButtons">
 
-            <a href="home.html">
-                <button class="checkoutBtn">
-                    Volver al inicio
-                </button>
+            <a 
+            href="home.html"
+            class="checkoutBtn successLinkBtn"
+            >
+                Volver al inicio
             </a>
 
         </div>
@@ -172,7 +220,7 @@
 </div>
 
 <script src="script.js"></script>
-<script src="success.html"></script>
+<script src="success.js"></script>
 
 </body>
 </html>
