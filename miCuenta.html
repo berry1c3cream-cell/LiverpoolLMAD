@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mi cuenta</title>
 <link rel="stylesheet" href="estiloLiverpool.css">
+<link rel="stylesheet" href="css/MiCuenta.css">
 </head>
 <body>
 
@@ -31,38 +32,82 @@
     </div>
 
     <div class="search">
-        <input type="text" placeholder="Buscar productos...">
+        <label for="searchBar" class="sr-only">
+            Buscar productos
+        </label>
+
+        <input 
+        type="text"
+        id="searchBar"
+        placeholder="Buscar productos..."
+        >
     </div>
 
     <div class="rightIcons">
 
-        <span class="iconBtn">
+        <a 
+        href="miCuenta.html"
+        class="iconBtn miCuentaLink"
+        aria-label="Ir a Mi cuenta"
+        >
+            <img 
+            src="icons/user.svg"
+            alt=""
+            >
+        </a>
+
+        <!-- <span class="iconBtn">
             <a href="miCuenta.html" class="miCuentaLink">
                 <img src="icons/user.svg">
             </a>
-        </span>
-
-        <!--<span class="iconBtn">
-            <a href="miCuenta.html" class="miCuentaLink">
-                <span class="accountLabel">Mi cuenta</span>
-            </a>
         </span> -->
 
-        <span class="iconBtn">
+        <a 
+        href="miCuenta.html?tab=wishlist"
+        class="iconBtn miCuentaLink"
+        aria-label="Ir a Whislist"
+        >
+            <img 
+            src="icons/heart.svg"
+            alt=""
+            >
+        </a>
+
+        <!-- <span class="iconBtn">
             <a href="miCuenta.html?tab=wishlist" class="miCuentaLink">
                 <img src="icons/heart.svg">
             </a>
-        </span>
+        </span> -->
 
-        <span class="iconBtn">
+        <a 
+        href="bolsa.html"
+        class="iconBtn miCuentaLink"
+        aria-label="Ir a la bolsa"
+        >
+            <img 
+            src="icons/bag.svg"
+            alt=""
+            >
+        </a>
+        
+        <!-- <span class="iconBtn">
             <a href="bolsa.html" class="miCuentaLink">
                 <img src="icons/bag.svg">
             </a>
-        </span>
+        </span> -->
 
-        <span id="accessibilityBtn" class="iconBtn">
-        <img src="icons/accessibility.svg">
-        </span>
+        <button 
+            id="accessibilityBtn" 
+            class="iconBtn"
+            aria-label="Abrir opciones de accesibilidad"
+            aria-expanded="false"
+            aria-controls="accessPanel"
+        >
+            <img 
+            src="icons/accessibility.svg"
+            alt="Accesibilidad"
+            >
+        </button>
 
     </div>
 
@@ -97,18 +142,18 @@
 <div class="content">
 
 <!-- TABS -->
-<div class="tabsAlternate">
-    <div class="tabAlt active" data-tab="cuenta">Mi cuenta</div>
-    <div class="tabAlt" data-tab="datos">Datos personales</div>
-    <div class="tabAlt" data-tab="cartera">Mi cartera</div>
-    <div class="tabAlt" data-tab="wishlist">Wishlist</div>
-    <div class="tabAlt" data-tab="beneficios">Beneficios</div>
-    <div class="tabAlt" data-tab="ayuda">Ayuda y contactos</div>
-    <div class="tabAlt" data-tab="acerca">Acerca de</div>
+<div class="tabsAlternate" role="tablist">
+    <button class="tabAlt active" role="tab" aria-selected="true" aria-controls="cuenta" id="tab-cuenta">Mi cuenta</button>
+    <button class="tabAlt" aria-controls="datos" role="tab" aria-selected="false" id="tab-datos">Datos personales</button>
+    <button class="tabAlt" aria-controls="cartera" role="tab" aria-selected="false" id="tab-miCartera">Mi cartera</button>
+    <button class="tabAlt" aria-controls="wishlist" role="tab" aria-selected="false" id="tab-whislist">Wishlist</button>
+    <button class="tabAlt" aria-controls="beneficios" role="tab" aria-selected="false" id="tab-beneficios">Beneficios</button>
+    <button class="tabAlt" aria-controls="ayuda" role="tab" aria-selected="false" id="tab-ayudaContactos">Ayuda y contactos</button>
+    <button class="tabAlt" aria-controls="acerca" role="tab" aria-selected="false" id="tab-acercaDe">Acerca de</button>
 </div>
 
 
-<div class="tabContent active" id="cuenta">
+<div class="tabContent active" id="cuenta" role="tabpanel" aria-labelledby="tab-cuenta">
     <h2>Personaliza tu experiencia</h2>
     <p>Elige tus categorías favoritas para recomendaciones.</p>
 
@@ -236,37 +281,37 @@
     <!-- MÉTODOS -->
     <div class="walletList">
 
-        <div class="walletItem">
+        <button class="walletItem">
             <div class="walletInfo">
                 <img src="icons/card.svg">
                 <span>Tarjeta Liverpool</span>
             </div>
             <span class="walletAction">⋮</span>
-        </div>
+        </button>
 
-        <div class="walletItem">
+        <button class="walletItem">
             <div class="walletInfo">
                 <img src="icons/paypal.svg">
                 <span>PayPal</span>
             </div>
             <span class="walletAction">⋮</span>
-        </div>
+        </button>
 
-        <div class="walletItem">
+        <button class="walletItem">
             <div class="walletInfo">
                 <img src="icons/cash.svg">
                 <span>Efectivo</span>
             </div>
             <span class="walletAction">⋮</span>
-        </div>
+        </button>
 
-        <div class="walletItem">
+        <button class="walletItem">
             <div class="walletInfo">
                 <img src="icons/spei.svg">
                 <span>Transferencia (SPEI)</span>
             </div>
             <span class="walletAction">⋮</span>
-        </div>
+        </button>
 
     </div>
 
@@ -400,17 +445,17 @@
     <div class="faqContainer">
 
         <div class="faqItem">
-            <div class="faqQuestion">¿Dónde está mi pedido?</div>
+            <button class="faqQuestion" aria-expanded="false">¿Dónde está mi pedido?</button>
             <div class="faqAnswer">Puedes rastrear tu pedido desde la sección “Mis compras”.</div>
         </div>
 
         <div class="faqItem">
-            <div class="faqQuestion">¿Cómo cambio mi dirección?</div>
+            <button class="faqQuestion" aria-expanded="false">¿Cómo cambio mi dirección?</button>
             <div class="faqAnswer">Ve a Datos personales y edita tu dirección de envío.</div>
         </div>
 
         <div class="faqItem">
-            <div class="faqQuestion">¿Puedo cancelar una compra?</div>
+            <button class="faqQuestion" aria-expanded="false">¿Puedo cancelar una compra?</button>
             <div class="faqAnswer">Sí, siempre que el pedido no haya sido enviado.</div>
         </div>
 

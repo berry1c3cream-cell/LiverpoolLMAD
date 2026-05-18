@@ -119,12 +119,12 @@ const darkToggle = document.getElementById("darkToggle");
 
 accBtn.addEventListener("click", () => {
 
-    accessPanel.classList.toggle("show");
+    accPanel.classList.toggle("show");
 
     /* mover foco al primer input */
-    if(accessPanel.classList.contains("show")){
+    if(accPanel.classList.contains("show")){
 
-        const firstInput = accessPanel.querySelector("input");
+        const firstInput = accPanel.querySelector("input");
 
         firstInput.focus();
     }
@@ -135,7 +135,7 @@ document.addEventListener("keydown", (e) => {
 
     if(e.key === "Escape"){
 
-        accessPanel.classList.remove("show");
+        accPanel.classList.remove("show");
 
         accBtn.focus();
     }
@@ -143,7 +143,7 @@ document.addEventListener("keydown", (e) => {
 });
 
 const expanded =
-accessPanel.classList.contains("show");
+accPanel.classList.contains("show");
 
 accBtn.setAttribute(
 "aria-expanded",
@@ -213,23 +213,23 @@ overlay?.addEventListener("click", () => {
 });
 
 //Tabs
-const tabs = document.querySelectorAll(".tabAlt")
-const contents = document.querySelectorAll(".tabContent")
+//const tabs = document.querySelectorAll(".tabAlt")
+//const contents = document.querySelectorAll(".tabContent")
 
-tabs.forEach(tab=>{
-tab.addEventListener("click",()=>{
+//tabs.forEach(tab=>{
+//tab.addEventListener("click",()=>{
 
-tabs.forEach(t=>t.classList.remove("active"))
-contents.forEach(c=>c.classList.remove("active"))
+//tabs.forEach(t=>t.classList.remove("active"))
+//contents.forEach(c=>c.classList.remove("active"))
 
-tab.classList.add("active")
+//tab.classList.add("active")
 
-document
-.getElementById(tab.dataset.tab)
-.classList.add("active")
+//document
+//.getElementById(tab.dataset.tab)
+//.classList.add("active")
 
-})
-})
+//})
+//})
 
 // abrir tab desde URL
 const params = new URLSearchParams(window.location.search);
@@ -237,27 +237,121 @@ const activeTab = params.get("tab");
 
 if(activeTab){
 
-    tabs.forEach(t => t.classList.remove("active"));
-    contents.forEach(c => c.classList.remove("active"));
+    tabs.forEach(t => {
+        t.classList.remove("active");
+        t.setAttribute("aria-selected", "false");
+    });
 
+    contents.forEach(c => {
+        c.classList.remove("active");
+    });
+
+    // buscar por aria-controls
     const targetTab = document.querySelector(
-        `.tabAlt[data-tab="${activeTab}"]`
+        `.tabAlt[aria-controls="${activeTab}"]`
     );
 
-    const targetContent = document.getElementById(activeTab);
+    const targetContent =
+    document.getElementById(activeTab);
 
     if(targetTab && targetContent){
+
         targetTab.classList.add("active");
+
+        targetTab.setAttribute(
+            "aria-selected",
+            "true"
+        );
+
         targetContent.classList.add("active");
     }
 }
 
 // faq
 document.querySelectorAll(".faqQuestion").forEach(q => {
+
     q.addEventListener("click", () => {
+
         const item = q.parentElement;
+
         item.classList.toggle("active");
+
+        // aria
+        const expanded =
+        q.getAttribute("aria-expanded") === "true";
+
+        q.setAttribute(
+            "aria-expanded",
+            !expanded
+        );
+
     });
+
+});
+
+const tabs = document.querySelectorAll(".tabAlt");
+const contents = document.querySelectorAll(".tabContent");
+
+tabs.forEach((tab, index) => {
+
+    // CLICK
+    tab.addEventListener("click", () => {
+
+        // limpiar tabs
+        tabs.forEach(t => {
+            t.classList.remove("active");
+            t.setAttribute("aria-selected", "false");
+        });
+
+        // limpiar contenidos
+        contents.forEach(c => {
+            c.classList.remove("active");
+        });
+
+        // activar actual
+        tab.classList.add("active");
+        tab.setAttribute("aria-selected", "true");
+
+        // mostrar panel correcto
+        const target = tab.getAttribute("aria-controls");
+
+        document
+        .getElementById(target)
+        .classList.add("active");
+    });
+
+    // TECLADO
+    tab.addEventListener("keydown", (e) => {
+
+        // derecha
+        if(e.key === "ArrowRight"){
+
+            e.preventDefault();
+
+            const next =
+            tabs[(index + 1) % tabs.length];
+
+            next.focus();
+            next.click();
+        }
+
+        // izquierda
+        if(e.key === "ArrowLeft"){
+
+            e.preventDefault();
+
+            const prev =
+            tabs[
+                (index - 1 + tabs.length)
+                % tabs.length
+            ];
+
+            prev.focus();
+            prev.click();
+        }
+
+    });
+
 });
 
 /* Pequeña microinteraccion en la bolsa */
