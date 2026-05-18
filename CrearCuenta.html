@@ -6,7 +6,6 @@
     <title>Liverpool - Crear Cuenta</title>
     <link rel="stylesheet" href="estiloLiverpool.css">
     <style>
-        
         body.login-page {
             background-color: #f5f5f5; 
             margin: 0;
@@ -45,7 +44,6 @@
             padding: 20px;
         }
 
-      
         .login-card-exact {
             background-color: #ffffff;
             width: 100%;
@@ -83,11 +81,42 @@
             border-radius: 8px;
             font-size: 14px;
             outline: none;
+            box-sizing: border-box;
             transition: border-color 0.3s;
         }
 
         .form-group input:focus {
             border-color: #d81b81;
+        }
+
+        /* LISTA DE REQUISITOS EN TIEMPO REAL */
+        .password-policies {
+            margin-top: 10px;
+            padding-left: 5px;
+            list-style: none;
+        }
+
+        .policy-item {
+            font-size: 12px;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #e53935;
+            transition: color 0.2s ease;
+        }
+
+        .policy-item.valid {
+            color: #2e7d32;
+        }
+
+        .policy-item::before {
+            content: "✕";
+            font-weight: bold;
+        }
+
+        .policy-item.valid::before {
+            content: "✓";
         }
 
         .forgot-link {
@@ -118,6 +147,8 @@
             font-weight: bold;
             cursor: pointer;
             text-transform: uppercase;
+            text-align: center;
+            text-decoration: none;
             transition: background 0.3s, transform 0.2s;
         }
 
@@ -128,7 +159,6 @@
         .btn-purple:active {
             transform: scale(0.98);
         }
-
     </style>
 </head>
 <body class="login-page">
@@ -148,21 +178,30 @@
 
             <div class="form-group">
                 <label>CORREO ELECTRÓNICO *</label>
-                <input type="email" placeholder="ejemplo@correo.com">
+                <input type="email" id="regEmail" placeholder="ejemplo@correo.com" required>
             </div>
 
             <div class="form-group">
                 <label>CONTRASEÑA *</label>
-                <input type="password" placeholder="••••••••">
+                <input type="password" id="regPassword" placeholder="••••••••" required>
+                
+                <ul class="password-policies">
+                    <li class="policy-item" id="paramLength">Mínimo 8 caracteres</li>
+                    <li class="policy-item" id="paramMayus">Una mayúscula</li>
+                    <li class="policy-item" id="paramNumber">Un número</li>
+                    <li class="policy-item" id="paramSpecial">Un signo especial (@, /, $, etc.)</li>
+                </ul>
             </div>
 
             <a href="iniciarSesion.html" class="forgot-link">¿Ya tienes cuenta?</a>
 
             <div class="button-group">
-                <a href="Campos.html" class="btn-purple">CREAR CUENTA</a>
+                <button type="button" id="btnRegister" class="btn-purple">CREAR CUENTA</button>
             </div>
         </div>
     </main>
 
+    <script src="script.js" defer></script>
+    <script src="registro.js" defer></script>
 </body>
 </html>
