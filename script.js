@@ -112,9 +112,59 @@ window.addEventListener("DOMContentLoaded", () => {
 
 });
 
+//Virtual keyboard
+
+if(window.SimpleKeyboard){
+
+    const Keyboard = window.SimpleKeyboard.default;
+
+    let currentInput = null;
+
+    document.querySelectorAll("input").forEach(input => {
+
+        input.addEventListener("focus", () => {
+            currentInput = input;
+        });
+
+    });
+
+    const keyboard = new Keyboard(".simple-keyboard", {
+
+        onChange: inputText => {
+
+            if(currentInput){
+                currentInput.value = inputText;
+            }
+
+        }
+
+    });
+}
+
 const accBtn = document.getElementById("accessibilityBtn");
 const accPanel = document.getElementById("accessPanel");
 const darkToggle = document.getElementById("darkToggle");
+const keyboardToggle = document.getElementById("keyboardToggle");
+const keyboardContainer = document.querySelector(".simple-keyboard");
+
+console.log(keyboardContainer);
+console.log(keyboardContainer.classList);
+
+/* ocultar al inicio */
+keyboardContainer?.classList.remove("show");
+
+keyboardToggle?.addEventListener("change", () => {
+
+    console.log("toggle!");
+
+    keyboardContainer?.classList.toggle(
+        "show",
+        keyboardToggle.checked
+    );
+
+});
+
+
 
 
 accBtn.addEventListener("click", () => {

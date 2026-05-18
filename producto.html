@@ -6,6 +6,7 @@
 <title>Producto</title>
 <link rel="stylesheet" href="estiloLiverpool.css">
 <link rel="stylesheet" href="css/producto.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-keyboard@latest/build/css/index.css"/>
 </head>
 <a href="#mainContent" class="skipLink">
     Saltar al contenido principal
@@ -138,7 +139,18 @@
         </label>
     </div>
 
+    <div class="accItem">
+        <span>Teclado virtual</span>
+
+        <label class="switch">
+            <input type="checkbox" id="keyboardToggle">
+            <span class="slider"></span>
+        </label>
+    </div>
+
 </div>
+
+<div class="simple-keyboard"></div>
 
 <!-- PRODUCTO -->
 <div class="productPage" id="mainContent">
@@ -299,6 +311,7 @@
 
 </section>
 
+<script src="https://cdn.jsdelivr.net/npm/simple-keyboard@latest/build/index.js"></script>
 <script src="script.js"></script>
 <script src="LiverpoolLMAD-main/producto.js"></script>
 </body>

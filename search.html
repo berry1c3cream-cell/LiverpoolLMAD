@@ -1,17 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <title>Liverpool_Menu</title>
 <link rel="stylesheet" href="estiloLiverpool.css">
-
-<!DOCTYPE html>
-
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<title>Liverpool UI</title>
-<link rel="stylesheet" href="estiloLiverpool.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-keyboard@latest/build/css/index.css"/>
 </head>
 
 <body>
@@ -140,7 +134,18 @@
         </label>
     </div>
 
+    <div class="accItem">
+        <span>Teclado virtual</span>
+
+        <label class="switch">
+            <input type="checkbox" id="keyboardToggle">
+            <span class="slider"></span>
+        </label>
+    </div>
+
 </div>
+
+<div class="simple-keyboard"></div>
 
 <!-- SIDEBAR -->
 
@@ -277,6 +282,8 @@
 </main>
 
 <!-- SCRIPT BASE -->
+
+<script src="https://cdn.jsdelivr.net/npm/simple-keyboard@latest/build/index.js"></script>
 
 <script>
 
