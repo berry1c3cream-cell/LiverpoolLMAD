@@ -75,7 +75,7 @@
 
 .deliveryCard.active{
     border-color:#d81b81;
-    background:rgba(216,27,129,0.05);
+    background:var(--faintPink);
 }
 
 .deliveryCard h3{
@@ -123,7 +123,7 @@
 
 .paymentBtn.active{
     border-color:#d81b81;
-    background:rgba(216,27,129,0.05);
+    background:var(--faintPink);
 }
 
 /* =========================

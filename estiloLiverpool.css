@@ -12,7 +12,8 @@
 --border:#e0e0e0;
 --welement:#ffffff;
 --gris:#555;
---purple:#a259ff;
+--purple:#5918ad;
+--faintPink:rgba(216,27,129,0.05);
 --font-scale: 1;
 }
 
@@ -27,6 +28,8 @@ body.dark{
 --border:#333;
 --welement:#464646;
 --gris:#aaa9a9;
+--purple:#b682fa;
+--faintPink:rgba(212, 115, 167, 0.219);
 }
 
 /* =========================

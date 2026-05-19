@@ -133,17 +133,54 @@ if (accBtn && accessPanel) {
     });
 }
 
-// Cargar preferencia guardada de Dark Mode
-if (localStorage.getItem("darkMode") === "true") {
+// ==========================================
+// DARK MODE + PREFERENCIA DEL SISTEMA
+// ==========================================
+
+const savedDarkMode = localStorage.getItem("darkMode");
+
+/* detectar preferencia del sistema */
+const prefersDark = window.matchMedia(
+    "(prefers-color-scheme: dark)"
+).matches;
+
+/* prioridad:
+1. preferencia guardada
+2. preferencia del sistema
+*/
+
+if(savedDarkMode !== null){
+
+    if(savedDarkMode === "true"){
+
+        document.body.classList.add("dark");
+
+        if(darkToggle){
+            darkToggle.checked = true;
+        }
+
+    }
+
+}else if(prefersDark){
+
     document.body.classList.add("dark");
-    if (darkToggle) darkToggle.checked = true;
+
+    if(darkToggle){
+        darkToggle.checked = true;
+    }
+
 }
 
-// Toggle Dark Mode
-darkToggle?.addEventListener("change", () => {
+/* toggle manual */
+darkToggle?.addEventListener("change", ()=>{
+
     document.body.classList.toggle("dark");
-    const isDark = document.body.classList.contains("dark");
+
+    const isDark =
+    document.body.classList.contains("dark");
+
     localStorage.setItem("darkMode", isDark);
+
 });
 
 // Toggle Letra Grande
