@@ -549,10 +549,65 @@
 
 <script src="https://cdn.jsdelivr.net/npm/simple-keyboard@latest/build/index.js"></script>
 
+<style>
+    /* Fuerza al navegador a ocultar lo inactivo y mostrar lo activo */
+    .tabContent {
+        display: none !important;
+    }
+    .tabContent.active {
+        display: block !important;
+    }
+</style>
+
 <script>
 window.addEventListener("load", () => {
-document.body.classList.add("loaded")
-})
+    document.body.classList.add("loaded");
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const tabs = document.querySelectorAll(".tabAlt");
+    const contents = document.querySelectorAll(".tabContent");
+
+    tabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+            // 1. Desactivar todos los botones de pestañas
+            tabs.forEach(t => {
+                t.classList.remove("active");
+                t.setAttribute("aria-selected", "false");
+            });
+            
+            // 2. Ocultar todos los contenidos de las pestañas
+            contents.forEach(c => {
+                c.classList.remove("active");
+            });
+
+            // 3. Activar el botón al que se le dio clic
+            tab.classList.add("active");
+            tab.setAttribute("aria-selected", "true");
+
+            // 4. Mostrar el contenido correspondiente
+            const targetId = tab.getAttribute("aria-controls");
+            const targetContent = document.getElementById(targetId);
+            if (targetContent) {
+                targetContent.classList.add("active");
+            }
+        });
+    });
+
+    // Leer la URL por si vienes desde la bolsa o el header (?tab=wishlist)
+    const urlParams = new URLSearchParams(window.location.search);
+    const tabParam = urlParams.get('tab');
+    if (tabParam) {
+        // Mapeo por si los IDs no coinciden exactamente con los parámetros
+        let targetId = tabParam;
+        if (tabParam === 'wishlist') targetId = 'whislist'; // Ajuste por tu id="tab-whislist"
+        
+        const targetTab = document.getElementById(`tab-${targetId}`);
+        if (targetTab) {
+            targetTab.click();
+        }
+    }
+});
 </script>
 
 <script src="script.js"></script>
