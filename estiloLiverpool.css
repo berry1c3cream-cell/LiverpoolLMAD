@@ -2204,3 +2204,17 @@ body.login-page {
 body.modal-open {
     overflow: hidden;
 }
+
+.header .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espacio de separación entre la imagen y el texto */
+    text-decoration: none; /* Por si las dudas, quita el subrayado */
+}
+
+/* Control del tamaño de la imagen del logo */
+.header .logo-img {
+    height: 30px;      /* Ajusta este valor según qué tan alto sea tu header */
+    width: auto;       /* Mantiene la proporción original de la imagen sin deformarla */
+    object-fit: contain;
+}
