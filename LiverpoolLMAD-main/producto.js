@@ -27,6 +27,100 @@ homeOption.addEventListener("click", () => {
 
 });
 
+/* =========================
+    ONBOARDING PRODUCTO
+========================= */
+
+const productOnboarding =
+document.getElementById("productOnboarding");
+
+const productOnTitle =
+document.getElementById("productOnTitle");
+
+const productOnText =
+document.getElementById("productOnText");
+
+const productOnStep =
+document.getElementById("productOnStep");
+
+const nextProductOnboarding =
+document.getElementById("nextProductOnboarding");
+
+const productSteps = [
+
+{
+    title: "Agregar a la bolsa",
+    text: "Guarda este producto en tu bolsa para comprarlo más tarde.",
+    element: document.getElementById("addBagHighlight")
+},
+
+{
+    title: "Comprar ahora",
+    text: "Finaliza tu compra rápidamente con un solo clic.",
+    element: document.getElementById("buyNowBtn")
+}
+
+];
+
+let currentProductStep = 0;
+
+/* mostrar solo primera vez */
+if(!localStorage.getItem("productOnboardingSeen")){
+
+    productOnboarding.classList.remove("hidden");
+
+    updateProductOnboarding();
+
+}
+
+function updateProductOnboarding(){
+
+    /* limpiar highlights */
+    document
+    .querySelectorAll(".onboarding-highlight")
+    .forEach(el=>{
+        el.classList.remove("onboarding-highlight");
+    });
+
+    const step = productSteps[currentProductStep];
+
+    productOnTitle.textContent = step.title;
+    productOnText.textContent = step.text;
+
+    productOnStep.textContent =
+    `Paso ${currentProductStep + 1} de ${productSteps.length}`;
+
+    step.element.classList.add("onboarding-highlight");
+
+}
+
+nextProductOnboarding.addEventListener("click", ()=>{
+
+    currentProductStep++;
+
+    if(currentProductStep >= productSteps.length){
+
+        productOnboarding.classList.add("hidden");
+
+        document
+        .querySelectorAll(".onboarding-highlight")
+        .forEach(el=>{
+            el.classList.remove("onboarding-highlight");
+        });
+
+        localStorage.setItem(
+            "productOnboardingSeen",
+            "true"
+        );
+
+    }else{
+
+        updateProductOnboarding();
+
+    }
+
+});
+
 
 // =========================
 // BOTÓN COMPRAR AHORA

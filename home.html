@@ -36,7 +36,7 @@
         </a>
     </div>
 
-    <div class="search">
+    <div class="search" id="searchHighlight">
         <label for="searchBar" class="sr-only">
             Buscar productos
         </label>
@@ -53,6 +53,7 @@
         <a 
         href="miCuenta.html"
         class="iconBtn miCuentaLink"
+        id="accountHighlight"
         aria-label="Ir a Mi cuenta"
         >
             <img 
@@ -70,7 +71,8 @@
         <a 
         href="miCuenta.html?tab=wishlist"
         class="iconBtn miCuentaLink"
-        aria-label="Ir a Whislist"
+        id="wishlistHighlight"
+        aria-label="Ir a Wishlist"
         >
             <img 
             src="icons/heart.svg"
@@ -102,11 +104,11 @@
         </span> -->
 
         <button 
-            id="accessibilityBtn" 
-            class="iconBtn"
-            aria-label="Abrir opciones de accesibilidad"
-            aria-expanded="false"
-            aria-controls="accessPanel"
+        id="accessibilityBtn"
+        class="iconBtn"
+        aria-label="Abrir opciones de accesibilidad"
+        aria-expanded="false"
+        aria-controls="accessPanel"
         >
             <img 
             src="icons/accessibility.svg"
@@ -140,14 +142,14 @@
         </label>
     </div>
 
-    <div class="accItem">
+    <!-- <div class="accItem">
         <span>Teclado virtual</span>
 
         <label for="keyboardToggle" class="switch">
             <input type="checkbox" id="keyboardToggle">
             <span class="slider"></span>
         </label>
-    </div>
+    </div> -->
 
 </div>
 
@@ -606,6 +608,29 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/simple-keyboard@latest/build/index.js"></script>
+<div id="onboarding" class="onboarding hidden">
+
+    <div class="onboarding-box">
+
+        <span class="onboarding-step" id="onStep">
+            Paso 1 de 4
+        </span>
+
+        <h3 id="onTitle">
+            Buscar productos
+        </h3>
+
+        <p id="onText">
+            Encuentra productos fácilmente usando la barra de búsqueda.
+        </p>
+
+        <button id="nextOnboarding">
+            Siguiente
+        </button>
+
+    </div>
+
+</div>
 <script src="script.js"></script>
 
 </body>

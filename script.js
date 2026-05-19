@@ -264,6 +264,101 @@ wishlistButtons.forEach(btn => {
     }
 });
 
+/* =========================
+        ONBOARDING
+========================= */
+
+const onboarding = document.getElementById("onboarding");
+const onTitle = document.getElementById("onTitle");
+const onText = document.getElementById("onText");
+const onStep = document.getElementById("onStep");
+const nextOnboarding = document.getElementById("nextOnboarding");
+
+const onboardingSteps = [
+
+{
+    title: "Buscar productos",
+    text: "Encuentra productos fácilmente usando la barra de búsqueda.",
+    element: document.getElementById("searchHighlight")
+},
+
+{
+    title: "Opciones de accesibilidad",
+    text: "Activa modo oscuro, letra grande y teclado virtual.",
+    element: document.getElementById("accessibilityBtn")
+},
+
+{
+    title: "Wishlist",
+    text: "Guarda productos para revisarlos más tarde.",
+    element: document.getElementById("wishlistHighlight")
+},
+
+{
+    title: "Mi cuenta",
+    text: "Consulta pedidos, beneficios y configuraciones personales.",
+    element: document.getElementById("accountHighlight")
+}
+
+];
+
+let currentOnboarding = 0;
+
+/* primera vez */
+if(!localStorage.getItem("homeOnboardingSeen")){
+
+    onboarding.classList.remove("hidden");
+
+    updateOnboarding();
+
+}
+
+function updateOnboarding(){
+
+    /* quitar highlights anteriores */
+    document
+    .querySelectorAll(".onboarding-highlight")
+    .forEach(el=>{
+        el.classList.remove("onboarding-highlight");
+    });
+
+    const step = onboardingSteps[currentOnboarding];
+
+    onTitle.textContent = step.title;
+    onText.textContent = step.text;
+
+    onStep.textContent =
+    `Paso ${currentOnboarding + 1} de ${onboardingSteps.length}`;
+
+    /* highlight */
+    step.element.classList.add("onboarding-highlight");
+
+}
+
+nextOnboarding.addEventListener("click", ()=>{
+
+    currentOnboarding++;
+
+    if(currentOnboarding >= onboardingSteps.length){
+
+        onboarding.classList.add("hidden");
+
+        document
+        .querySelectorAll(".onboarding-highlight")
+        .forEach(el=>{
+            el.classList.remove("onboarding-highlight");
+        });
+
+        localStorage.setItem("homeOnboardingSeen", "true");
+
+    }else{
+
+        updateOnboarding();
+
+    }
+
+});
+
 // ==========================================
 // 10. FORMULARIO DE COMPRA (CHECKOUT)
 // ==========================================

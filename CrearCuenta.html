@@ -89,6 +89,35 @@
             border-color: #d81b81;
         }
 
+        .password-wrapper{
+            position: relative;
+        }
+
+        .password-wrapper input{
+            padding-right: 45px;
+        }
+
+        .toggle-password{
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+
+            background: none;
+            border: none;
+            cursor: pointer;
+
+            font-size: 18px;
+            color: #777;
+
+            transition: 0.2s ease;
+        }
+
+        .toggle-password:hover{
+            color: #d81b81;
+            transform: translateY(-50%) scale(1.1);
+        }
+
         /* LISTA DE REQUISITOS EN TIEMPO REAL */
         .password-policies {
             margin-top: 10px;
@@ -183,8 +212,19 @@
 
             <div class="form-group">
                 <label>CONTRASEÑA *</label>
-                <input type="password" id="regPassword" placeholder="••••••••" required>
-                
+
+                <div class="password-wrapper">
+                    <input type="password" id="regPassword" placeholder="••••••••" required>
+
+                    <button 
+                        type="button" 
+                        class="toggle-password"
+                        id="togglePassword"
+                        aria-label="Mostrar contraseña">
+                        👁
+                    </button>
+                </div>
+
                 <ul class="password-policies">
                     <li class="policy-item" id="paramLength">Mínimo 8 caracteres</li>
                     <li class="policy-item" id="paramMayus">Una mayúscula</li>
@@ -200,6 +240,30 @@
             </div>
         </div>
     </main>
+
+    <script>
+        const passwordInput = document.getElementById("regPassword");
+        const togglePassword = document.getElementById("togglePassword");
+
+        togglePassword.addEventListener("click", () => {
+
+            const isPassword =
+                passwordInput.type === "password";
+
+            passwordInput.type =
+                isPassword ? "text" : "password";
+
+            togglePassword.textContent =
+                isPassword ? "👁" : "👁";
+
+            togglePassword.setAttribute(
+                "aria-label",
+                isPassword
+                    ? "Ocultar contraseña"
+                    : "Mostrar contraseña"
+            );
+        });
+    </script>
 
     <script src="script.js" defer></script>
     <script src="LiverpoolLMAD-main/registro.js" defer></script>

@@ -148,14 +148,14 @@
         </label>
     </div>
 
-    <div class="accItem">
+    <!-- <div class="accItem">
         <span>Teclado virtual</span>
 
         <label for="keyboardToggle" class="switch">
             <input type="checkbox" id="keyboardToggle">
             <span class="slider"></span>
         </label>
-    </div>
+    </div> -->
 
 </div>
 
@@ -249,7 +249,7 @@
     <div class="buyContent">
 
         <div class="buyButtons">
-            <button class="btnPrimary">Agregar a la bolsa</button>
+            <button class="btnPrimary" id="addBagHighlight">Agregar a la bolsa</button>
             <button class="btnSecondary" id="buyNowBtn">
                 Comprar ahora
             </button>
@@ -385,6 +385,29 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/simple-keyboard@latest/build/index.js"></script>
+<div id="productOnboarding" class="onboarding hidden">
+
+    <div class="onboarding-box">
+
+        <span class="onboarding-step" id="productOnStep">
+            Paso 1 de 2
+        </span>
+
+        <h3 id="productOnTitle">
+            Agregar a la bolsa
+        </h3>
+
+        <p id="productOnText">
+            Guarda este producto en tu bolsa para comprarlo más tarde.
+        </p>
+
+        <button id="nextProductOnboarding">
+            Siguiente
+        </button>
+
+    </div>
+
+</div>
 <script src="script.js"></script>
 <script src="LiverpoolLMAD-main/producto.js"></script>
 </body>
