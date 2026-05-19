@@ -123,7 +123,7 @@
     <div class="accItem">
         <span>Modo oscuro</span>
 
-        <label class="switch">
+        <label for="darkToggle" class="switch">
             <input type="checkbox" id="darkToggle">
             <span class="slider"></span>
         </label>
@@ -132,7 +132,7 @@
     <div class="accItem">
         <span>Letra grande</span>
 
-        <label class="switch">
+        <label for="sizeFontToggle" class="switch">
             <input type="checkbox" id="sizeFontToggle">
             <span class="slider"></span>
         </label>
@@ -141,7 +141,7 @@
     <div class="accItem">
         <span>Teclado virtual</span>
 
-        <label class="switch">
+        <label for="keyboardToggle" class="switch">
             <input type="checkbox" id="keyboardToggle">
             <span class="slider"></span>
         </label>
@@ -151,86 +151,88 @@
 
 <div class="simple-keyboard"></div>
 
-<div class="successPage">
+<main class="mainSuccessPage" id="mainContent">
+    <div class="successPage">
 
-    <div class="successCard">
+        <div class="successCard">
 
-        <!-- ICONO -->
-        <div 
-        class="successIcon"
-        aria-hidden="true"
-        >
-            ✓
-        </div>
+            <!-- ICONO -->
+            <div 
+            class="successIcon"
+            aria-hidden="true"
+            >
+                ✓
+            </div>
 
-        <!-- TEXTO -->
-        <h1>
-            ¡Compra realizada!
-        </h1>
+            <!-- TEXTO -->
+            <h1>
+                ¡Compra realizada!
+            </h1>
 
-        <p class="successText">
-            Tu pedido fue procesado correctamente.
-        </p>
+            <p class="successText">
+                Tu pedido fue procesado correctamente.
+            </p>
 
-        <!-- PEDIDO -->
-        <div class="orderBox">
+            <!-- PEDIDO -->
+            <div class="orderBox">
 
-            <span>Número de pedido</span>
+                <span>Número de pedido</span>
 
-            <h2>#LVP482913</h2>
-
-        </div>
-
-        <!-- ENTREGA DINÁMICA -->
-        <div id="deliveryResult" aria-live="polite"></div>
-
-        <!-- PRODUCTO -->
-        <div class="successProduct">
-
-            <img src="imagenes/tenis.png" alt="Tenis Nike Court Vision Low color blanco">
-
-            <div>
-
-                <h3>
-                    Nike Court Vision Low
-                </h3>
-
-                <p>
-                    Color blanco · Cantidad: 1
-                </p>
+                <h2>#LVP482913</h2>
 
             </div>
 
-            <strong>
-                $1,303.20
-            </strong>
+            <!-- ENTREGA DINÁMICA -->
+            <div id="deliveryResult" aria-live="polite"></div>
 
-        </div>
+            <!-- PRODUCTO -->
+            <div class="successProduct">
 
-        <!-- TOTAL -->
-        <div class="successTotal">
+                <img src="imagenes/tenis.png" alt="Tenis Nike Court Vision Low color blanco">
 
-            <span>Total pagado</span>
+                <div>
 
-            <strong>$1,303.20</strong>
+                    <h3>
+                        Nike Court Vision Low
+                    </h3>
 
-        </div>
+                    <p>
+                        Color blanco · Cantidad: 1
+                    </p>
 
-        <!-- BOTONES -->
-        <div class="successButtons">
+                </div>
 
-            <a 
-            href="home.html"
-            class="checkoutBtn successLinkBtn"
-            >
-                Volver al inicio
-            </a>
+                <strong>
+                    $1,303.20
+                </strong>
+
+            </div>
+
+            <!-- TOTAL -->
+            <div class="successTotal">
+
+                <span>Total pagado</span>
+
+                <strong>$1,303.20</strong>
+
+            </div>
+
+            <!-- BOTONES -->
+            <div class="successButtons">
+
+                <a 
+                href="home.html"
+                class="checkoutBtn successLinkBtn"
+                >
+                    Volver al inicio
+                </a>
+
+            </div>
 
         </div>
 
     </div>
-
-</div>
+</main>
 
 <!-- FOOTER -->
 <footer class="footer">

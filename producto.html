@@ -9,10 +9,12 @@
 <link rel="stylesheet" href="css/components.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-keyboard@latest/build/css/index.css"/>
 </head>
+
+<body>
+
 <a href="#mainContent" class="skipLink">
     Saltar al contenido principal
 </a>
-<body>
 
 <!-- TOPBAR -->
 <header class="topbar">
@@ -128,7 +130,7 @@
     <div class="accItem">
         <span>Modo oscuro</span>
 
-        <label class="switch">
+        <label for="darkToggle" class="switch">
             <input type="checkbox" id="darkToggle">
             <span class="slider"></span>
         </label>
@@ -137,7 +139,7 @@
     <div class="accItem">
         <span>Letra grande</span>
 
-        <label class="switch">
+        <label for="sizeFontToggle" class="switch">
             <input type="checkbox" id="sizeFontToggle">
             <span class="slider"></span>
         </label>
@@ -146,7 +148,7 @@
     <div class="accItem">
         <span>Teclado virtual</span>
 
-        <label class="switch">
+        <label for="keyboardToggle" class="switch">
             <input type="checkbox" id="keyboardToggle">
             <span class="slider"></span>
         </label>
@@ -157,7 +159,7 @@
 <div class="simple-keyboard"></div>
 
 <!-- PRODUCTO -->
-<div class="productPage" id="mainContent">
+<main class="productPage" id="mainContent">
 
     <h1 class="productTitle">Nombre del producto</h1>
 
@@ -238,7 +240,7 @@
         </div>
 
     </div>
-</div>
+</main>
 
 <div class="buySticky" id="buySticky">
     <div class="buyContent">
