@@ -126,7 +126,7 @@
     <div class="accItem">
         <span>Modo oscuro</span>
 
-        <label class="switch">
+        <label for="darkToggle" class="switch">
             <input type="checkbox" id="darkToggle">
             <span class="slider"></span>
         </label>
@@ -135,7 +135,7 @@
     <div class="accItem">
         <span>Letra grande</span>
 
-        <label class="switch">
+        <label for="sizeFontToggle" class="switch">
             <input type="checkbox" id="sizeFontToggle">
             <span class="slider"></span>
         </label>
@@ -144,7 +144,7 @@
     <div class="accItem">
         <span>Teclado virtual</span>
 
-        <label class="switch">
+        <label for="keyboardToggle" class="switch">
             <input type="checkbox" id="keyboardToggle">
             <span class="slider"></span>
         </label>
@@ -154,12 +154,13 @@
 
 <div class="simple-keyboard"></div>
 
-<div class="checkoutPage">
+<main class="mainCheckoutPage" id="mainContent">
+    <div class="checkoutPage">
 
-    <!-- IZQUIERDA -->
-    <div class="checkoutLeft">
+        <!-- IZQUIERDA -->
+        <div class="checkoutLeft">
 
-        <!-- ENTREGA -->
+            <!-- ENTREGA -->
 <section class="checkoutCard">
 
     <h2 class="checkoutTitle">
@@ -181,116 +182,114 @@
         </div>
     </div>
 
-</section>
+            <!-- PAGO -->
+            <section class="checkoutCard">
 
-        <!-- PAGO -->
-        <section class="checkoutCard">
+                <h2 class="checkoutTitle">
+                    2. Forma de pago
+                </h2>
 
-            <h2 class="checkoutTitle">
-                2. Forma de pago
-            </h2>
+                <div class="paymentMethods">
 
-            <div class="paymentMethods">
+                    <button class="paymentBtn active">
+                        💳 Tarjeta
+                    </button>
 
-                <button class="paymentBtn active">
-                    💳 Tarjeta
-                </button>
-
-                <button class="paymentBtn">
-                    <img src="imagenes/paypal.png" width="70">
-                </button>
-
-            </div>
-
-        </section>
-
-        <!-- PRODUCTOS -->
-        <section class="checkoutCard">
-
-            <h2 class="checkoutTitle">
-                3. Artículos
-            </h2>
-
-            <div class="bagItem">
-
-                <img src="imagenes/aretes.png" alt="producto">
-
-                <div class="wishlistInfo">
-
-                    <h3>
-                        Aretes DKNY con acabado pavé cristal
-                    </h3>
-
-                    <p class="wishlistDate">
-                        Color rosa · Acero inoxidable
-                    </p>
-
-                    <br>
-
-                    <div class="price-container">
-                        $749<sup>00</sup>
-                    </div>
-
-                    <br>
-
-                    <!-- LOADING FAKE -->
-                    <!--
-                    <div class="loadingBar"></div>
-                    -->
-
-                    <!-- PROMOCION -->
-                    <button class="deliveryCard active">
-
-                        <h3>✨ Pago único</h3>
-
-                        <p>
-                            50% de descuento aplicado automáticamente.
-                        </p>
-
+                    <button class="paymentBtn active" aria-label="paymentBtn">
+                        <img src="imagenes/paypal.png" width="70" alt="Paypal">
                     </button>
 
                 </div>
 
+            </section>
+
+            <!-- PRODUCTOS -->
+            <section class="checkoutCard">
+
+                <h2 class="checkoutTitle">
+                    3. Artículos
+                </h2>
+
+                <div class="bagItem">
+
+                    <img src="imagenes/aretes.png" alt="producto">
+
+                    <div class="wishlistInfo">
+
+                        <h3>
+                            Aretes DKNY con acabado pavé cristal
+                        </h3>
+
+                        <p class="wishlistDate">
+                            Color rosa · Acero inoxidable
+                        </p>
+
+                        <br>
+
+                        <div class="price-container">
+                            $749<sup>00</sup>
+                        </div>
+
+                        <br>
+
+                        <!-- LOADING FAKE -->
+                        <!--
+                        <div class="loadingBar"></div>
+                        -->
+
+                        <!-- PROMOCION -->
+                        <button class="deliveryCard active">
+
+                            <h3>✨ Pago único</h3>
+
+                            <p>
+                                50% de descuento aplicado automáticamente.
+                            </p>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+        <!-- DERECHA -->
+        <aside class="checkoutSummary">
+
+            <h2 class="checkoutTitle">
+                Resumen
+            </h2>
+
+            <div class="summaryRow">
+                <span>Subtotal</span>
+                <span>$749.00</span>
             </div>
 
-        </section>
+            <div class="summaryRow">
+                <span>Envío</span>
+                <span>Gratis</span>
+            </div>
 
+            <div class="summaryRow">
+                <span>Descuento</span>
+                <span>-$0.00</span>
+            </div>
+
+            <div class="summaryTotal">
+                <span>Total</span>
+                <span>$749.00</span>
+            </div>
+
+            <button class="checkoutBtn" id="finishPurchaseBtn">
+                Finalizar compra
+            </button>
+
+        </aside>
     </div>
-
-    <!-- DERECHA -->
-    <aside class="checkoutSummary">
-
-        <h2 class="checkoutTitle">
-            Resumen
-        </h2>
-
-        <div class="summaryRow">
-            <span>Subtotal</span>
-            <span>$749.00</span>
-        </div>
-
-        <div class="summaryRow">
-            <span>Envío</span>
-            <span>Gratis</span>
-        </div>
-
-        <div class="summaryRow">
-            <span>Descuento</span>
-            <span>-$0.00</span>
-        </div>
-
-        <div class="summaryTotal">
-            <span>Total</span>
-            <span>$749.00</span>
-        </div>
-
-        <button class="checkoutBtn" id="finishPurchaseBtn">
-            Finalizar compra
-        </button>
-
-    </aside>
-
-</div>
+</main>
 
 <!-- FOOTER -->
 <footer class="footer">
